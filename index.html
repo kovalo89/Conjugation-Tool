@@ -3,25 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Conjugador Francés PRO — Final (Separation + Next on correct)</title>
+<title>Conjugador Francés</title>
 <style>
 :root{
-  --bg:#0d1117; --card:#0f1724; --primary:#58a6ff; --fuchsia:#ff49c8; --success:#1fc47f;
-  --muted:#8b949e; --border:#20262b;
+  --bg:#0d1117; --card:#0f1724; --primary:#ffffff; --fuchsia:#ff49c8; --success:#13f898;
+  --muted:#677e98; --border:#576d7f;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#e6eef8;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;min-height:100vh}
+body{margin:0;background:var(--bg);color:#e6eef8;font-family:Roboto,system-ui,Roboto,Roboto,"Roboto",Roboto;min-height:100vh}
 .container{max-width:980px;margin:32px auto;padding:20px}
 .header{text-align:center;margin-bottom:18px}
-h1{color:var(--primary);margin:0 0 8px}
+h1 {color: var(--primary);margin: 0 0 16px;font-size: 25px;   /* ← add this */}
 .mode-tabs{display:inline-flex;gap:12px}
-.tab{background:var(--card);padding:8px 18px;border-radius:12px;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-weight:700}
-.tab.active{background:linear-gradient(180deg,#1a2b3f,#11202b);color:var(--primary)}
+.tab{background:var(--card);padding:8px 18px;border-radius:10px;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-weight:700}
+.tab.active{background:linear-gradient(180deg,#0d87fa,#01287c);color:var(--primary)}
 .card{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);margin-bottom:14px}
 .section-title{color:var(--primary);font-weight:700;margin-bottom:10px}
 .chips{display:flex;gap:10px;flex-wrap:wrap}
-.chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid var(--border);cursor:pointer;color:var(--muted);font-weight:700}
-.chip.selected{background:rgba(88,166,255,0.12);border-color:var(--primary);color:var(--primary);box-shadow:0 8px 20px rgba(88,166,255,0.06)}
+.chip{padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);cursor:pointer;color:var(--muted);font-weight:700}
+.chip.selected{background:rgba(88,166,255,0.12);border-color:rgb(0, 174, 255);color:var(--primary);box-shadow:0 8px 20px rgba(88,166,255,0.06)}
+
 
 .exercise-wrap{margin-top:10px}
 .question{font-size:22px;margin-bottom:6px}
@@ -32,14 +33,14 @@ h1{color:var(--primary);margin:0 0 8px}
 .input.wrong{border-color:var(--fuchsia);animation:shake .45s}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 
+
 /* buttons */
-.icon-btn{width:64px;height:64px;border-radius:14px;display:inline-grid;place-items:center;border:none;cursor:pointer;box-shadow:0 12px 32px rgba(2,6,23,0.6)}
+.icon-btn{width:50px;height:50px;border-radius:10px;display:inline-grid;place-items:center;border:none;cursor:pointer;box-shadow:0 12px 32px rgba(2,6,23,0.6)}
 .btn-blue{background:linear-gradient(180deg,#58a6ff,#2b82e6)}
 .btn-pink{background:linear-gradient(180deg,#ff6adf,#ff49c8)}
 .btn-green{background:linear-gradient(180deg,#33e59f,#1fc47f)}
 .btn-red{background:linear-gradient(180deg,#ff6b6b,#ff3b3b)}
 .icon-small{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;border:none;cursor:pointer;background:rgba(255,255,255,0.02)}
-/* when icon-small is paired with btn-red, ensure the red background shows */
 .icon-small.btn-red{background:linear-gradient(180deg,#ff6b6b,#ff3b3b)}
 
 .inline-actions{display:flex;gap:10px;justify-content:center;margin-top:14px}
@@ -70,20 +71,68 @@ footer{text-align:center;margin-top:26px;color:var(--muted);font-size:13px}
 /* mobile error overlay (visible on phone to surface JS errors) */
 .mobile-error-overlay{position:fixed;left:8px;right:8px;bottom:12px;background:rgba(220,46,46,0.95);color:white;padding:12px;border-radius:10px;z-index:99999;font-size:13px;max-height:40vh;overflow:auto;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
 .mobile-error-overlay .close{float:right;color:white;opacity:0.95;cursor:pointer;padding-left:8px;font-weight:700}
-</style>
 
-<link rel="manifest" href="manifest.json">
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+/* DROPDOWN ARROW Design */
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #06121a;
+  color: #cfe9ff;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: 120%;
+  position: relative;
+  font-size: 1rem;
 }
-</script>
 
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select-arrow {
+  position: absolute;
+  right: -10px;   /* ← CHANGE THIS TO MOVE ARROW */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: .75rem;
+  color: #ffffff;
+}
+
+/* Desktop */
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Mobile fix: move buttons below input */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;      /* stack input + buttons vertically */
+    align-items: center;
+  }
+
+  .input-buttons {
+    display: flex;
+    gap: 14px;                   /* spacing between buttons */
+  }
+
+  #answer.input {
+    width: 90%;                 /* bigger input on mobile */
+  }
+}
+
+
+
+</style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <h1>Conjugador Francés PRO</h1>
+    <h1>Conjugador de Francés</h1>
     <div class="mode-tabs">
       <div class="tab active" id="tab-ale" onclick="showMode('aleatorio')">Aleatorio</div>
       <div class="tab" id="tab-ind" onclick="showMode('individual')">Individual</div>
@@ -105,14 +154,14 @@ if ("serviceWorker" in navigator) {
       </div>
 
       <div style="text-align:center;margin-top:8px;display:flex;justify-content:center;gap:12px;align-items:center">
-        <button id="clearAleatorio" class="icon-small btn-red hidden" onclick="clearAleatorio()" title="Borrar selecciones" aria-label="Borrar selecciones" style="color:white;width:64px;height:64px;border-radius:14px;border:none;place-items:center">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M3 6h18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 6v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 11v6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 11v6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <button id="clearAleatorio" class="icon-small btn-red hidden" onclick="clearAleatorio()" title="Borrar selecciones" aria-label="Borrar selecciones" style="color:white;width:64px;height:64px;border-radius:10px;border:none;place-items:center">
+          <img src="https://github.com/kovalo89/Conjugation-Tool/blob/main/Icons/trash.png?raw=true"width="50" height="50" viewBox="0 0 24 24" fill="none">
+    <path d="M4 6h16" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M10 10v7" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M14 10v7" stroke="white" stroke-width="" stroke-linecap="round"/>
+    <rect x="7" y="6" width="10" height="12" rx="2" stroke="white" stroke-width="2.2"/>
+    <path d="M9 6V5c0-.6.5-1 1-1h4c.6 0 1 .4 1 1v1" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  </svg>
         </button>
         <button id="startAleatorio" class="icon-small hidden" onclick="startAleatorio()" disabled style="background:linear-gradient(180deg,#58a6ff,#2b82e6);color:black">INICIAR</button>
       </div>
@@ -122,10 +171,13 @@ if ("serviceWorker" in navigator) {
     <div id="individualPanel" class="hidden">
       <div class="card">
         <div class="section-title">Selecciona un verbo</div>
-        <select id="singleVerb" style="width:100%;padding:12px;border-radius:10px;background:#06121a;color:#cfe9ff;border:1px solid var(--border)">
-          <option value="">-- Elige un verbo --</option>
-        </select>
-      </div>
+        <div class="custom-select-wrapper">
+  <select id="singleVerb" class="custom-select">
+    <option value="">Elige un verbo...</option>
+  </select>
+  <div class="custom-select-arrow">▼</div>
+    </div>
+</div>
 
       <div class="card">
         <div class="section-title">Tiempos a practicar</div>
@@ -163,20 +215,24 @@ if ("serviceWorker" in navigator) {
         <div class="sub" id="pronounAleatorio"></div>
 
         <div class="input-row">
-          <input id="answer" class="input" placeholder="Escribe la forma correcta..." autocomplete="off" onkeydown="if(event.key==='Enter') checkAleatorio()">
-          <button class="icon-btn btn-blue" id="btnCheck" title="Comprobar" onclick="checkAleatorio()">
-            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-              <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </button>
+  <input id="answer" class="input" placeholder="Escribe la forma correcta..." autocomplete="off"
+         onkeydown="if(event.key==='Enter') checkAleatorio()">
 
-          <button class="icon-btn btn-pink" id="btnReveal" title="Revelar" onclick="revealAleatorio()">
-            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-              <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none"/>
-              <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </button>
-        </div>
+  <div class="input-buttons">
+    <button class="icon-btn btn-blue" id="btnCheck" title="Comprobar" onclick="checkAleatorio()">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+        <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </button>
+
+    <button class="icon-btn btn-pink" id="btnReveal" title="Revelar" onclick="revealAleatorio()">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+        <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none"/>
+        <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </button>
+  </div>
+</div>
 
         <div id="explicacionAleatorio" style="margin-top:12px;color:var(--muted)"></div>
 
