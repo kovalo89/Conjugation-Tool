@@ -1,0 +1,1582 @@
+{
+  "être": {
+    "present": {
+      "je": "suis",
+      "tu": "es",
+      "il": "est",
+      "nous": "sommes",
+      "vous": "êtes",
+      "ils": "sont",
+      "elle": "est",
+      "on": "est",
+      "elles": "sont"
+    },
+    "passeCompose": {
+      "je": "ai été",
+      "tu": "as été",
+      "il": "a été",
+      "nous": "avons été",
+      "vous": "avez été",
+      "ils": "ont été",
+      "elle": "a été",
+      "on": "a été",
+      "elles": "ont été"
+    },
+    "imparfait": {
+      "je": "étais",
+      "tu": "étais",
+      "il": "était",
+      "nous": "étions",
+      "vous": "étiez",
+      "ils": "étaient",
+      "elle": "était",
+      "on": "était",
+      "elles": "étaient"
+    },
+    "futurSimple": {
+      "je": "serai",
+      "tu": "seras",
+      "il": "sera",
+      "nous": "serons",
+      "vous": "serez",
+      "ils": "seront",
+      "elle": "sera",
+      "on": "sera",
+      "elles": "seront"
+    },
+    "plusQueParfait": {
+      "je": "avais été",
+      "tu": "avais été",
+      "il": "avait été",
+      "nous": "avions été",
+      "vous": "aviez été",
+      "ils": "avaient été",
+      "elle": "avait été",
+      "on": "avait été",
+      "elles": "avaient été"
+    },
+    "futurProche": {
+      "je": "vais être",
+      "tu": "vas être",
+      "il": "va être",
+      "nous": "allons être",
+      "vous": "allez être",
+      "ils": "vont être",
+      "elle": "va être",
+      "on": "va être",
+      "elles": "vont être"
+    },
+    "futurAnterieur": {
+      "je": "aurai été",
+      "tu": "auras été",
+      "il": "aura été",
+      "nous": "aurons été",
+      "vous": "aurez été",
+      "ils": "auront été",
+      "elle": "aura été",
+      "on": "aura été",
+      "elles": "auront été"
+    }
+  },
+  "avoir": {
+    "present": {
+      "je": "ai",
+      "tu": "as",
+      "il": "a",
+      "nous": "avons",
+      "vous": "avez",
+      "ils": "ont",
+      "elle": "a",
+      "on": "a",
+      "elles": "ont"
+    },
+    "passeCompose": {
+      "je": "ai eu",
+      "tu": "as eu",
+      "il": "a eu",
+      "nous": "avons eu",
+      "vous": "avez eu",
+      "ils": "ont eu",
+      "elle": "a eu",
+      "on": "a eu",
+      "elles": "ont eu"
+    },
+    "imparfait": {
+      "je": "avais",
+      "tu": "avais",
+      "il": "avait",
+      "nous": "avions",
+      "vous": "aviez",
+      "ils": "avaient",
+      "elle": "avait",
+      "on": "avait",
+      "elles": "avaient"
+    },
+    "futurSimple": {
+      "je": "aurai",
+      "tu": "auras",
+      "il": "aura",
+      "nous": "aurons",
+      "vous": "aurez",
+      "ils": "auront",
+      "elle": "aura",
+      "on": "aura",
+      "elles": "auront"
+    },
+    "plusQueParfait": {
+      "je": "avais eu",
+      "tu": "avais eu",
+      "il": "avait eu",
+      "nous": "avions eu",
+      "vous": "aviez eu",
+      "ils": "avaient eu",
+      "elle": "avait eu",
+      "on": "avait eu",
+      "elles": "avaient eu"
+    },
+    "futurProche": {
+      "je": "vais avoir",
+      "tu": "vas avoir",
+      "il": "va avoir",
+      "nous": "allons avoir",
+      "vous": "allez avoir",
+      "ils": "vont avoir",
+      "elle": "va avoir",
+      "on": "va avoir",
+      "elles": "vont avoir"
+    },
+    "futurAnterieur": {
+      "je": "aurai eu",
+      "tu": "auras eu",
+      "il": "aura eu",
+      "nous": "aurons eu",
+      "vous": "aurez eu",
+      "ils": "auront eu",
+      "elle": "aura eu",
+      "on": "aura eu",
+      "elles": "auront eu"
+    }
+  },
+  "faire": {
+    "present": {
+      "je": "fais",
+      "tu": "fais",
+      "il": "fait",
+      "nous": "faisons",
+      "vous": "faites",
+      "ils": "font",
+      "elle": "fait",
+      "on": "fait",
+      "elles": "font"
+    },
+    "passeCompose": {
+      "je": "ai fait",
+      "tu": "as fait",
+      "il": "a fait",
+      "nous": "avons fait",
+      "vous": "avez fait",
+      "ils": "ont fait",
+      "elle": "a fait",
+      "on": "a fait",
+      "elles": "ont fait"
+    },
+    "imparfait": {
+      "je": "faisais",
+      "tu": "faisais",
+      "il": "faisait",
+      "nous": "faisions",
+      "vous": "faisiez",
+      "ils": "faisaient",
+      "elle": "faisait",
+      "on": "faisait",
+      "elles": "faisaient"
+    },
+    "futurSimple": {
+      "je": "ferai",
+      "tu": "feras",
+      "il": "fera",
+      "nous": "ferons",
+      "vous": "ferez",
+      "ils": "feront",
+      "elle": "fera",
+      "on": "fera",
+      "elles": "feront"
+    },
+    "plusQueParfait": {
+      "je": "avais fait",
+      "tu": "avais fait",
+      "il": "avait fait",
+      "nous": "avions fait",
+      "vous": "aviez fait",
+      "ils": "avaient fait",
+      "elle": "avait fait",
+      "on": "avait fait",
+      "elles": "avaient fait"
+    },
+    "futurProche": {
+      "je": "vais faire",
+      "tu": "vas faire",
+      "il": "va faire",
+      "nous": "allons faire",
+      "vous": "allez faire",
+      "ils": "vont faire",
+      "elle": "va faire",
+      "on": "va faire",
+      "elles": "vont faire"
+    },
+    "futurAnterieur": {
+      "je": "aurai fait",
+      "tu": "auras fait",
+      "il": "aura fait",
+      "nous": "aurons fait",
+      "vous": "aurez fait",
+      "ils": "auront fait",
+      "elle": "aura fait",
+      "on": "aura fait",
+      "elles": "auront fait"
+    }
+  },
+  "aller": {
+    "present": {
+      "je": "vais",
+      "tu": "vas",
+      "il": "va",
+      "nous": "allons",
+      "vous": "allez",
+      "ils": "vont",
+      "elle": "va",
+      "on": "va",
+      "elles": "vont"
+    },
+    "passeCompose": {
+      "je": "suis allé",
+      "tu": "es allé",
+      "il": "est allé",
+      "nous": "sommes allés",
+      "vous": "êtes allés",
+      "ils": "sont allés",
+      "elle": "est allé",
+      "on": "est allé",
+      "elles": "sont allés"
+    },
+    "imparfait": {
+      "je": "allais",
+      "tu": "allais",
+      "il": "allait",
+      "nous": "allions",
+      "vous": "alliez",
+      "ils": "allaient",
+      "elle": "allait",
+      "on": "allait",
+      "elles": "allaient"
+    },
+    "futurSimple": {
+      "je": "irai",
+      "tu": "iras",
+      "il": "ira",
+      "nous": "irons",
+      "vous": "irez",
+      "ils": "iront",
+      "elle": "ira",
+      "on": "ira",
+      "elles": "iront"
+    },
+    "plusQueParfait": {
+      "je": "étais allé",
+      "tu": "étais allé",
+      "il": "était allé",
+      "nous": "étions allés",
+      "vous": "étiez allés",
+      "ils": "étaient allés",
+      "elle": "était allé",
+      "on": "était allé",
+      "elles": "étaient allés"
+    },
+    "futurProche": {
+      "je": "vais aller",
+      "tu": "vas aller",
+      "il": "va aller",
+      "nous": "allons aller",
+      "vous": "allez aller",
+      "ils": "vont aller",
+      "elle": "va aller",
+      "on": "va aller",
+      "elles": "vont aller"
+    },
+    "futurAnterieur": {
+      "je": "serai allé",
+      "tu": "seras allé",
+      "il": "sera allé",
+      "nous": "serons allés",
+      "vous": "serez allés",
+      "ils": "seront allés",
+      "elle": "sera allé",
+      "on": "sera allé",
+      "elles": "seront allés"
+    }
+  },
+  "pouvoir": {
+    "present": {
+      "je": "peux",
+      "tu": "peux",
+      "il": "peut",
+      "nous": "pouvons",
+      "vous": "pouvez",
+      "ils": "peuvent",
+      "elle": "peut",
+      "on": "peut",
+      "elles": "peuvent"
+    },
+    "passeCompose": {
+      "je": "ai pu",
+      "tu": "as pu",
+      "il": "a pu",
+      "nous": "avons pu",
+      "vous": "avez pu",
+      "ils": "ont pu",
+      "elle": "a pu",
+      "on": "a pu",
+      "elles": "ont pu"
+    },
+    "imparfait": {
+      "je": "pouvais",
+      "tu": "pouvais",
+      "il": "pouvait",
+      "nous": "pouvions",
+      "vous": "pouviez",
+      "ils": "pouvaient",
+      "elle": "pouvait",
+      "on": "pouvait",
+      "elles": "pouvaient"
+    },
+    "futurSimple": {
+      "je": "pourrai",
+      "tu": "pourras",
+      "il": "pourra",
+      "nous": "pourrons",
+      "vous": "pourrez",
+      "ils": "pourront",
+      "elle": "pourra",
+      "on": "pourra",
+      "elles": "pourront"
+    },
+    "plusQueParfait": {
+      "je": "avais pu",
+      "tu": "avais pu",
+      "il": "avait pu",
+      "nous": "avions pu",
+      "vous": "aviez pu",
+      "ils": "avaient pu",
+      "elle": "avait pu",
+      "on": "avait pu",
+      "elles": "avaient pu"
+    },
+    "futurProche": {
+      "je": "vais pouvoir",
+      "tu": "vas pouvoir",
+      "il": "va pouvoir",
+      "nous": "allons pouvoir",
+      "vous": "allez pouvoir",
+      "ils": "vont pouvoir",
+      "elle": "va pouvoir",
+      "on": "va pouvoir",
+      "elles": "vont pouvoir"
+    },
+    "futurAnterieur": {
+      "je": "aurai pu",
+      "tu": "auras pu",
+      "il": "aura pu",
+      "nous": "aurons pu",
+      "vous": "aurez pu",
+      "ils": "auront pu",
+      "elle": "aura pu",
+      "on": "aura pu",
+      "elles": "auront pu"
+    }
+  },
+  "vouloir": {
+    "present": {
+      "je": "veux",
+      "tu": "veux",
+      "il": "veut",
+      "nous": "voulons",
+      "vous": "voulez",
+      "ils": "veulent",
+      "elle": "veut",
+      "on": "veut",
+      "elles": "veulent"
+    },
+    "passeCompose": {
+      "je": "ai voulu",
+      "tu": "as voulu",
+      "il": "a voulu",
+      "nous": "avons voulu",
+      "vous": "avez voulu",
+      "ils": "ont voulu",
+      "elle": "a voulu",
+      "on": "a voulu",
+      "elles": "ont voulu"
+    },
+    "imparfait": {
+      "je": "voulais",
+      "tu": "voulais",
+      "il": "voulait",
+      "nous": "voulions",
+      "vous": "vouliez",
+      "ils": "voulaient",
+      "elle": "voulait",
+      "on": "voulait",
+      "elles": "voulaient"
+    },
+    "futurSimple": {
+      "je": "voudrai",
+      "tu": "voudras",
+      "il": "voudra",
+      "nous": "voudrons",
+      "vous": "voudrez",
+      "ils": "voudront",
+      "elle": "voudra",
+      "on": "voudra",
+      "elles": "voudront"
+    },
+    "plusQueParfait": {
+      "je": "avais voulu",
+      "tu": "avais voulu",
+      "il": "avait voulu",
+      "nous": "avions voulu",
+      "vous": "aviez voulu",
+      "ils": "avaient voulu",
+      "elle": "avait voulu",
+      "on": "avait voulu",
+      "elles": "avaient voulu"
+    },
+    "futurProche": {
+      "je": "vais vouloir",
+      "tu": "vas vouloir",
+      "il": "va vouloir",
+      "nous": "allons vouloir",
+      "vous": "allez vouloir",
+      "ils": "vont vouloir",
+      "elle": "va vouloir",
+      "on": "va vouloir",
+      "elles": "vont vouloir"
+    },
+    "futurAnterieur": {
+      "je": "aurai voulu",
+      "tu": "auras voulu",
+      "il": "aura voulu",
+      "nous": "aurons voulu",
+      "vous": "aurez voulu",
+      "ils": "auront voulu",
+      "elle": "aura voulu",
+      "on": "aura voulu",
+      "elles": "auront voulu"
+    }
+  },
+  "dire": {
+    "present": {
+      "je": "dis",
+      "tu": "dis",
+      "il": "dit",
+      "nous": "disons",
+      "vous": "dites",
+      "ils": "disent",
+      "elle": "dit",
+      "on": "dit",
+      "elles": "disent"
+    },
+    "passeCompose": {
+      "je": "ai dit",
+      "tu": "as dit",
+      "il": "a dit",
+      "nous": "avons dit",
+      "vous": "avez dit",
+      "ils": "ont dit",
+      "elle": "a dit",
+      "on": "a dit",
+      "elles": "ont dit"
+    },
+    "imparfait": {
+      "je": "disais",
+      "tu": "disais",
+      "il": "disait",
+      "nous": "disions",
+      "vous": "disiez",
+      "ils": "disaient",
+      "elle": "disait",
+      "on": "disait",
+      "elles": "disaient"
+    },
+    "futurSimple": {
+      "je": "dirai",
+      "tu": "diras",
+      "il": "dira",
+      "nous": "dirons",
+      "vous": "direz",
+      "ils": "diront",
+      "elle": "dira",
+      "on": "dira",
+      "elles": "diront"
+    },
+    "plusQueParfait": {
+      "je": "avais dit",
+      "tu": "avais dit",
+      "il": "avait dit",
+      "nous": "avions dit",
+      "vous": "aviez dit",
+      "ils": "avaient dit",
+      "elle": "avait dit",
+      "on": "avait dit",
+      "elles": "avaient dit"
+    },
+    "futurProche": {
+      "je": "vais dire",
+      "tu": "vas dire",
+      "il": "va dire",
+      "nous": "allons dire",
+      "vous": "allez dire",
+      "ils": "vont dire",
+      "elle": "va dire",
+      "on": "va dire",
+      "elles": "vont dire"
+    },
+    "futurAnterieur": {
+      "je": "aurai dit",
+      "tu": "auras dit",
+      "il": "aura dit",
+      "nous": "aurons dit",
+      "vous": "aurez dit",
+      "ils": "auront dit",
+      "elle": "aura dit",
+      "on": "aura dit",
+      "elles": "auront dit"
+    }
+  },
+  "prendre": {
+    "present": {
+      "je": "prends",
+      "tu": "prends",
+      "il": "prend",
+      "nous": "prenons",
+      "vous": "prenez",
+      "ils": "prennent",
+      "elle": "prend",
+      "on": "prend",
+      "elles": "prennent"
+    },
+    "passeCompose": {
+      "je": "ai pris",
+      "tu": "as pris",
+      "il": "a pris",
+      "nous": "avons pris",
+      "vous": "avez pris",
+      "ils": "ont pris",
+      "elle": "a pris",
+      "on": "a pris",
+      "elles": "ont pris"
+    },
+    "imparfait": {
+      "je": "prenais",
+      "tu": "prenais",
+      "il": "prenait",
+      "nous": "prenions",
+      "vous": "preniez",
+      "ils": "prenaient",
+      "elle": "prenait",
+      "on": "prenait",
+      "elles": "prenaient"
+    },
+    "futurSimple": {
+      "je": "prendrai",
+      "tu": "prendras",
+      "il": "prendra",
+      "nous": "prendrons",
+      "vous": "prendrez",
+      "ils": "prendront",
+      "elle": "prendra",
+      "on": "prendra",
+      "elles": "prendront"
+    },
+    "plusQueParfait": {
+      "je": "avais pris",
+      "tu": "avais pris",
+      "il": "avait pris",
+      "nous": "avions pris",
+      "vous": "aviez pris",
+      "ils": "avaient pris",
+      "elle": "avait pris",
+      "on": "avait pris",
+      "elles": "avaient pris"
+    },
+    "futurProche": {
+      "je": "vais prendre",
+      "tu": "vas prendre",
+      "il": "va prendre",
+      "nous": "allons prendre",
+      "vous": "allez prendre",
+      "ils": "vont prendre",
+      "elle": "va prendre",
+      "on": "va prendre",
+      "elles": "vont prendre"
+    },
+    "futurAnterieur": {
+      "je": "aurai pris",
+      "tu": "auras pris",
+      "il": "aura pris",
+      "nous": "aurons pris",
+      "vous": "aurez pris",
+      "ils": "auront pris",
+      "elle": "aura pris",
+      "on": "aura pris",
+      "elles": "auront pris"
+    }
+  },
+  "voir": {
+    "present": {
+      "je": "ai",
+      "tu": "as",
+      "il": "a",
+      "nous": "avons",
+      "vous": "avez",
+      "ils": "ont",
+      "elle": "a",
+      "on": "a",
+      "elles": "ont"
+    },
+    "passeCompose": {
+      "je": "ai eu",
+      "tu": "as eu",
+      "il": "a eu",
+      "nous": "avons eu",
+      "vous": "avez eu",
+      "ils": "ont eu",
+      "elle": "a eu",
+      "on": "a eu",
+      "elles": "ont eu"
+    },
+    "imparfait": {
+      "je": "avais",
+      "tu": "avais",
+      "il": "avait",
+      "nous": "avions",
+      "vous": "aviez",
+      "ils": "avaient",
+      "elle": "avait",
+      "on": "avait",
+      "elles": "avaient"
+    },
+    "futurSimple": {
+      "je": "aurai",
+      "tu": "auras",
+      "il": "aura",
+      "nous": "aurons",
+      "vous": "aurez",
+      "ils": "auront",
+      "elle": "aura",
+      "on": "aura",
+      "elles": "auront"
+    },
+    "plusQueParfait": {
+      "je": "avais eu",
+      "tu": "avais eu",
+      "il": "avait eu",
+      "nous": "avions eu",
+      "vous": "aviez eu",
+      "ils": "avaient eu",
+      "elle": "avait eu",
+      "on": "avait eu",
+      "elles": "avaient eu"
+    },
+    "futurProche": {
+      "je": "vais avoir",
+      "tu": "vas avoir",
+      "il": "va avoir",
+      "nous": "allons avoir",
+      "vous": "allez avoir",
+      "ils": "vont avoir",
+      "elle": "va avoir",
+      "on": "va avoir",
+      "elles": "vont avoir"
+    },
+    "futurAnterieur": {
+      "je": "aurai eu",
+      "tu": "auras eu",
+      "il": "aura eu",
+      "nous": "aurons eu",
+      "vous": "aurez eu",
+      "ils": "auront eu",
+      "elle": "aura eu",
+      "on": "aura eu",
+      "elles": "auront eu"
+    }
+  },
+  "savoir": {
+    "present": {
+      "je": "sais",
+      "tu": "sais",
+      "il": "sait",
+      "nous": "savons",
+      "vous": "savez",
+      "ils": "savent",
+      "elle": "sait",
+      "on": "sait",
+      "elles": "savent"
+    },
+    "passeCompose": {
+      "je": "ai su",
+      "tu": "as su",
+      "il": "a su",
+      "nous": "avons su",
+      "vous": "avez su",
+      "ils": "ont su",
+      "elle": "a su",
+      "on": "a su",
+      "elles": "ont su"
+    },
+    "imparfait": {
+      "je": "savais",
+      "tu": "savais",
+      "il": "savait",
+      "nous": "savions",
+      "vous": "saviez",
+      "ils": "savaient",
+      "elle": "savait",
+      "on": "savait",
+      "elles": "savaient"
+    },
+    "futurSimple": {
+      "je": "saurai",
+      "tu": "sauras",
+      "il": "saura",
+      "nous": "saurons",
+      "vous": "saurez",
+      "ils": "sauront",
+      "elle": "saura",
+      "on": "saura",
+      "elles": "sauront"
+    },
+    "plusQueParfait": {
+      "je": "avais su",
+      "tu": "avais su",
+      "il": "avait su",
+      "nous": "avions su",
+      "vous": "aviez su",
+      "ils": "avaient su",
+      "elle": "avait su",
+      "on": "avait su",
+      "elles": "avaient su"
+    },
+    "futurProche": {
+      "je": "vais savoir",
+      "tu": "vas savoir",
+      "il": "va savoir",
+      "nous": "allons savoir",
+      "vous": "allez savoir",
+      "ils": "vont savoir",
+      "elle": "va savoir",
+      "on": "va savoir",
+      "elles": "vont savoir"
+    },
+    "futurAnterieur": {
+      "je": "aurai su",
+      "tu": "auras su",
+      "il": "aura su",
+      "nous": "aurons su",
+      "vous": "aurez su",
+      "ils": "auront su",
+      "elle": "aura su",
+      "on": "aura su",
+      "elles": "auront su"
+    }
+  },
+  "venir": {
+    "present": {
+      "je": "viens",
+      "tu": "viens",
+      "il": "vient",
+      "nous": "venons",
+      "vous": "venez",
+      "ils": "viennent",
+      "elle": "vient",
+      "on": "vient",
+      "elles": "viennent"
+    },
+    "passeCompose": {
+      "je": "suis venu",
+      "tu": "es venu",
+      "il": "est venu",
+      "nous": "sommes venus",
+      "vous": "êtes venus",
+      "ils": "sont venus",
+      "elle": "est venu",
+      "on": "est venu",
+      "elles": "sont venus"
+    },
+    "imparfait": {
+      "je": "venais",
+      "tu": "venais",
+      "il": "venait",
+      "nous": "venions",
+      "vous": "veniez",
+      "ils": "venaient",
+      "elle": "venait",
+      "on": "venait",
+      "elles": "venaient"
+    },
+    "futurSimple": {
+      "je": "viendrai",
+      "tu": "viendras",
+      "il": "viendra",
+      "nous": "viendrons",
+      "vous": "viendrez",
+      "ils": "viendront",
+      "elle": "viendra",
+      "on": "viendra",
+      "elles": "viendront"
+    },
+    "plusQueParfait": {
+      "je": "étais venu",
+      "tu": "étais venu",
+      "il": "était venu",
+      "nous": "étions venus",
+      "vous": "étiez venus",
+      "ils": "étaient venus",
+      "elle": "était venu",
+      "on": "était venu",
+      "elles": "étaient venus"
+    },
+    "futurProche": {
+      "je": "vais venir",
+      "tu": "vas venir",
+      "il": "va venir",
+      "nous": "allons venir",
+      "vous": "allez venir",
+      "ils": "vont venir",
+      "elle": "va venir",
+      "on": "va venir",
+      "elles": "vont venir"
+    },
+    "futurAnterieur": {
+      "je": "serai venu",
+      "tu": "seras venu",
+      "il": "sera venu",
+      "nous": "serons venus",
+      "vous": "serez venus",
+      "ils": "seront venus",
+      "elle": "sera venu",
+      "on": "sera venu",
+      "elles": "seront venus"
+    }
+  },
+  "devoir": {
+    "present": {
+      "je": "dois",
+      "tu": "dois",
+      "il": "doit",
+      "nous": "devons",
+      "vous": "devez",
+      "ils": "doivent",
+      "elle": "doit",
+      "on": "doit",
+      "elles": "doivent"
+    },
+    "passeCompose": {
+      "je": "ai dû",
+      "tu": "as dû",
+      "il": "a dû",
+      "nous": "avons dû",
+      "vous": "avez dû",
+      "ils": "ont dû",
+      "elle": "a dû",
+      "on": "a dû",
+      "elles": "ont dû"
+    },
+    "imparfait": {
+      "je": "devais",
+      "tu": "devais",
+      "il": "devait",
+      "nous": "devions",
+      "vous": "deviez",
+      "ils": "devaient",
+      "elle": "devait",
+      "on": "devait",
+      "elles": "devaient"
+    },
+    "futurSimple": {
+      "je": "devrai",
+      "tu": "devras",
+      "il": "devra",
+      "nous": "devrons",
+      "vous": "devrez",
+      "ils": "devront",
+      "elle": "devra",
+      "on": "devra",
+      "elles": "devront"
+    },
+    "plusQueParfait": {
+      "je": "avais dû",
+      "tu": "avais dû",
+      "il": "avait dû",
+      "nous": "avions dû",
+      "vous": "aviez dû",
+      "ils": "avaient dû",
+      "elle": "avait dû",
+      "on": "avait dû",
+      "elles": "avaient dû"
+    },
+    "futurProche": {
+      "je": "vais devoir",
+      "tu": "vas devoir",
+      "il": "va devoir",
+      "nous": "allons devoir",
+      "vous": "allez devoir",
+      "ils": "vont devoir",
+      "elle": "va devoir",
+      "on": "va devoir",
+      "elles": "vont devoir"
+    },
+    "futurAnterieur": {
+      "je": "aurai dû",
+      "tu": "auras dû",
+      "il": "aura dû",
+      "nous": "aurons dû",
+      "vous": "aurez dû",
+      "ils": "auront dû",
+      "elle": "aura dû",
+      "on": "aura dû",
+      "elles": "auront dû"
+    }
+  },
+  "boire": {
+    "present": {
+      "je": "bois",
+      "tu": "bois",
+      "il": "boit",
+      "nous": "buvons",
+      "vous": "buvez",
+      "ils": "boivent",
+      "elle": "boit",
+      "on": "boit",
+      "elles": "boivent"
+    },
+    "passeCompose": {
+      "je": "ai bu",
+      "tu": "as bu",
+      "il": "a bu",
+      "nous": "avons bu",
+      "vous": "avez bu",
+      "ils": "ont bu",
+      "elle": "a bu",
+      "on": "a bu",
+      "elles": "ont bu"
+    },
+    "imparfait": {
+      "je": "buvais",
+      "tu": "buvais",
+      "il": "buvait",
+      "nous": "buvions",
+      "vous": "buviez",
+      "ils": "buvaient",
+      "elle": "buvait",
+      "on": "buvait",
+      "elles": "buvaient"
+    },
+    "futurSimple": {
+      "je": "boirai",
+      "tu": "boiras",
+      "il": "boira",
+      "nous": "boirons",
+      "vous": "boirez",
+      "ils": "boiront",
+      "elle": "boira",
+      "on": "boira",
+      "elles": "boiront"
+    },
+    "plusQueParfait": {
+      "je": "avais bu",
+      "tu": "avais bu",
+      "il": "avait bu",
+      "nous": "avions bu",
+      "vous": "aviez bu",
+      "ils": "avaient bu",
+      "elle": "avait bu",
+      "on": "avait bu",
+      "elles": "avaient bu"
+    },
+    "futurProche": {
+      "je": "vais boire",
+      "tu": "vas boire",
+      "il": "va boire",
+      "nous": "allons boire",
+      "vous": "allez boire",
+      "ils": "vont boire",
+      "elle": "va boire",
+      "on": "va boire",
+      "elles": "vont boire"
+    },
+    "futurAnterieur": {
+      "je": "aurai bu",
+      "tu": "auras bu",
+      "il": "aura bu",
+      "nous": "aurons bu",
+      "vous": "aurez bu",
+      "ils": "auront bu",
+      "elle": "aura bu",
+      "on": "aura bu",
+      "elles": "auront bu"
+    }
+  },
+  "lire": {
+    "present": {
+      "je": "lis",
+      "tu": "lis",
+      "il": "lit",
+      "nous": "lisons",
+      "vous": "lisez",
+      "ils": "lisent",
+      "elle": "lit",
+      "on": "lit",
+      "elles": "lisent"
+    },
+    "passeCompose": {
+      "je": "ai lu",
+      "tu": "as lu",
+      "il": "a lu",
+      "nous": "avons lu",
+      "vous": "avez lu",
+      "ils": "ont lu",
+      "elle": "a lu",
+      "on": "a lu",
+      "elles": "ont lu"
+    },
+    "imparfait": {
+      "je": "lisais",
+      "tu": "lisais",
+      "il": "lisait",
+      "nous": "lisions",
+      "vous": "lisiez",
+      "ils": "lisaient",
+      "elle": "lisait",
+      "on": "lisait",
+      "elles": "lisaient"
+    },
+    "futurSimple": {
+      "je": "lirai",
+      "tu": "liras",
+      "il": "lira",
+      "nous": "lirons",
+      "vous": "lirez",
+      "ils": "liront",
+      "elle": "lira",
+      "on": "lira",
+      "elles": "liront"
+    },
+    "plusQueParfait": {
+      "je": "avais lu",
+      "tu": "avais lu",
+      "il": "avait lu",
+      "nous": "avions lu",
+      "vous": "aviez lu",
+      "ils": "avaient lu",
+      "elle": "avait lu",
+      "on": "avait lu",
+      "elles": "avaient lu"
+    },
+    "futurProche": {
+      "je": "vais lire",
+      "tu": "vas lire",
+      "il": "va lire",
+      "nous": "allons lire",
+      "vous": "allez lire",
+      "ils": "vont lire",
+      "elle": "va lire",
+      "on": "va lire",
+      "elles": "vont lire"
+    },
+    "futurAnterieur": {
+      "je": "aurai lu",
+      "tu": "auras lu",
+      "il": "aura lu",
+      "nous": "aurons lu",
+      "vous": "aurez lu",
+      "ils": "auront lu",
+      "elle": "aura lu",
+      "on": "aura lu",
+      "elles": "auront lu"
+    }
+  },
+  "écrire": {
+    "present": {
+      "je": "écris",
+      "tu": "écris",
+      "il": "écrit",
+      "nous": "écrivons",
+      "vous": "écrivez",
+      "ils": "écrivent",
+      "elle": "écrit",
+      "on": "écrit",
+      "elles": "écrivent"
+    },
+    "passeCompose": {
+      "je": "ai écrit",
+      "tu": "as écrit",
+      "il": "a écrit",
+      "nous": "avons écrit",
+      "vous": "avez écrit",
+      "ils": "ont écrit",
+      "elle": "a écrit",
+      "on": "a écrit",
+      "elles": "ont écrit"
+    },
+    "imparfait": {
+      "je": "écrivais",
+      "tu": "écrivais",
+      "il": "écrivait",
+      "nous": "écrivions",
+      "vous": "écriviez",
+      "ils": "écrivaient",
+      "elle": "écrivait",
+      "on": "écrivait",
+      "elles": "écrivaient"
+    },
+    "futurSimple": {
+      "je": "écrirai",
+      "tu": "écriras",
+      "il": "écrira",
+      "nous": "écrirons",
+      "vous": "écrirez",
+      "ils": "écriront",
+      "elle": "écrira",
+      "on": "écrira",
+      "elles": "écriront"
+    },
+    "plusQueParfait": {
+      "je": "avais écrit",
+      "tu": "avais écrit",
+      "il": "avait écrit",
+      "nous": "avions écrit",
+      "vous": "aviez écrit",
+      "ils": "avaient écrit",
+      "elle": "avait écrit",
+      "on": "avait écrit",
+      "elles": "avaient écrit"
+    },
+    "futurProche": {
+      "je": "vais écrire",
+      "tu": "vas écrire",
+      "il": "va écrire",
+      "nous": "allons écrire",
+      "vous": "allez écrire",
+      "ils": "vont écrire",
+      "elle": "va écrire",
+      "on": "va écrire",
+      "elles": "vont écrire"
+    },
+    "futurAnterieur": {
+      "je": "aurai écrit",
+      "tu": "auras écrit",
+      "il": "aura écrit",
+      "nous": "aurons écrit",
+      "vous": "aurez écrit",
+      "ils": "auront écrit",
+      "elle": "aura écrit",
+      "on": "aura écrit",
+      "elles": "auront écrit"
+    }
+  },
+  "parler": {
+    "present": {
+      "je": "parle",
+      "tu": "parles",
+      "il": "parle",
+      "nous": "parlons",
+      "vous": "parlez",
+      "ils": "parlent",
+      "elle": "parle",
+      "on": "parle",
+      "elles": "parlent"
+    },
+    "passeCompose": {
+      "je": "ai parlé",
+      "tu": "as parlé",
+      "il": "a parlé",
+      "nous": "avons parlé",
+      "vous": "avez parlé",
+      "ils": "ont parlé",
+      "elle": "a parlé",
+      "on": "a parlé",
+      "elles": "ont parlé"
+    },
+    "imparfait": {
+      "je": "parlais",
+      "tu": "parlais",
+      "il": "parlait",
+      "nous": "parlions",
+      "vous": "parliez",
+      "ils": "parlaient",
+      "elle": "parlait",
+      "on": "parlait",
+      "elles": "parlaient"
+    },
+    "futurSimple": {
+      "je": "parlerai",
+      "tu": "parleras",
+      "il": "parlera",
+      "nous": "parlerons",
+      "vous": "parlerez",
+      "ils": "parleront",
+      "elle": "parlera",
+      "on": "parlera",
+      "elles": "parleront"
+    },
+    "plusQueParfait": {
+      "je": "avais parlé",
+      "tu": "avais parlé",
+      "il": "avait parlé",
+      "nous": "avions parlé",
+      "vous": "aviez parlé",
+      "ils": "avaient parlé",
+      "elle": "avait parlé",
+      "on": "avait parlé",
+      "elles": "avaient parlé"
+    },
+    "futurProche": {
+      "je": "vais parler",
+      "tu": "vas parler",
+      "il": "va parler",
+      "nous": "allons parler",
+      "vous": "allez parler",
+      "ils": "vont parler",
+      "elle": "va parler",
+      "on": "va parler",
+      "elles": "vont parler"
+    },
+    "futurAnterieur": {
+      "je": "aurai parlé",
+      "tu": "auras parlé",
+      "il": "aura parlé",
+      "nous": "aurons parlé",
+      "vous": "aurez parlé",
+      "ils": "auront parlé",
+      "elle": "aura parlé",
+      "on": "aura parlé",
+      "elles": "auront parlé"
+    }
+  },
+  "manger": {
+    "present": {
+      "je": "mange",
+      "tu": "manges",
+      "il": "mange",
+      "nous": "mangeons",
+      "vous": "mangez",
+      "ils": "mangent",
+      "elle": "mange",
+      "on": "mange",
+      "elles": "mangent"
+    },
+    "passeCompose": {
+      "je": "ai mangé",
+      "tu": "as mangé",
+      "il": "a mangé",
+      "nous": "avons mangé",
+      "vous": "avez mangé",
+      "ils": "ont mangé",
+      "elle": "a mangé",
+      "on": "a mangé",
+      "elles": "ont mangé"
+    },
+    "imparfait": {
+      "je": "mangeais",
+      "tu": "mangeais",
+      "il": "mangeait",
+      "nous": "mangions",
+      "vous": "mangiez",
+      "ils": "mangeaient",
+      "elle": "mangeait",
+      "on": "mangeait",
+      "elles": "mangeaient"
+    },
+    "futurSimple": {
+      "je": "mangerai",
+      "tu": "mangeras",
+      "il": "mangera",
+      "nous": "mangerons",
+      "vous": "mangerez",
+      "ils": "mangeront",
+      "elle": "mangera",
+      "on": "mangera",
+      "elles": "mangeront"
+    },
+    "plusQueParfait": {
+      "je": "avais mangé",
+      "tu": "avais mangé",
+      "il": "avait mangé",
+      "nous": "avions mangé",
+      "vous": "aviez mangé",
+      "ils": "avaient mangé",
+      "elle": "avait mangé",
+      "on": "avait mangé",
+      "elles": "avaient mangé"
+    },
+    "futurProche": {
+      "je": "vais manger",
+      "tu": "vas manger",
+      "il": "va manger",
+      "nous": "allons manger",
+      "vous": "allez manger",
+      "ils": "vont manger",
+      "elle": "va manger",
+      "on": "va manger",
+      "elles": "vont manger"
+    },
+    "futurAnterieur": {
+      "je": "aurai mangé",
+      "tu": "auras mangé",
+      "il": "aura mangé",
+      "nous": "aurons mangé",
+      "vous": "aurez mangé",
+      "ils": "auront mangé",
+      "elle": "aura mangé",
+      "on": "aura mangé",
+      "elles": "auront mangé"
+    }
+  },
+  "finir": {
+    "present": {
+      "je": "finis",
+      "tu": "finis",
+      "il": "finit",
+      "nous": "finissons",
+      "vous": "finissez",
+      "ils": "finissent",
+      "elle": "finit",
+      "on": "finit",
+      "elles": "finissent"
+    },
+    "passeCompose": {
+      "je": "ai fini",
+      "tu": "as fini",
+      "il": "a fini",
+      "nous": "avons fini",
+      "vous": "avez fini",
+      "ils": "ont fini",
+      "elle": "a fini",
+      "on": "a fini",
+      "elles": "ont fini"
+    },
+    "imparfait": {
+      "je": "finissais",
+      "tu": "finissais",
+      "il": "finissait",
+      "nous": "finissions",
+      "vous": "finissiez",
+      "ils": "finissaient",
+      "elle": "finissait",
+      "on": "finissait",
+      "elles": "finissaient"
+    },
+    "futurSimple": {
+      "je": "finirai",
+      "tu": "finiras",
+      "il": "finira",
+      "nous": "finirons",
+      "vous": "finirez",
+      "ils": "finiront",
+      "elle": "finira",
+      "on": "finira",
+      "elles": "finiront"
+    },
+    "plusQueParfait": {
+      "je": "avais fini",
+      "tu": "avais fini",
+      "il": "avait fini",
+      "nous": "avions fini",
+      "vous": "aviez fini",
+      "ils": "avaient fini",
+      "elle": "avait fini",
+      "on": "avait fini",
+      "elles": "avaient fini"
+    },
+    "futurProche": {
+      "je": "vais finir",
+      "tu": "vas finir",
+      "il": "va finir",
+      "nous": "allons finir",
+      "vous": "allez finir",
+      "ils": "vont finir",
+      "elle": "va finir",
+      "on": "va finir",
+      "elles": "vont finir"
+    },
+    "futurAnterieur": {
+      "je": "aurai fini",
+      "tu": "auras fini",
+      "il": "aura fini",
+      "nous": "aurons fini",
+      "vous": "aurez fini",
+      "ils": "auront fini",
+      "elle": "aura fini",
+      "on": "aura fini",
+      "elles": "auront fini"
+    }
+  },
+  "partir": {
+    "present": {
+      "je": "pars",
+      "tu": "pars",
+      "il": "part",
+      "nous": "partons",
+      "vous": "partez",
+      "ils": "partent",
+      "elle": "part",
+      "on": "part",
+      "elles": "partent"
+    },
+    "passeCompose": {
+      "je": "suis parti",
+      "tu": "es parti",
+      "il": "est parti",
+      "nous": "sommes partis",
+      "vous": "êtes partis",
+      "ils": "sont partis",
+      "elle": "est parti",
+      "on": "est parti",
+      "elles": "sont partis"
+    },
+    "imparfait": {
+      "je": "partais",
+      "tu": "partais",
+      "il": "partait",
+      "nous": "partions",
+      "vous": "partiez",
+      "ils": "partaient",
+      "elle": "partait",
+      "on": "partait",
+      "elles": "partaient"
+    },
+    "futurSimple": {
+      "je": "partirai",
+      "tu": "partiras",
+      "il": "partira",
+      "nous": "partirons",
+      "vous": "partirez",
+      "ils": "partiront",
+      "elle": "partira",
+      "on": "partira",
+      "elles": "partiront"
+    },
+    "plusQueParfait": {
+      "je": "étais parti",
+      "tu": "étais parti",
+      "il": "était parti",
+      "nous": "étions partis",
+      "vous": "étiez partis",
+      "ils": "étaient partis",
+      "elle": "était parti",
+      "on": "était parti",
+      "elles": "étaient partis"
+    },
+    "futurProche": {
+      "je": "vais partir",
+      "tu": "vas partir",
+      "il": "va partir",
+      "nous": "allons partir",
+      "vous": "allez partir",
+      "ils": "vont partir",
+      "elle": "va partir",
+      "on": "va partir",
+      "elles": "vont partir"
+    },
+    "futurAnterieur": {
+      "je": "serai parti",
+      "tu": "seras parti",
+      "il": "sera parti",
+      "nous": "serons partis",
+      "vous": "serez partis",
+      "ils": "seront partis",
+      "elle": "sera parti",
+      "on": "sera parti",
+      "elles": "seront partis"
+    }
+  },
+  "arriver": {
+    "present": {
+      "je": "arrive",
+      "tu": "arrives",
+      "il": "arrive",
+      "nous": "arrivons",
+      "vous": "arrivez",
+      "ils": "arrivent",
+      "elle": "arrive",
+      "on": "arrive",
+      "elles": "arrivent"
+    },
+    "passeCompose": {
+      "je": "suis arrivé",
+      "tu": "es arrivé",
+      "il": "est arrivé",
+      "nous": "sommes arrivés",
+      "vous": "êtes arrivés",
+      "ils": "sont arrivés",
+      "elle": "est arrivé",
+      "on": "est arrivé",
+      "elles": "sont arrivés"
+    },
+    "imparfait": {
+      "je": "arrivais",
+      "tu": "arrivais",
+      "il": "arrivait",
+      "nous": "arrivions",
+      "vous": "arriviez",
+      "ils": "arrivaient",
+      "elle": "arrivait",
+      "on": "arrivait",
+      "elles": "arrivaient"
+    },
+    "futurSimple": {
+      "je": "arriverai",
+      "tu": "arriveras",
+      "il": "arrivera",
+      "nous": "arriverons",
+      "vous": "arriverez",
+      "ils": "arriveront",
+      "elle": "arrivera",
+      "on": "arrivera",
+      "elles": "arriveront"
+    },
+    "plusQueParfait": {
+      "je": "étais arrivé",
+      "tu": "étais arrivé",
+      "il": "était arrivé",
+      "nous": "étions arrivés",
+      "vous": "étiez arrivés",
+      "ils": "étaient arrivés",
+      "elle": "était arrivé",
+      "on": "était arrivé",
+      "elles": "étaient arrivés"
+    },
+    "futurProche": {
+      "je": "vais arriver",
+      "tu": "vas arriver",
+      "il": "va arriver",
+      "nous": "allons arriver",
+      "vous": "allez arriver",
+      "ils": "vont arriver",
+      "elle": "va arriver",
+      "on": "va arriver",
+      "elles": "vont arriver"
+    },
+    "futurAnterieur": {
+      "je": "serai arrivé",
+      "tu": "seras arrivé",
+      "il": "sera arrivé",
+      "nous": "serons arrivés",
+      "vous": "serez arrivés",
+      "ils": "seront arrivés",
+      "elle": "sera arrivé",
+      "on": "sera arrivé",
+      "elles": "seront arrivés"
+    }
+  }
+}
