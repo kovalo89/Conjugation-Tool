@@ -1,842 +1,1429 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Conjugador Francés</title>
-<style>
-:root{
-  --bg:#0d1117; --card:#0f1724; --primary:#ffffff; --fuchsia:#ff49c8; --success:#13f898;
-  --muted:#677e98; --border:#576d7f;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#e6eef8;font-family:Roboto,system-ui,Roboto,Roboto,"Roboto",Roboto;min-height:100vh}
-.container{max-width:980px;margin:32px auto;padding:20px}
-.header{text-align:center;margin-bottom:18px}
-h1 {color: var(--primary);margin: 0 0 16px;font-size: 25px;   /* ← add this */}
-.mode-tabs{display:inline-flex;gap:12px}
-.tab{background:var(--card);padding:8px 18px;border-radius:10px;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-weight:700}
-.tab.active{background:linear-gradient(180deg,#0d87fa,#01287c);color:var(--primary)}
-.card{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);margin-bottom:14px}
-.section-title{color:var(--primary);font-weight:700;margin-bottom:10px}
-.chips{display:flex;gap:10px;flex-wrap:wrap}
-.chip{padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);cursor:pointer;color:var(--muted);font-weight:700}
-.chip.selected{background:rgba(88,166,255,0.12);border-color:rgb(0, 174, 255);color:var(--primary);box-shadow:0 8px 20px rgba(88,166,255,0.06)}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conjugador Francés</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #0f1724;
+      --primary: #ffffff;
+      --fuchsia: #ff49c8;
+      --success: #13f898;
+      --muted: #c8d6e6;
+      --modeTitle: #0091ff;
+      --pronoMuted: #accdf3ba;
+      --border: #576d7f;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #e6eef8;
+      font-family: Roboto, system-ui, Roboto, Roboto, "Roboto", Roboto;
+      min-height: 100vh
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 32px auto;
+      padding: 20px
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 18px
+    }
+
+    h1 {
+      color: var(--primary);
+      margin: 0 0 16px;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    .mode-tabs {
+      display: inline-flex;
+      gap: 12px
+    }
+
+    .tab {
+      background: var(--card);
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .tab.active {
+      background: linear-gradient(180deg, #0d87fa, #01287c);
+      color: var(--primary)
+    }
+
+    .card {
+      background: var(--card);
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 14px;
+      padding: 20px 20px;
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .section-title {
+      justify-self: center;
+      color: var(--primary);
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 15px
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .chip {
+      padding: 8px 14px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 100
+    }
+
+    .chip:hover {
+      background: rgba(107, 193, 255, 0.128)
+    }
+
+    .chip.selected {
+      background: rgba(88, 166, 255, 0.147);
+      border-color: rgb(0, 174, 255);
+      color: var(--primary);
+      box-shadow: 0 8px 20px rgba(88, 166, 255, 0.06)
+    }
 
 
-.exercise-wrap{margin-top:10px}
-.question{font-size:22px;margin-bottom:6px}
-.sub{color:var(--muted);margin-bottom:16px}
-.input-row{display:flex;justify-content:center;gap:12px;align-items:center;flex-wrap:wrap}
-.input{min-width:340px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#071018;color:#cfe9ff;font-size:16px;text-align:center}
-.input.correct{border-color:var(--success);box-shadow:0 10px 30px rgba(31,196,127,0.08)}
-.input.wrong{border-color:var(--fuchsia);animation:shake .45s}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+    .exercise-wrap {
+      margin-top: 10px
+    }
+
+    .question {
+      font-size: 16px;
+      margin-bottom: 6px
+    }
+
+    .sub {
+      color: var(--muted);
+      margin-bottom: 16px
+    }
+
+    #questionAleatorio,
+
+    #pronounAleatorio {
+      text-align: center;
+    }
+
+    .input-row {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .input-buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      position: relative;
+      border-color: #ff6b6b;
+      gap: 14px;
+    }
 
 
-/* buttons */
-.icon-btn{width:50px;height:50px;border-radius:10px;display:inline-grid;place-items:center;border:none;cursor:pointer;box-shadow:0 12px 32px rgba(2,6,23,0.6)}
-.btn-blue{background:linear-gradient(180deg,#58a6ff,#2b82e6)}
-.btn-pink{background:linear-gradient(180deg,#ff6adf,#ff49c8)}
-.btn-green{background:linear-gradient(180deg,#33e59f,#1fc47f)}
-.btn-red{background:linear-gradient(180deg,#ff6b6b,#ff3b3b)}
-.icon-small{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;border:none;cursor:pointer;background:rgba(255,255,255,0.02)}
-.icon-small.btn-red{background:linear-gradient(180deg,#ff6b6b,#ff3b3b)}
+    .input {
+      min-width: 100px;
+      width: 200px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #071018;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+    }
 
-.inline-actions{display:flex;gap:10px;justify-content:center;margin-top:14px}
+    .inputIndi.correctIndi {
+      border-color: var(--success);
+      box-shadow: 0 10px 30px rgba(31, 196, 127, 0.08)
+    }
 
-/* pronouns */
-.pronoms{max-width:820px;margin:8px auto 0}
-.pronom-row{display:flex;align-items:center;gap:12px;margin:12px 0;justify-content:center;flex-wrap:wrap}
-.pronom{min-width:120px;text-align:right;color:var(--muted);font-weight:700}
-.small-reveal{padding:8px 10px;border-radius:10px;border:none;background:rgba(255,255,255,0.03);cursor:pointer;color:var(--muted)}
-
-/* back button in exercise header */
-.exercise-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.back-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;font-weight:700;padding:8px 10px;border-radius:10px}
-
-/* hidden */
-.hidden{display:none}
-
-/* footer */
-footer{text-align:center;margin-top:26px;color:var(--muted);font-size:13px}
-
-/* responsive */
-@media (max-width:720px){
-  .input{min-width:220px}
-  .icon-btn{width:56px;height:56px}
-  .icon-small{width:40px;height:40px}
-}
-
-/* mobile error overlay (visible on phone to surface JS errors) */
-.mobile-error-overlay{position:fixed;left:8px;right:8px;bottom:12px;background:rgba(220,46,46,0.95);color:white;padding:12px;border-radius:10px;z-index:99999;font-size:13px;max-height:40vh;overflow:auto;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-.mobile-error-overlay .close{float:right;color:white;opacity:0.95;cursor:pointer;padding-left:8px;font-weight:700}
-
-/* DROPDOWN ARROW Design */
-.custom-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #06121a;
-  color: #cfe9ff;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  width: 120%;
-  position: relative;
-  font-size: 1rem;
-}
-
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.custom-select-arrow {
-  position: absolute;
-  right: -10px;   /* ← CHANGE THIS TO MOVE ARROW */
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: .75rem;
-  color: #ffffff;
-}
-
-/* Desktop */
-.input-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Mobile fix: move buttons below input */
-@media (max-width: 600px) {
-  .input-row {
-    flex-direction: column;      /* stack input + buttons vertically */
-    align-items: center;
-  }
-
-  .input-buttons {
-    display: flex;
-    gap: 14px;                   /* spacing between buttons */
-  }
-
-  #answer.input {
-    width: 90%;                 /* bigger input on mobile */
-  }
-}
+    .inputIndi.wrongIndi {
+      border-color: var(--fuchsia);
+      animation: shake .45s
+    }
 
 
 
-</style>
+    .input.correct {
+      border-color: var(--success);
+      box-shadow: 0 10px 30px rgba(31, 196, 127, 0.08)
+    }
+
+    .input.wrong {
+      border-color: var(--fuchsia);
+      animation: shake .45s
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      25% {
+        transform: translateX(-8px)
+      }
+
+      75% {
+        transform: translateX(8px)
+      }
+    }
+
+
+    /* buttons */
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: inline-grid;
+      place-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 32px rgba(2, 6, 23, 0.6)
+    }
+
+    .btn-orange {
+      background: linear-gradient(180deg, #58a6ff, #2b82e6);
+      border: none;
+    }
+
+    .btn-pink {
+      background: linear-gradient(180deg, #ff6adf, #ff49c8);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: none;
+
+    }
+
+    .btn-pink:hover {
+      filter: brightness(1.25);
+    }
+
+    .btn-blue[disabled],
+
+    .btn-blue[disabled]:hover {
+      /* Mute the background gradient */
+      background: linear-gradient(180deg, #576d7f, #3a4b5b);
+      /* Slightly lighten the content */
+      opacity: 0.6;
+      /* Ensure cursor shows it's disabled */
+      cursor: not-allowed;
+      /* Remove hover filter if present */
+      filter: none;
+    }
+
+    .btn-green {
+      background: linear-gradient(180deg, #33e59f, #1fc47f);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .btn-green:hover {
+      filter: brightness(1.25);
+    }
+
+    .btn-red {
+      background: linear-gradient(180deg, #ff6b6b, #ff3b3b);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .btn-red:hover {
+      filter: brightness(1.25);
+    }
+
+    .btn-blue {
+      background: linear-gradient(180deg, #58a6ff, #2b82e6);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .btn-blue:hover {
+      filter: brightness(1.25);
+    }
+
+    .topBackPosition {
+      display: flex;
+      justify-content: center;
+    }
+
+    .inline-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 14px;
+      justify-content: center;
+      align-content: center;
+    }
+
+    /* pronouns */
+
+    .pronoms {
+      max-width: 820px;
+      margin: 8px auto 0
+    }
+
+    .pronom-row {
+      position: relative;
+      display: grid;
+      grid-template-columns:
+        auto minmax(80px, 90px) 200px minmax(80px, 90px) auto;
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .inputIndi {
+      grid-column: 3;
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
+      width: 200px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #071018;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .pronom {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
+      align-self: center;
+      margin-right: 15px;
+      color: var(--pronoMuted);
+    }
+
+
+    .mutedWords {
+      color: var(--pronoMuted);
+    }
+
+
+
+    .pronomAl {
+      display: flex;
+      justify-content: center;
+      color: var(--pronoMuted);
+    }
+
+    .small-reveal {
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      color: var(--muted)
+    }
+
+    /* back button in exercise header */
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .back-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 10px
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .quickCenter {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .indivCenter {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .mobile-error-overlay .close {
+      float: right;
+      color: white;
+      opacity: 0.95;
+      cursor: pointer;
+      padding-left: 8px;
+      font-weight: 700
+    }
+
+    /* DROPDOWN ARROW Design */
+    .custom-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #06121a;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      width: 200px;
+      position: relative;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .custom-select-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .custom-select-arrow {
+      position: absolute;
+      right: 15px;
+      /* ← CHANGE THIS TO MOVE ARROW */
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: .75rem;
+      color: #78869e;
+    }
+
+    /* Mobile fix: move buttons below input */
+    @media (max-width: 720px) {
+      .input-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* #answer.input {
+        width: 100%;
+        /* bigger input on mobile */
+    }
+
+    .inviBtn-Style {
+      background-color: #0091ff;
+      width: 44px;
+      height: 44px;
+    }
+
+    .header-control-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px;
+      margin: auto;
+      gap: 20px;
+    }
+
+    #topBack {
+      background: linear-gradient(180deg, #58a6ff, #2b82e6);
+      border: 5px;
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    #individualTitle {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="header">
-    <h1>Conjugador de Francés</h1>
-    <div class="mode-tabs">
-      <div class="tab active" id="tab-ale" onclick="showMode('aleatorio')">Aleatorio</div>
-      <div class="tab" id="tab-ind" onclick="showMode('individual')">Individual</div>
-    </div>
-  </div>
+  <div class="container">
+    <div class="header">
 
-  <!-- SETUP VIEW (Aleatorio / Individual) -->
-  <div id="setupView">
-    <!-- ALEATORIO SETUP -->
-    <div id="aleatorioPanel">
-      <div class="card">
-        <div class="section-title">Tiempos a practicar</div>
-        <div class="chips" id="tenseChips"></div>
-      </div>
-
-      <div class="card">
-        <div class="section-title">Verbos a incluir</div>
-        <div class="chips" id="verbChips"></div>
-      </div>
-
-      <div style="text-align:center;margin-top:8px;display:flex;justify-content:center;gap:12px;align-items:center">
-        <button id="clearAleatorio" class="icon-small btn-red hidden" onclick="clearAleatorio()" title="Borrar selecciones" aria-label="Borrar selecciones" style="color:white;width:64px;height:64px;border-radius:10px;border:none;place-items:center">
-          <img src="https://github.com/kovalo89/Conjugation-Tool/blob/main/Icons/trash.png?raw=true"width="50" height="50" viewBox="0 0 24 24" fill="none">
-    <path d="M4 6h16" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M10 10v7" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-    <path d="M14 10v7" stroke="white" stroke-width="" stroke-linecap="round"/>
-    <rect x="7" y="6" width="10" height="12" rx="2" stroke="white" stroke-width="2.2"/>
-    <path d="M9 6V5c0-.6.5-1 1-1h4c.6 0 1 .4 1 1v1" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>
-        </button>
-        <button id="startAleatorio" class="icon-small hidden" onclick="startAleatorio()" disabled style="background:linear-gradient(180deg,#58a6ff,#2b82e6);color:black">INICIAR</button>
-      </div>
-    </div>
-
-    <!-- INDIVIDUAL SETUP -->
-    <div id="individualPanel" class="hidden">
-      <div class="card">
-        <div class="section-title">Selecciona un verbo</div>
-        <div class="custom-select-wrapper">
-  <select id="singleVerb" class="custom-select">
-    <option value="">Elige un verbo...</option>
-  </select>
-  <div class="custom-select-arrow">▼</div>
-    </div>
-</div>
-
-      <div class="card">
-        <div class="section-title">Tiempos a practicar</div>
-        <div class="chips" id="individualTenseChips"></div>
-      </div>
-
-      <div style="text-align:center;margin-top:8px;display:flex;justify-content:center;gap:12px;align-items:center">
-        <button id="clearIndividual" class="icon-small btn-red hidden" onclick="clearIndividual()" title="Borrar selecciones" aria-label="Borrar selecciones" style="color:white;width:64px;height:64px;border-radius:14px;border:none;place-items:center">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M3 6h18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 6v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 11v6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 11v6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <h1><span style="font-size: 30px;">🇫🇷</span><br>Conjugador de Francés</h1>
+      <div class="header-control-row hidden">
+        <button id="topBack" class="hidden" onclick="goBack()">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
           </svg>
         </button>
-        <button id="startIndividual" class="icon-small hidden" onclick="startIndividual()" disabled style="background:linear-gradient(180deg,#58a6ff,#2b82e6);color:black">INICIAR</button>
+        <!-- <div id="inviBtn" class="inviBtn-Style hidden">
+        </div> -->
+      </div>
+      <div class="mode-tabs">
+        <div class="tab active" id="tab-ale" onclick="showMode('aleatorio')">Aleatorio</div>
+        <div class="tab" id="tab-ind" onclick="showMode('individual')">Individual</div>
       </div>
     </div>
-  </div>
 
-  <!-- EXERCISE VIEW (replaces setupView when started) -->
-  <div id="exerciseView" class="hidden">
-    <div class="card">
-      <div class="exercise-header">
-        <div>
-          <button class="back-btn" onclick="goBack()">⟵ Regresar</button>
+    <!-- SETUP VIEW (Aleatorio / Individual) -->
+    <div id="setupView">
+      <!-- ALEATORIO MODE SETUP -->
+      <div id="aleatorioPanel">
+        <div class="card">
+          <div class="section-title">Tiempos a practicar:</div>
+          <div class="chips" id="tenseChips"></div>
         </div>
-        <div id="exerciseModeLabel" style="color:var(--muted);font-weight:700"></div>
-      </div>
 
-      <!-- ALEATORIO EXERCISE -->
-      <div id="aleatorioExercise" class="hidden">
-        <div class="question" id="questionAleatorio"></div>
-        <div class="sub" id="pronounAleatorio"></div>
-
-        <div class="input-row">
-  <input id="answer" class="input" placeholder="Escribe la forma correcta..." autocomplete="off"
-         onkeydown="if(event.key==='Enter') checkAleatorio()">
-
-  <div class="input-buttons">
-    <button class="icon-btn btn-blue" id="btnCheck" title="Comprobar" onclick="checkAleatorio()">
-      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-        <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-    </button>
-
-    <button class="icon-btn btn-pink" id="btnReveal" title="Revelar" onclick="revealAleatorio()">
-      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-        <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none"/>
-        <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-    </button>
-  </div>
-</div>
-
-        <div id="explicacionAleatorio" style="margin-top:12px;color:var(--muted)"></div>
-
-        <div class="inline-actions">
-          <button class="icon-btn btn-green hidden" id="btnNext" title="Siguiente" onclick="nextAleatorio()">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
-              <path d="M5 4v16l14-8z"/>
-            </svg>
+        <div class="card">
+          <div class="section-title">Verbos a incluir:</div>
+          <div class="chips" id="verbChips"></div>
+        </div>
+        <div style="text-align:center;margin-top:8px;display:flex;justify-content:center;gap:12px;align-items:center">
+          <button id="clearAleatorio" class="btn-red hidden" onclick="clearAleatorio()" title="Borrar selecciones"
+            aria-label="Borrar selecciones">
+            <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/trash.png" width="20px"
+              height="20px" alt="Borrar">
+          </button>
+          <button id="startAleatorio" class="btn-blue hidden" onclick="startAleatorio()" disabled>
+            <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/start.png" width="20px"
+              height="20px" alt="Borrar" alt="Iniciar">
           </button>
         </div>
       </div>
 
-      <!-- INDIVIDUAL EXERCISE -->
-      <div id="individualExercise" class="hidden">
-        <div class="question" id="individualTitle"></div>
-        <div class="pronoms" id="pronomsList"></div>
+      <!-- INDIVIDUAL MODE SETUP -->
+      <div id="individualPanel" class="hidden">
+        <div class="card">
+          <div class="section-title">Selecciona un verbo</div>
+          <div style="display: flex; justify-content:center; margin:auto;">
+            <div class="custom-select-wrapper">
+              <select id="singleVerb" class="custom-select">
+                <option value="">Elige un verbo...</option>
+              </select>
+              <div class="custom-select-arrow">▼</div>
+            </div>
+          </div>
+        </div>
 
-        <div class="inline-actions" style="margin-top:18px">
-          <button class="icon-btn btn-blue" title="Comprobar todo" onclick="checkIndividual()" id="btnCheckAll">
-            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-              <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
+        <div class="card">
+          <div class="section-title">Tiempos a practicar</div>
+          <div class="chips" id="individualTenseChips"></div>
+        </div>
+        <div style="text-align:center;margin-top:8px;display:flex;justify-content:center;gap:12px;align-items:center">
+          <button id="clearIndividual" class="btn-red hidden" onclick="clearIndividual()" title="Borrar selecciones"
+            aria-label="Borrar selecciones">
+            <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/trash.png" width="20px"
+              height="20px" alt="Borrar">
           </button>
-
-          <button class="icon-btn btn-pink" title="Revelar todo" onclick="revealIndividual()">
-            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
-              <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none"/>
-              <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </button>
-
-          <button class="icon-btn btn-green hidden" id="btnNextIndividual" title="Siguiente tiempo" onclick="nextIndividual()">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
-              <path d="M5 4v16l14-8z"/>
-            </svg>
+          <button id="startIndividual" class="btn-blue hidden" onclick="startIndividual()" disabled>
+            <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/start.png" width="20px"
+              height="20px" alt="Borrar" alt="Iniciar">
           </button>
         </div>
       </div>
     </div>
+
+    <!-- EXERCISE VIEW -->
+    <div id="exerciseView" class="hidden">
+
+      <!-- <div id="exerciseModeLabel" style="color:var(--muted);font-weight:100;display:none"></div> -->
+      <div class="card">
+        <div class="exercise-header">
+        </div>
+
+        <!-- ALEATORIO EXERCISE -->
+        <div id="aleatorioExercise" class="hidden">
+          <div id="aleModeBanner"
+            style="color:var(--modeTitle);font-weight:600;font-size: 20px;margin-bottom: 10px; text-align: center;">
+          </div>
+
+          <div class="question" id="questionAleatorio"></div>
+          <div class="sub" id="pronounAleatorio"></div>
+
+          <div class="input-row">
+            <!-- INVISIBLE BUTTON -->
+            <!-- <div class="input-buttons">
+              <div id="inviBtn01" class="inviBtn-Style hidden"></div>
+              <div id="inviBtn02" class="inviBtn-Style hidden"></div>
+            </div> -->
+            <!-- INPUT ROW -->
+            <input id="answer" class="input" placeholder="Escribe la respuesta..." autocomplete="off">
+            <!-- BUTTONS -->
+            <div class="input-buttons">
+              <button id="btnRevealAleatorio" class="icon-btn btn-pink" title="Revelar todo">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+                  <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none" />
+                  <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+                </svg>
+              </button>
+              <button id="btnCheck" class="btn-blue hidden">
+                <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/start.png" width="20px"
+                  height="20px" alt="Borrar" alt="Iniciar">
+              </button>
+              <button class="icon-btn btn-green hidden" id="btnNext" title="Siguiente" onclick="nextAleatorio()">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
+                  <path d="M5 4v16l14-8z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDIVIDUAL EXERCISE -->
+        <div id="individualExercise" class="hidden">
+          <div id="indivModeBanner"
+            style="color:var(--modeTitle);font-weight:600;font-size: 20px;margin-bottom: 10px; text-align: center;">
+          </div>
+
+          <div class="question" id="individualTitle"></div>
+          <div class="pronoms" id="pronomsList"></div>
+
+          <div class="inline-actions">
+            <button id="btnRevealIndividual" class="icon-btn btn-pink" title="Revelar todo">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+                <circle cx="11" cy="11" r="6" stroke="white" stroke-width="3" fill="none" />
+                <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
+              </svg>
+            </button>
+            <button id="btnCheckIndividual" class="btn-blue" disabled>
+              <img src="https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/Icons/start.png" width="20px"
+                height="20px" alt="Iniciar">
+            </button>
+
+            <button class="icon-btn btn-green hidden" id="btnNextIndividual" title="Siguiente tiempo"
+              onclick="nextIndividual()">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
+                <path d="M5 4v16l14-8z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <footer>Conjugador Francés PRO • 100% offline • Hecho con cariño</footer> -->
   </div>
 
-  <footer>Conjugador Francés PRO • 100% offline • Hecho con cariño</footer>
-</div>
 
-<script>
-// ------------------------------
-// Data (same as before, corrected)
-const conjugations = {
-    être: { present:["suis","es","est","sommes","êtes","sont"], passeCompose:["ai été","as été","a été","avons été","avez été","ont été"], imparfait:["étais","étais","était","étions","étiez","étaient"], futurSimple:["serai","seras","sera","serons","serez","seront"], plusQueParfait:["avais été","avais été","avait été","avions été","aviez été","avaient été"], futurProche:["vais être","vas être","va être","allons être","allez être","vont être"], futurAnterieur:["aurai été","auras été","aura été","aurons été","aurez été","auront été"] },
-    avoir: { present:["ai","as","a","avons","avez","ont"], passeCompose:["ai eu","as eu","a eu","avons eu","avez eu","ont eu"], imparfait:["avais","avais","avait","avions","aviez","avaient"], futurSimple:["aurai","auras","aura","aurons","aurez","auront"], plusQueParfait:["avais eu","avais eu","avait eu","avions eu","aviez eu","avaient eu"], futurProche:["vais avoir","vas avoir","va avoir","allons avoir","allez avoir","vont avoir"], futurAnterieur:["aurai eu","auras eu","aura eu","aurons eu","aurez eu","auront eu"] },
-    faire: { present:["fais","fais","fait","faisons","faites","font"], passeCompose:["ai fait","as fait","a fait","avons fait","avez fait","ont fait"], imparfait:["faisais","faisais","faisait","faisions","faisiez","faisaient"], futurSimple:["ferai","feras","fera","ferons","ferez","feront"], plusQueParfait:["avais fait","avais fait","avait fait","avions fait","aviez fait","avaient fait"], futurProche:["vais faire","vas faire","va faire","allons faire","allez faire","vont faire"], futurAnterieur:["aurai fait","auras fait","aura fait","aurons fait","aurez fait","auront fait"] },
-    aller: { present:["vais","vas","va","allons","allez","vont"], passeCompose:["suis allé(e)","es allé(e)","est allé(e)","sommes allé(e)s","êtes allé(e)s","sont allé(e)s"], imparfait:["allais","allais","allait","allions","alliez","allaient"], futurSimple:["irai","iras","ira","irons","irez","iront"], plusQueParfait:["étais allé(e)","étais allé(e)","était allé(e)","étions allé(e)s","étiez allé(e)s","étaient allé(e)s"], futurProche:["vais aller","vas aller","va aller","allons aller","allez aller","vont aller"], futurAnterieur:["serai allé(e)","seras allé(e)","sera allé(e)","serons allé(e)s","serez allé(e)s","seront allé(e)s"] },
-    pouvoir: { present:["peux","peux","peut","pouvons","pouvez","peuvent"], passeCompose:["ai pu","as pu","a pu","avons pu","avez pu","ont pu"], imparfait:["pouvais","pouvais","pouvait","pouvions","pouviez","pouvaient"], futurSimple:["pourrai","pourras","pourra","pourrons","pourrez","pourront"], plusQueParfait:["avais pu","avais pu","avait pu","avions pu","aviez pu","avaient pu"], futurProche:["vais pouvoir","vas pouvoir","va pouvoir","allons pouvoir","allez pouvoir","vont pouvoir"], futurAnterieur:["aurai pu","auras pu","aura pu","aurons pu","aurez pu","auront pu"] },
-    vouloir: { present:["veux","veux","veut","voulons","voulez","veulent"], passeCompose:["ai voulu","as voulu","a voulu","avons voulu","avez voulu","ont voulu"], imparfait:["voulais","voulais","voulait","voulions","vouliez","voulaient"], futurSimple:["voudrai","voudras","voudra","voudrons","voudrez","voudront"], plusQueParfait:["avais voulu","avais voulu","avait voulu","avions voulu","aviez voulu","avaient voulu"], futurProche:["vais vouloir","vas vouloir","va vouloir","allons vouloir","allez vouloir","vont vouloir"], futurAnterieur:["aurai voulu","auras voulu","aura voulu","aurons voulu","aurez voulu","auront voulu"] },
-    dire: { present:["dis","dis","dit","disons","dites","disent"], passeCompose:["ai dit","as dit","a dit","avons dit","avez dit","ont dit"], imparfait:["disais","disais","disait","disions","disiez","disaient"], futurSimple:["dirai","diras","dira","dirons","direz","diront"], plusQueParfait:["avais dit","avais dit","avait dit","avions dit","aviez dit","avaient dit"], futurProche:["vais dire","vas dire","va dire","allons dire","allez dire","vont dire"], futurAnterieur:["aurai dit","auras dit","aura dit","aurons dit","aurez dit","auront dit"] },
-    prendre: { present:["prends","prends","prend","prenons","prenez","prennent"], passeCompose:["ai pris","as pris","a pris","avons pris","avez pris","ont pris"], imparfait:["prenais","prenais","prenait","prenions","preniez","prenaient"], futurSimple:["prendrai","prendras","prendra","prendrons","prendrez","prendront"], plusQueParfait:["avais pris","avais pris","avait pris","avions pris","aviez pris","avaient pris"], futurProche:["vais prendre","vas prendre","va prendre","allons prendre","allez prendre","vont prendre"], futurAnterieur:["aurai pris","auras pris","aura pris","aurons pris","aurez pris","auront pris"] },
-    voir: { present:["vois","vois","voit","voyons","voyez","voient"], passeCompose:["ai vu","as vu","a vu","avons vu","avez vu","ont vu"], imparfait:["voyais","voyais","voyait","voyions","voyiez","voyaient"], futurSimple:["verrai","verras","verra","verrons","verrez","verront"], plusQueParfait:["avais vu","avais vu","avait vu","avions vu","aviez vu","avaient vu"], futurProche:["vais voir","vas voir","va voir","allons voir","allez voir","vont voir"], futurAnterieur:["aurai vu","auras vu","aura vu","aurons vu","aurez vu","auront vu"] },
-    savoir: { present:["sais","sais","sait","savons","savez","savent"], passeCompose:["ai su","as su","a su","avons su","avez su","ont su"], imparfait:["savais","savais","savait","savions","saviez","savaient"], futurSimple:["saurai","sauras","saura","saurons","saurez","sauront"], plusQueParfait:["avais su","avais su","avait su","avions su","aviez su","avaient su"], futurProche:["vais savoir","vas savoir","va savoir","allons savoir","allez savoir","vont savoir"], futurAnterieur:["aurai su","auras su","aura su","aurons su","aurez su","auront su"] },
-    venir: { present:["viens","viens","vient","venons","venez","viennent"], passeCompose:["suis venu(e)","es venu(e)","est venu(e)","sommes venu(e)s","êtes venu(e)s","sont venu(e)s"], imparfait:["venais","venais","venait","venions","veniez","venaient"], futurSimple:["viendrai","viendras","viendra","viendrons","viendrez","viendront"], plusQueParfait:["étais venu(e)","étais venu(e)","était venu(e)","étions venu(e)s","étiez venu(e)s","étaient venu(e)s"], futurProche:["vais venir","vas venir","va venir","allons venir","allez venir","vont venir"], futurAnterieur:["serai venu(e)","seras venu(e)","sera venu(e)","serons venu(e)s","serez venu(e)s","seront venu(e)s"] },
-    devoir: { present:["dois","dois","doit","devons","devez","doivent"], passeCompose:["ai dû","as dû","a dû","avons dû","avez dû","ont dû"], imparfait:["devais","devais","devait","devions","deviez","devaient"], futurSimple:["devrai","devras","devra","devrons","devrez","devront"], plusQueParfait:["avais dû","avais dû","avait dû","avions dû","aviez dû","avaient dû"], futurProche:["vais devoir","vas devoir","va devoir","allons devoir","allez devoir","vont devoir"], futurAnterieur:["aurai dû","auras dû","aura dû","aurons dû","aurez dû","auront dû"] },
-    boire: { present:["bois","bois","boit","buvons","buvez","boivent"], passeCompose:["ai bu","as bu","a bu","avons bu","avez bu","ont bu"], imparfait:["buvais","buvais","buvait","buvions","buviez","buvaient"], futurSimple:["boirai","boiras","boira","boirons","boirez","boiront"], plusQueParfait:["avais bu","avais bu","avait bu","avions bu","aviez bu","avaient bu"], futurProche:["vais boire","vas boire","va boire","allons boire","allez boire","vont boire"], futurAnterieur:["aurai bu","auras bu","aura bu","aurons bu","aurez bu","auront bu"] },
-    lire: { present:["lis","lis","lit","lisons","lisez","lisent"], passeCompose:["ai lu","as lu","a lu","avons lu","avez lu","ont lu"], imparfait:["lisais","lisais","lisait","lisions","lisiez","lisaient"], futurSimple:["lirai","liras","lira","lirons","lirez","liront"], plusQueParfait:["avais lu","avais lu","avait lu","avions lu","aviez lu","avaient lu"], futurProche:["vais lire","vas lire","va lire","allons lire","allez lire","vont lire"], futurAnterieur:["aurai lu","auras lu","aura lu","aurons lu","aurez lu","auront lu"] },
-    écrire: { present:["écris","écris","écrit","écrivons","écrivez","écrivent"], passeCompose:["ai écrit","as écrit","a écrit","avons écrit","avez écrit","ont écrit"], imparfait:["écrivais","écrivais","écrivait","écrivions","écriviez","écrivaient"], futurSimple:["écrirai","écriras","écrira","écrirons","écrirez","écriront"], plusQueParfait:["avais écrit","avais écrit","avait écrit","avions écrit","aviez écrit","avaient écrit"], futurProche:["vais écrire","vas écrire","va écrire","allons écrire","allez écrire","vont écrire"], futurAnterieur:["aurai écrit","auras écrit","aura écrit","aurons écrit","aurez écrit","auront écrit"] },
-    parler: { present:["parle","parles","parle","parlons","parlez","parlent"], passeCompose:["ai parlé","as parlé","a parlé","avons parlé","avez parlé","ont parlé"], imparfait:["parlais","parlais","parlait","parlions","parliez","parlaient"], futurSimple:["parlerai","parleras","parlera","parlerons","parlerez","parleront"], plusQueParfait:["avais parlé","avais parlé","avait parlé","avions parlé","aviez parlé","avaient parlé"], futurProche:["vais parler","vas parler","va parler","allons parler","allez parler","vont parler"], futurAnterieur:["aurai parlé","auras parlé","aura parlé","aurons parlé","aurez parlé","auront parlé"] },
-    manger: { present:["mange","manges","mange","mangeons","mangez","mangent"], passeCompose:["ai mangé","as mangé","a mangé","avons mangé","avez mangé","ont mangé"], imparfait:["mangeais","mangeais","mangeait","mangions","mangiez","mangeaient"], futurSimple:["mangerai","mangeras","mangera","mangerons","mangerez","mangeront"], plusQueParfait:["avais mangé","avais mangé","avait mangé","avions mangé","aviez mangé","avaient mangé"], futurProche:["vais manger","vas manger","va manger","allons manger","allez manger","vont manger"], futurAnterieur:["aurai mangé","auras mangé","aura mangé","aurons mangé","aurez mangé","auront mangé"] },
-    finir: { present:["finis","finis","finit","finissons","finissez","finissent"], passeCompose:["ai fini","as fini","a fini","avons fini","avez fini","ont fini"], imparfait:["finissais","finissais","finissait","finissions","finissiez","finissaient"], futurSimple:["finirai","finiras","finira","finirons","finirez","finiront"], plusQueParfait:["avais fini","avais fini","avait fini","avions fini","aviez fini","avaient fini"], futurProche:["vais finir","vas finir","va finir","allons finir","allez finir","vont finir"], futurAnterieur:["aurai fini","auras fini","aura fini","aurons fini","aurez fini","auront fini"] },
-    partir: { present:["pars","pars","part","partons","partez","partent"], passeCompose:["suis parti(e)","es parti(e)","est parti(e)","sommes parti(e)s","êtes parti(e)s","sont parti(e)s"], imparfait:["partais","partais","partait","partions","partiez","partaient"], futurSimple:["partirai","partiras","partira","partirons","partirez","partiront"], plusQueParfait:["étais parti(e)","étais parti(e)","était parti(e)","étions parti(e)s","étiez parti(e)s","étaient parti(e)s"], futurProche:["vais partir","vas partir","va partir","allons partir","allez partir","vont partir"], futurAnterieur:["serai parti(e)","seras parti(e)","sera parti(e)","serons parti(e)s","serez parti(e)s","seront parti(e)s"] },
-    arriver: { present:["arrive","arrives","arrive","arrivons","arrivez","arrivent"], passeCompose:["suis arrivé(e)","es arrivé(e)","est arrivé(e)","sommes arrivé(e)s","êtes arrivé(e)s","sont arrivé(e)s"], imparfait:["arrivais","arrivais","arrivait","arrivions","arriviez","arrivaient"], futurSimple:["arriverai","arriveras","arrivera","arriverons","arriverez","arriveront"], plusQueParfait:["étais arrivé(e)","étais arrivé(e)","était arrivé(e)","étions arrivé(e)s","étiez arrivé(e)s","étaient arrivé(e)s"], futurProche:["vais arriver","vas arriver","va arriver","allons arriver","allez arriver","vont arriver"], futurAnterieur:["serai arrivé(e)","seras arrivé(e)","sera arrivé(e)","serons arrivé(e)s","serez arrivé(e)s","seront arrivé(e)s"] }
-};
 
-// ------------------------------
-// UI generation
-const PRONOMS = ["Je","Tu","Il/Elle/On","Nous","Vous","Ils/Elles"];
-const NOMBRE_BONITO = { present:"Présent", passeCompose:"Passé composé", imparfait:"Imparfait", futurSimple:"Futur simple", plusQueParfait:"Plus-que-parfait", futurProche:"Futur proche", futurAnterieur:"Futur antérieur" };
-const TIMES = ["present","passeCompose","imparfait","futurSimple","plusQueParfait","futurProche","futurAnterieur"];
+  <script>
+    // ------------------------------
+    // Data (same as before, corrected)
+    window.conjugations = {
+      Être: { present: ["suis", "es", "est", "sommes", "êtes", "sont"], passeCompose: ["ai été", "as été", "a été", "avons été", "avez été", "ont été"], imparfait: ["étais", "étais", "était", "étions", "étiez", "étaient"], futurSimple: ["serai", "seras", "sera", "serons", "serez", "seront"], plusQueParfait: ["avais été", "avais été", "avait été", "avions été", "aviez été", "avaient été"], futurProche: ["vais être", "vas être", "va être", "allons être", "allez être", "vont être"], futurAnterieur: ["aurai été", "auras été", "aura été", "aurons été", "aurez été", "auront été"] },
+      Avoir: { present: ["ai", "as", "a", "avons", "avez", "ont"], passeCompose: ["ai eu", "as eu", "a eu", "avons eu", "avez eu", "ont eu"], imparfait: ["avais", "avais", "avait", "avions", "aviez", "avaient"], futurSimple: ["aurai", "auras", "aura", "aurons", "aurez", "auront"], plusQueParfait: ["avais eu", "avais eu", "avait eu", "avions eu", "aviez eu", "avaient eu"], futurProche: ["vais avoir", "vas avoir", "va avoir", "allons avoir", "allez avoir", "vont avoir"], futurAnterieur: ["aurai eu", "auras eu", "aura eu", "aurons eu", "aurez eu", "auront eu"] },
+      Faire: { present: ["fais", "fais", "fait", "faisons", "faites", "font"], passeCompose: ["ai fait", "as fait", "a fait", "avons fait", "avez fait", "ont fait"], imparfait: ["faisais", "faisais", "faisait", "faisions", "faisiez", "faisaient"], futurSimple: ["ferai", "feras", "fera", "ferons", "ferez", "feront"], plusQueParfait: ["avais fait", "avais fait", "avait fait", "avions fait", "aviez fait", "avaient fait"], futurProche: ["vais faire", "vas faire", "va faire", "allons faire", "allez faire", "vont faire"], futurAnterieur: ["aurai fait", "auras fait", "aura fait", "aurons fait", "aurez fait", "auront fait"] },
+      Aller: { present: ["vais", "vas", "va", "allons", "allez", "vont"], passeCompose: ["suis allé", "es allé", "est allé", "sommes allés", "êtes allés", "sont allés"], imparfait: ["allais", "allais", "allait", "allions", "alliez", "allaient"], futurSimple: ["irai", "iras", "ira", "irons", "irez", "iront"], plusQueParfait: ["étais allé", "étais allé", "était allé", "étions allés", "étiez allés", "étaient allés"], futurProche: ["vais aller", "vas aller", "va aller", "allons aller", "allez aller", "vont aller"], futurAnterieur: ["serai allé", "seras allé", "sera allé", "serons allés", "serez allés", "seront allés"] },
+      Pouvoir: { present: ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"], passeCompose: ["ai pu", "as pu", "a pu", "avons pu", "avez pu", "ont pu"], imparfait: ["pouvais", "pouvais", "pouvait", "pouvions", "pouviez", "pouvaient"], futurSimple: ["pourrai", "pourras", "pourra", "pourrons", "pourrez", "pourront"], plusQueParfait: ["avais pu", "avais pu", "avait pu", "avions pu", "aviez pu", "avaient pu"], futurProche: ["vais pouvoir", "vas pouvoir", "va pouvoir", "allons pouvoir", "allez pouvoir", "vont pouvoir"], futurAnterieur: ["aurai pu", "auras pu", "aura pu", "aurons pu", "aurez pu", "auront pu"] },
+      Vouloir: { present: ["veux", "veux", "veut", "voulons", "voulez", "veulent"], passeCompose: ["ai voulu", "as voulu", "a voulu", "avons voulu", "avez voulu", "ont voulu"], imparfait: ["voulais", "voulais", "voulait", "voulions", "vouliez", "voulaient"], futurSimple: ["voudrai", "voudras", "voudra", "voudrons", "voudrez", "voudront"], plusQueParfait: ["avais voulu", "avais voulu", "avait voulu", "avions voulu", "aviez voulu", "avaient voulu"], futurProche: ["vais vouloir", "vas vouloir", "va vouloir", "allons vouloir", "allez vouloir", "vont vouloir"], futurAnterieur: ["aurai voulu", "auras voulu", "aura voulu", "aurons voulu", "aurez voulu", "auront voulu"] },
+      Dire: { present: ["dis", "dis", "dit", "disons", "dites", "disent"], passeCompose: ["ai dit", "as dit", "a dit", "avons dit", "avez dit", "ont dit"], imparfait: ["disais", "disais", "disait", "disions", "disiez", "disaient"], futurSimple: ["dirai", "diras", "dira", "dirons", "direz", "diront"], plusQueParfait: ["avais dit", "avais dit", "avait dit", "avions dit", "aviez dit", "avaient dit"], futurProche: ["vais dire", "vas dire", "va dire", "allons dire", "allez dire", "vont dire"], futurAnterieur: ["aurai dit", "auras dit", "aura dit", "aurons dit", "aurez dit", "auront dit"] },
+      Prendre: { present: ["prends", "prends", "prend", "prenons", "prenez", "prennent"], passeCompose: ["ai pris", "as pris", "a pris", "avons pris", "avez pris", "ont pris"], imparfait: ["prenais", "prenais", "prenait", "prenions", "preniez", "prenaient"], futurSimple: ["prendrai", "prendras", "prendra", "prendrons", "prendrez", "prendront"], plusQueParfait: ["avais pris", "avais pris", "avait pris", "avions pris", "aviez pris", "avaient pris"], futurProche: ["vais prendre", "vas prendre", "va prendre", "allons prendre", "allez prendre", "vont prendre"], futurAnterieur: ["aurai pris", "auras pris", "aura pris", "aurons pris", "aurez pris", "auront pris"] },
+      Voir: { present: ["vois", "vois", "voit", "voyons", "voyez", "voient"], passeCompose: ["ai vu", "as vu", "a vu", "avons vu", "avez vu", "ont vu"], imparfait: ["voyais", "voyais", "voyait", "voyions", "voyiez", "voyaient"], futurSimple: ["verrai", "verras", "verra", "verrons", "verrez", "verront"], plusQueParfait: ["avais vu", "avais vu", "avait vu", "avions vu", "aviez vu", "avaient vu"], futurProche: ["vais voir", "vas voir", "va voir", "allons voir", "allez voir", "vont voir"], futurAnterieur: ["aurai vu", "auras vu", "aura vu", "aurons vu", "aurez vu", "auront vu"] },
+      Savoir: { present: ["sais", "sais", "sait", "savons", "savez", "savent"], passeCompose: ["ai su", "as su", "a su", "avons su", "avez su", "ont su"], imparfait: ["savais", "savais", "savait", "savions", "saviez", "savaient"], futurSimple: ["saurai", "sauras", "saura", "saurons", "saurez", "sauront"], plusQueParfait: ["avais su", "avais su", "avait su", "avions su", "aviez su", "avaient su"], futurProche: ["vais savoir", "vas savoir", "va savoir", "allons savoir", "allez savoir", "vont savoir"], futurAnterieur: ["aurai su", "auras su", "aura su", "aurons su", "aurez su", "auront su"] },
+      Venir: { present: ["viens", "viens", "vient", "venons", "venez", "viennent"], passeCompose: ["suis venu", "es venu", "est venu", "sommes venus", "êtes venus", "sont venus"], imparfait: ["venais", "venais", "venait", "venions", "veniez", "venaient"], futurSimple: ["viendrai", "viendras", "viendra", "viendrons", "viendrez", "viendront"], plusQueParfait: ["étais venu", "étais venu", "était venu", "étions venus", "étiez venus", "étaient venus"], futurProche: ["vais venir", "vas venir", "va venir", "allons venir", "allez venir", "vont venir"], futurAnterieur: ["serai venu", "seras venu", "sera venu", "serons venus", "serez venus", "seront venus"] },
+      Devoir: { present: ["dois", "dois", "doit", "devons", "devez", "doivent"], passeCompose: ["ai dû", "as dû", "a dû", "avons dû", "avez dû", "ont dû"], imparfait: ["devais", "devais", "devait", "devions", "deviez", "devaient"], futurSimple: ["devrai", "devras", "devra", "devrons", "devrez", "devront"], plusQueParfait: ["avais dû", "avais dû", "avait dû", "avions dû", "aviez dû", "avaient dû"], futurProche: ["vais devoir", "vas devoir", "va devoir", "allons devoir", "allez devoir", "vont devoir"], futurAnterieur: ["aurai dû", "auras dû", "aura dû", "aurons dû", "aurez dû", "auront dû"] },
+      Boire: { present: ["bois", "bois", "boit", "buvons", "buvez", "boivent"], passeCompose: ["ai bu", "as bu", "a bu", "avons bu", "avez bu", "ont bu"], imparfait: ["buvais", "buvais", "buvait", "buvions", "buviez", "buvaient"], futurSimple: ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"], plusQueParfait: ["avais bu", "avais bu", "avait bu", "avions bu", "aviez bu", "avaient bu"], futurProche: ["vais boire", "vas boire", "va boire", "allons boire", "allez boire", "vont boire"], futurAnterieur: ["aurai bu", "auras bu", "aura bu", "aurons bu", "aurez bu", "auront bu"] },
+      Lire: { present: ["lis", "lis", "lit", "lisons", "lisez", "lisent"], passeCompose: ["ai lu", "as lu", "a lu", "avons lu", "avez lu", "ont lu"], imparfait: ["lisais", "lisais", "lisait", "lisions", "lisiez", "lisaient"], futurSimple: ["lirai", "liras", "lira", "lirons", "lirez", "liront"], plusQueParfait: ["avais lu", "avais lu", "avait lu", "avions lu", "aviez lu", "avaient lu"], futurProche: ["vais lire", "vas lire", "va lire", "allons lire", "allez lire", "vont lire"], futurAnterieur: ["aurai lu", "auras lu", "aura lu", "aurons lu", "aurez lu", "auront lu"] },
+      Écrire: { present: ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"], passeCompose: ["ai écrit", "as écrit", "a écrit", "avons écrit", "avez écrit", "ont écrit"], imparfait: ["écrivais", "écrivais", "écrivait", "écrivions", "écriviez", "écrivaient"], futurSimple: ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"], plusQueParfait: ["avais écrit", "avais écrit", "avait écrit", "avions écrit", "aviez écrit", "avaient écrit"], futurProche: ["vais écrire", "vas écrire", "va écrire", "allons écrire", "allez écrire", "vont écrire"], futurAnterieur: ["aurai écrit", "auras écrit", "aura écrit", "aurons écrit", "aurez écrit", "auront écrit"] },
+      Parler: { present: ["parle", "parles", "parle", "parlons", "parlez", "parlent"], passeCompose: ["ai parlé", "as parlé", "a parlé", "avons parlé", "avez parlé", "ont parlé"], imparfait: ["parlais", "parlais", "parlait", "parlions", "parliez", "parlaient"], futurSimple: ["parlerai", "parleras", "parlera", "parlerons", "parlerez", "parleront"], plusQueParfait: ["avais parlé", "avais parlé", "avait parlé", "avions parlé", "aviez parlé", "avaient parlé"], futurProche: ["vais parler", "vas parler", "va parler", "allons parler", "allez parler", "vont parler"], futurAnterieur: ["aurai parlé", "auras parlé", "aura parlé", "aurons parlé", "aurez parlé", "auront parlé"] },
+      Manger: { present: ["mange", "manges", "mange", "mangeons", "mangez", "mangent"], passeCompose: ["ai mangé", "as mangé", "a mangé", "avons mangé", "avez mangé", "ont mangé"], imparfait: ["mangeais", "mangeais", "mangeait", "mangions", "mangiez", "mangeaient"], futurSimple: ["mangerai", "mangeras", "mangera", "mangerons", "mangerez", "mangeront"], plusQueParfait: ["avais mangé", "avais mangé", "avait mangé", "avions mangé", "aviez mangé", "avaient mangé"], futurProche: ["vais manger", "vas manger", "va manger", "allons manger", "allez manger", "vont manger"], futurAnterieur: ["aurai mangé", "auras mangé", "aura mangé", "aurons mangé", "aurez mangé", "auront mangé"] },
+      Finir: { present: ["finis", "finis", "finit", "finissons", "finissez", "finissent"], passeCompose: ["ai fini", "as fini", "a fini", "avons fini", "avez fini", "ont fini"], imparfait: ["finissais", "finissais", "finissait", "finissions", "finissiez", "finissaient"], futurSimple: ["finirai", "finiras", "finira", "finirons", "finirez", "finiront"], plusQueParfait: ["avais fini", "avais fini", "avait fini", "avions fini", "aviez fini", "avaient fini"], futurProche: ["vais finir", "vas finir", "va finir", "allons finir", "allez finir", "vont finir"], futurAnterieur: ["aurai fini", "auras fini", "aura fini", "aurons fini", "aurez fini", "auront fini"] },
+      Partir: { present: ["pars", "pars", "part", "partons", "partez", "partent"], passeCompose: ["suis parti", "es parti", "est parti", "sommes partis", "êtes partis", "sont partis"], imparfait: ["partais", "partais", "partait", "partions", "partiez", "partaient"], futurSimple: ["partirai", "partiras", "partira", "partirons", "partirez", "partiront"], plusQueParfait: ["étais parti", "étais parti", "était parti", "étions partis", "étiez partis", "étaient partis"], futurProche: ["vais partir", "vas partir", "va partir", "allons partir", "allez partir", "vont partir"], futurAnterieur: ["serai parti", "seras parti", "sera parti", "serons partis", "serez partis", "seront partis"] },
+      Arriver: { present: ["arrive", "arrives", "arrive", "arrivons", "arrivez", "arrivent"], passeCompose: ["suis arrivé", "es arrivé", "est arrivé", "sommes arrivés", "êtes arrivés", "sont arrivés"], imparfait: ["arrivais", "arrivais", "arrivait", "arrivions", "arriviez", "arrivaient"], futurSimple: ["arriverai", "arriveras", "arrivera", "arriverons", "arriverez", "arriveront"], plusQueParfait: ["étais arrivé", "étais arrivé", "était arrivé", "étions arrivés", "étiez arrivés", "étaient arrivés"], futurProche: ["vais arriver", "vas arriver", "va arriver", "allons arriver", "allez arriver", "vont arriver"], futurAnterieur: ["serai arrivé", "seras arrivé", "sera arrivé", "serons arrivés", "serez arrivés", "seront arrivés"] }
+    };
 
-function createChips(containerId, items, type){
-    const cont = document.getElementById(containerId);
-    items.forEach(it=>{
+    // ------------------------------
+    // UI generation
+    const PRONOMS = [
+      "Je",
+      "Tu",
+      "Il/Elle/On",
+      "Nous",
+      "Vous",
+      "Ils/Elles"];
+
+    const TIMES = [
+      "present",
+      "passeCompose",
+      "imparfait",
+      "futurSimple",
+      "plusQueParfait",
+      "futurProche",
+      "futurAnterieur"
+    ];
+    const NOMBRE_BONITO = {
+      present: "Présent",
+      passeCompose: "Passé composé",
+      imparfait: "Imparfait",
+      futurSimple: "Futur simple",
+      plusQueParfait: "Plus-que-parfait",
+      futurProche: "Futur proche",
+      futurAnterieur: "Futur antérieur"
+    };
+
+    function createChips(containerId, items, type) {
+      const cont = document.getElementById(containerId);
+      items.forEach(it => {
         const d = document.createElement("div");
         d.className = "chip";
         d.dataset.value = it;
         d.textContent = NOMBRE_BONITO[it] || it;
-        d.addEventListener("click", ()=> {
-            d.classList.toggle("selected");
-            toggleSelection(type, it, d.classList.contains("selected"));
+        d.addEventListener("click", () => {
+          d.classList.toggle("selected");
+          toggleSelection(type, it, d.classList.contains("selected"));
         });
         cont.appendChild(d);
-    });
-}
+      });
+    }
 
-function createVerbSelect(){
-    const sel = document.getElementById("singleVerb");
-    Object.keys(conjugations).forEach(v=>{
+    function createVerbSelect() {
+      const sel = document.getElementById("singleVerb");
+      Object.keys(window.conjugations).forEach(v => {
         const o = document.createElement("option");
         o.value = v; o.textContent = v;
         sel.appendChild(o);
-    });
-}
-
-// ------------------------------
-// selection state
-let selectedTensesAleatorio = new Set();
-let selectedVerbs = new Set();
-let selectedTensesIndividual = new Set();
-
-function toggleSelection(type, val, on){
-    if(type==="tenseA"){ on ? selectedTensesAleatorio.add(val) : selectedTensesAleatorio.delete(val); }
-    if(type==="verbs"){ on ? selectedVerbs.add(val) : selectedVerbs.delete(val); }
-    if(type==="tenseI"){ on ? selectedTensesIndividual.add(val) : selectedTensesIndividual.delete(val); }
-    updateStarts();
-}
-
-// ------------------------------
-// mode switching
-function showMode(mode){
-    document.getElementById("tab-ale").classList.toggle("active", mode==="aleatorio");
-    document.getElementById("tab-ind").classList.toggle("active", mode==="individual");
-    document.getElementById("aleatorioPanel").classList.toggle("hidden", mode!=="aleatorio");
-    document.getElementById("individualPanel").classList.toggle("hidden", mode!=="individual");
-    // hide exercise if switching while in setup
-    document.getElementById("exerciseView").classList.add("hidden");
-    document.getElementById("setupView").classList.remove("hidden");
-    updateStarts();
-}
-
-// ------------------------------
-// enable start buttons
-function updateStarts(){
-    // enable/disable start buttons
-    document.getElementById("startAleatorio").disabled = !(selectedTensesAleatorio.size>0 && selectedVerbs.size>0);
-    const sel = document.getElementById("singleVerb").value;
-    document.getElementById("startIndividual").disabled = !(sel && selectedTensesIndividual.size>0);
-
-    // show/hide clear (borrar) buttons based on whether there's any selection
-    const clearAle = document.getElementById("clearAleatorio");
-    if(clearAle){
-      const hasAnyAleSelection = (selectedTensesAleatorio.size>0) || (selectedVerbs.size>0);
-      clearAle.classList.toggle('hidden', !hasAnyAleSelection);
+      });
     }
-    const clearInd = document.getElementById("clearIndividual");
-    if(clearInd){
-      const hasAnyIndSelection = (selectedTensesIndividual.size>0) || !!sel;
-      clearInd.classList.toggle('hidden', !hasAnyIndSelection);
-    }
-    // show/hide the INICIAR buttons based on required selections
-    const startAle = document.getElementById("startAleatorio");
-    if(startAle){
-      const showAle = (selectedTensesAleatorio.size>0 && selectedVerbs.size>0);
-      startAle.classList.toggle('hidden', !showAle);
-    }
-    const startInd = document.getElementById("startIndividual");
-    if(startInd){
-      const showInd = (!!sel && selectedTensesIndividual.size>0);
-      startInd.classList.toggle('hidden', !showInd);
-    }
-}
-document.getElementById("singleVerb").addEventListener("change", updateStarts);
 
-// ------------------------------
-// clear / borrar helpers for landing page
-function clearAleatorio(){
-  // clear selected tenses and verbs
-  selectedTensesAleatorio.clear();
-  selectedVerbs.clear();
-  // remove visual selection
-  document.querySelectorAll("#tenseChips .chip, #verbChips .chip").forEach(el=>el.classList.remove("selected"));
-  // update start buttons
-  updateStarts();
-}
+    // ------------------------------
+    // selection state
+    let selectedTensesAleatorio = new Set();
+    let selectedVerbs = new Set();
+    let selectedTensesIndividual = new Set();
 
-function clearIndividual(){
-  // clear selected tenses and reset verb selector
-  selectedTensesIndividual.clear();
-  document.querySelectorAll("#individualTenseChips .chip").forEach(el=>el.classList.remove("selected"));
-  document.getElementById("singleVerb").value = "";
-  updateStarts();
-}
+    function toggleSelection(type, val, on) {
+      if (type === "tenseA") { on ? selectedTensesAleatorio.add(val) : selectedTensesAleatorio.delete(val); }
+      if (type === "verbs") { on ? selectedVerbs.add(val) : selectedVerbs.delete(val); }
+      if (type === "tenseI") { on ? selectedTensesIndividual.add(val) : selectedTensesIndividual.delete(val); }
+      updateStarts();
+    }
 
-// ------------------------------
-// navigation: start, goBack
-let questions = [], currentQuestion = 0;
-function startAleatorio(){
-    // build questions from selected sets
-    questions = [];
-    selectedVerbs.forEach(v=>{
-        selectedTensesAleatorio.forEach(t=>{
-            PRONOMS.forEach((p,i)=> questions.push({verb:v,tense:t,pronoun:p,index:i}));
+    // ------------------------------
+    // mode switching
+    function showMode(mode) {
+      document.getElementById("tab-ale").classList.toggle("active", mode === "aleatorio");
+      document.getElementById("tab-ind").classList.toggle("active", mode === "individual");
+      document.getElementById("aleatorioPanel").classList.toggle("hidden", mode !== "aleatorio");
+      document.getElementById("individualPanel").classList.toggle("hidden", mode !== "individual");
+      // hide exercise if switching while in setup
+      document.getElementById("exerciseView").classList.add("hidden");
+      document.getElementById("setupView").classList.remove("hidden");
+      updateStarts();
+    }
+
+    // enable start buttons
+    function updateStarts() {
+      // enable/disable start buttons
+      document.getElementById("startAleatorio").disabled = !(selectedTensesAleatorio.size > 0 && selectedVerbs.size > 0);
+      const sel = document.getElementById("singleVerb").value;
+      document.getElementById("startIndividual").disabled = !(sel && selectedTensesIndividual.size > 0);
+      // show/hide clear (borrar) buttons based on whether there's any selection
+      const clearAle = document.getElementById("clearAleatorio");
+      if (clearAle) {
+        const hasAnyAleSelection = (selectedTensesAleatorio.size > 0) || (selectedVerbs.size > 0);
+        clearAle.classList.toggle('hidden', !hasAnyAleSelection);
+      }
+      const clearInd = document.getElementById("clearIndividual");
+      if (clearInd) {
+        const hasAnyIndSelection = (selectedTensesIndividual.size > 0) || !!sel;
+        clearInd.classList.toggle('hidden', !hasAnyIndSelection);
+      }
+      // show/hide the INICIAR buttons based on required selections
+      const startAle = document.getElementById("startAleatorio");
+      if (startAle) {
+        const showAle = (selectedTensesAleatorio.size > 0 && selectedVerbs.size > 0);
+        startAle.classList.toggle('hidden', !showAle);
+      }
+      const startInd = document.getElementById("startIndividual");
+      if (startInd) {
+        const showInd = (!!sel && selectedTensesIndividual.size > 0);
+        startInd.classList.toggle('hidden', !showInd);
+      }
+    }
+    document.getElementById("singleVerb").addEventListener("change", updateStarts);
+
+    // ------------------------------
+    // Clear selected Chips in aleatorio and Individual modes
+    function clearAleatorio() {
+      selectedTensesAleatorio.clear();
+      selectedVerbs.clear();
+      // remove visual selection
+      document.querySelectorAll("#tenseChips .chip, #verbChips .chip").forEach(el => el.classList.remove("selected"));
+      // update start buttons
+      updateStarts();
+    }
+
+    function clearIndividual() {
+      // clear selected tenses and reset verb selector
+      selectedTensesIndividual.clear();
+      document.querySelectorAll("#individualTenseChips .chip").forEach(el => el.classList.remove("selected"));
+      document.getElementById("singleVerb").value = "";
+      updateStarts();
+    }
+
+    // ------------------------------
+    // navigation: start, goBack
+    window.questions = []; // <-- Added/Confirmed
+    window.currentQuestion = 0; // <-- Added/Confirmed
+    window.singleVerb = null;
+    window.tensesList = [];
+    window.currentTenseIndex = 0;
+
+    function enterMode(mode) {
+      // hide tabs and show banner and top back button
+      var tabs = document.querySelector('.mode-tabs'); if (tabs) tabs.style.display = 'none';
+      var banner = document.getElementById('aleModeBanner'); if (banner) { banner.style.display = 'block'; banner.textContent = mode === 'aleatorio' ? 'Modo Aleatorio' : 'Modo Individual'; }
+      var banner = document.getElementById('indivModeBanner'); if (banner) { banner.style.display = 'block'; banner.textContent = mode === 'aleatorio' ? 'Modo Aleatorio' : 'Modo Individual'; }
+      var topBack = document.getElementById('topBack'); if (topBack) topBack.style.display = 'flex';
+    }
+
+    function exitMode() {
+      var tabs = document.querySelector('.mode-tabs'); if (tabs) tabs.style.display = 'inline-flex';
+      var banner = document.getElementById('aleModeBanner'); if (banner) { banner.style.display = 'none'; banner.textContent = '' }
+      var banner = document.getElementById('indivModeBanner'); if (banner) { banner.style.display = 'none'; banner.textContent = '' }
+      var topBack = document.getElementById('topBack'); if (topBack) topBack.style.display = 'none';
+    }
+
+    function startAleatorio() {
+      // build questions from selected sets
+      window.questions = [];
+      selectedVerbs.forEach(v => {
+        selectedTensesAleatorio.forEach(t => {
+          PRONOMS.forEach((p, i) => window.questions.push({ verb: v, tense: t, pronoun: p, index: i }));
         });
-    });
-    questions.sort(()=>Math.random()-0.5);
-    currentQuestion = 0;
-    // hide setup, show exercise and aleatorioExercise
-    document.getElementById("setupView").classList.add("hidden");
-    document.getElementById("exerciseView").classList.remove("hidden");
-    document.getElementById("aleatorioExercise").classList.remove("hidden");
-    document.getElementById("individualExercise").classList.add("hidden");
-    document.getElementById("exerciseModeLabel").textContent = "Modo Aleatorio";
-    showCurrentQuestion();
-}
+      });
+      window.questions.sort(() => Math.random() - 0.5);
+      window.currentQuestion = 0;
+      document.getElementById("setupView").classList.add("hidden");
+      document.getElementById("exerciseView").classList.remove("hidden");
+      document.getElementById("aleatorioExercise").classList.remove("hidden");
+      document.getElementById("individualExercise").classList.add("hidden");
+      enterMode('aleatorio');
+      showCurrentQuestion();
+    }
 
-function startIndividual(){
-    // ensure verb selected
-    const sel = document.getElementById("singleVerb").value;
-    if(!sel) return;
-    // prepare tenses list
-    singleVerb = sel;
-    tensesList = Array.from(selectedTensesIndividual);
-    currentTenseIndex = 0;
-    // hide setup, show exercise individual
-    document.getElementById("setupView").classList.add("hidden");
-    document.getElementById("exerciseView").classList.remove("hidden");
-    document.getElementById("aleatorioExercise").classList.add("hidden");
-    document.getElementById("individualExercise").classList.remove("hidden");
-    document.getElementById("exerciseModeLabel").textContent = `Modo Individual · ${singleVerb}`;
-    loadTense();
-}
+    function startIndividual() {
+      // ensure verb selected
+      const sel = document.getElementById("singleVerb").value;
+      if (!sel) return;
+      // prepare tenses list
+      window.singleVerb = sel;
+      window.tensesList = Array.from(selectedTensesIndividual);
+      window.currentTenseIndex = 0;
+      document.getElementById("setupView").classList.add("hidden");
+      document.getElementById("exerciseView").classList.remove("hidden");
+      document.getElementById("aleatorioExercise").classList.add("hidden");
+      document.getElementById("individualExercise").classList.remove("hidden");
+      enterMode('individual');
+      loadTense();
+    }
 
-function goBack(){
-    // hide exercise view and show setup again, keep selections intact
-    document.getElementById("exerciseView").classList.add("hidden");
-    document.getElementById("setupView").classList.remove("hidden");
-    // reset exercise-specific UI
-    document.getElementById("btnNext").classList.add("hidden");
-    document.getElementById("btnNextIndividual").classList.add("hidden");
-}
+    function goBack() {
+      // hide exercise view and show setup again, keep selections intact
+      document.getElementById("exerciseView").classList.add("hidden");
+      document.getElementById("setupView").classList.remove("hidden");
+      // reset exercise-specific UI
+      document.getElementById("btnNext").classList.add("hidden");
+      document.getElementById("btnNextIndividual").classList.add("hidden");
+      exitMode();
+    }
 
-// ------------------------------
-// ALEATORIO: show question, check, reveal, next
-function showCurrentQuestion(){
-    if(currentQuestion >= questions.length){
-        alert("¡Has terminado el modo Aleatorio!");
+    // ------------------------------
+    // ALEATORIO: SHOW QUESTIONS
+    function showCurrentQuestion() {
+      if (currentQuestion >= questions.length) {
+        alert("¡Has terminado el ejercicio!");
         goBack();
         return;
+      }
+      const q = questions[currentQuestion];
+
+      // Set question and pronoun display
+      document.getElementById("questionAleatorio").innerHTML =
+        `<b>${q.verb}</b> / <b>${NOMBRE_BONITO[q.tense] || q.tense}</b>`;
+
+      document.getElementById("pronounAleatorio").innerHTML =
+        `<div class="pronomAl">${q.pronoun}&nbsp;&nbsp;_____</div>`;
+
+      // Reset the input field and classes
+      const ans = document.getElementById("answer");
+      ans.value = "";
+      ans.className = "input";
+
+      // --- ADDED UI SETUP ---
+
+      // SHOW CHECK BUTTON
+      const btnCheck = document.getElementById("btnCheck");
+      if (btnCheck) {
+        btnCheck.classList.remove("hidden");
+        btnCheck.disabled = true;
+      }
+
+
+      // HIDE NEXT BUTTON
+      document.getElementById("btnNext").classList.add("hidden");
+      // --- END ADDED UI SETUP ---
+      setTimeout(function () {
+        ans.focus();
+      }, 0);
     }
-    const q = questions[currentQuestion];
-    document.getElementById("questionAleatorio").innerHTML = `Conjuga <b>${q.verb}</b> en <b>${NOMBRE_BONITO[q.tense] || q.tense}</b>`;
-    document.getElementById("pronounAleatorio").textContent = `${q.pronoun} → _____`;
-    const ans = document.getElementById("answer");
-    ans.value = "";
-    ans.className = "input";
-    document.getElementById("explicacionAleatorio").textContent = "";
-    // hide next until correct
-    document.getElementById("btnNext").classList.add("hidden");
-}
 
-function clean(s){ return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim(); }
+    function clean(s) { return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim(); }
 
-function checkAleatorio(){
-    const q = questions[currentQuestion];
-    const correct = (conjugations[q.verb] && conjugations[q.verb][q.tense]) ? conjugations[q.verb][q.tense][q.index] : "";
-    const user = document.getElementById("answer").value || "";
-    const inp = document.getElementById("answer");
-    inp.classList.remove("correct","wrong");
-    if(clean(user) === clean(correct)){
+    function checkAleatorio() {
+
+      if (u === clean(expectedFormOnly) || u === clean(expectedWithPron)) {
         inp.classList.add("correct");
-        document.getElementById("explicacionAleatorio").textContent = `${q.pronoun} → ${correct}`;
-        // show next button
+
+        // SHOW NEXT BUTTON
         document.getElementById("btnNext").classList.remove("hidden");
-    } else {
+
+        // HIDE CHECK BUTTON
+        document.getElementById("btnCheck").classList.add("hidden"); // <-- ADDED
+      } else {
         inp.classList.add("wrong");
-        // keep next hidden
         document.getElementById("btnNext").classList.add("hidden");
+        document.getElementById("btnCheck").classList.remove("hidden"); // <-- Ensure Check remains visible
+      }
     }
-}
 
-function revealAleatorio(){
-    const q = questions[currentQuestion];
-    const correct = (conjugations[q.verb] && conjugations[q.verb][q.tense]) ? conjugations[q.verb][q.tense][q.index] : "";
-    document.getElementById("answer").value = correct;
-    document.getElementById("explicacionAleatorio").textContent = `${q.pronoun} → ${correct}`;
-    document.getElementById("answer").classList.remove("wrong");
-    // do not show next automatically when revealing; user must type or accept as correct
-    document.getElementById("btnNext").classList.add("hidden");
-}
+    // ALEATORIO NEXT QUESTION 
+    function nextAleatorio() {
+      currentQuestion++;
+      showCurrentQuestion();
+    }
 
-function nextAleatorio(){
-    currentQuestion++;
-    showCurrentQuestion();
-}
+    // ALLOW ENTER ON NEXT
+    function nextByEnterAleatorio() {
+      const nextEnterAleatorio = document.getElementById('btnNext');
+      nextEnterAleatorio.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          nextAleatorio();
+        }
+      });
+    }
 
-// ------------------------------
-// INDIVIDUAL: load tense, reveal, check, next
-function loadTense(){
-    if(currentTenseIndex >= tensesList.length){
-        alert("¡Has completado este verbo!");
+    // INDIVIDUAL: SHOW QUESTIONS
+    function loadTense() {
+      if (currentTenseIndex >= tensesList.length) {
+        alert("¡Has completado el ejercicio!");
         goBack();
         return;
-    }
-    const tense = tensesList[currentTenseIndex];
-    document.getElementById("individualTitle").innerHTML = `Verbo <b>${singleVerb}</b> · <b>${NOMBRE_BONITO[tense] || tense}</b>`;
-    let html = "";
-    PRONOMS.forEach((p,i)=>{
-        html += `<div class="pronom-row">
-            <div class="pronom">${p}</div>
-            <input class="input" data-i="${i}" placeholder="...">
-            <button class="small-reveal" onclick="revealOne(${i})">→</button>
-        </div>`;
-    });
-    document.getElementById("pronomsList").innerHTML = html;
-    document.getElementById("btnNextIndividual").classList.add("hidden");
-}
-
-function revealOne(i){
-    const tense = tensesList[currentTenseIndex];
-    const el = document.querySelector(`#pronomsList input[data-i="${i}"]`);
-    if(el) el.value = (conjugations[singleVerb] && conjugations[singleVerb][tense]) ? conjugations[singleVerb][tense][i] : "";
-}
-
-function revealIndividual(){
-    const tense = tensesList[currentTenseIndex];
-    document.querySelectorAll("#pronomsList input").forEach((inp,i)=>{
-        inp.value = (conjugations[singleVerb] && conjugations[singleVerb][tense]) ? conjugations[singleVerb][tense][i] : "";
-    });
-    // don't auto-show next
-    document.getElementById("btnNextIndividual").classList.add("hidden");
-}
-
-function checkIndividual(){
-    const tense = tensesList[currentTenseIndex];
-    let allCorrect = true;
-    document.querySelectorAll("#pronomsList input").forEach((inp,i)=>{
-        inp.classList.remove("correct","wrong");
-        const c = (conjugations[singleVerb] && conjugations[singleVerb][tense]) ? conjugations[singleVerb][tense][i] : "";
-        if(clean(inp.value) === clean(c)){
-            inp.classList.add("correct");
-        } else {
-            inp.classList.add("wrong");
-            allCorrect = false;
-        }
-    });
-    if(allCorrect){
-        // show next tense button
-        document.getElementById("btnNextIndividual").classList.remove("hidden");
-    } else {
-        document.getElementById("btnNextIndividual").classList.add("hidden");
-    }
-}
-
-function nextIndividual(){
-    currentTenseIndex++;
-    loadTense();
-}
-
-// ------------------------------
-// initialize UI
-createChips("tenseChips", TIMES, "tenseA");
-createChips("verbChips", Object.keys(conjugations), "verbs");
-createChips("individualTenseChips", TIMES, "tenseI");
-createVerbSelect();
-updateStarts();
-</script>
-
-<!-- Inserted override script: pronoun handling, button visuals, and function overrides -->
-<script>
-(function(){
-  // helper: normalize string for comparison
-  function clean(s){ return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim(); }
-
-  // Create pronoun+form with elision for "Je" before vowels or h mute
-  function pronounForm(pronoun, form){
-    if(!pronoun) return form;
-    // standardize pronoun text (use Je, Tu, Il/Elle/On, Nous, Vous, Ils/Elles)
-    var p = pronoun.trim();
-    // detect leading vowel or silent h (approx): vowels and letters with diacritics
-    var startsWithVowelOrH = /^[aeiouhàâäéèêëîïôöùûüÿAEIOUHÀÂÄÉÈÊËÎÏÔÖÙÛÜŸ]/.test(form);
-    if(/^Je$/i.test(p) || /^J[ eéè]$/i.test(p)){
-      if(startsWithVowelOrH){
-        // use apostrophe — prefer right single quote
-        return "J'" + form;
-      } else {
-        return "Je " + form;
       }
-    }
-    // For Il/Elle/On collapse to "Il/Elle/On" as given
-    // Keep spacing for others
-    return p + " " + form;
-  }
 
-  // Replace start buttons visuals (make Play icon for startAleatorio and startIndividual if present)
-  function installStartButtons(){
-    var sA = document.getElementById('startAleatorio');
-    if(sA){
-      sA.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden><path d="M5 3l14 9-14 9z"/></svg>';
-      sA.classList.add('btn-blue');
-      sA.style.width = '64px'; sA.style.height = '64px'; sA.style.borderRadius='14px';
-    }
-    var sI = document.getElementById('startIndividual');
-    if(sI){
-      sI.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden><path d="M5 3l14 9-14 9z"/></svg>';
-      sI.classList.add('btn-blue');
-      sI.style.width = '64px'; sI.style.height = '64px'; sI.style.borderRadius='14px';
-    }
-  }
+      const tense = tensesList[currentTenseIndex];
 
-  // Replace back / regresar button to orange icon if exists (look for elements with class 'back-btn' or text 'Regresar')
-  function installBackButton(){
-    // prefer element with class back-btn
-    var back = document.querySelector('.back-btn') || Array.from(document.querySelectorAll('button')).find(b=>/regresar/i.test(b.textContent || b.innerText || ''));
-    if(back){
-      back.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M15 6l-6 6 6 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      back.classList.add('btn-orange');
-      back.style.width='48px'; back.style.height='48px'; back.style.borderRadius='12px';
-      back.style.color='white';
-    }
-    // also try id btnBack
-    var b2 = document.getElementById('btnBack');
-    if(b2){
-      b2.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M15 6l-6 6 6 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      b2.classList.add('btn-orange');
-      b2.style.width='48px'; b2.style.height='48px'; b2.style.borderRadius='12px';
-      b2.style.color='white';
-    }
-  }
+      // SET TITLE AND QUESTION FOR INDIVIDUAL
+      document.getElementById("individualTitle").innerHTML =
+        `<b>${singleVerb}</b> / <b>${NOMBRE_BONITO[tense] || tense}</b>`;
 
-  // Override check/reveal functions to include pronoun and elision logic
-  function installValidationOverrides(){
-    // ALEATORIO
-    var btnCheck = document.getElementById('btnCheck');
-    var btnReveal = document.getElementById('btnReveal');
-    var input = document.getElementById('answer');
-    var nextBtn = document.getElementById('btnNext');
+      let html = "";
+      PRONOMS.forEach((p, i) => {
 
-    function getCurrentQuestion(){
-      // Prefer lexical globals declared in the main script (let questions, currentQuestion)
-      try{
-        if(typeof questions !== 'undefined' && typeof currentQuestion !== 'undefined'){
-          return questions[currentQuestion];
-        }
-      }catch(e){}
-      // fallback to window properties if present
-      if(window.questions && typeof window.currentQuestion !== 'undefined'){ return window.questions[window.currentQuestion]; }
-      return null;
-    }
-
-    function getCorrectWithPronoun(q){
-      if(!q) return "";
-      var correct = "";
-      try{
-        if(typeof conjugations !== 'undefined' && conjugations[q.verb] && conjugations[q.verb][q.tense]){
-          correct = conjugations[q.verb][q.tense][q.index] || "";
-        }
-      }catch(e){ correct = ""; }
-      return pronounForm(q.pronoun, correct);
-    }
-
-    function checkAleatorioNew(){
-      var q = getCurrentQuestion();
-      if(!q) return;
-      var expected = getCorrectWithPronoun(q);
-      var user = input.value || "";
-      // Normalize: remove spaces around apostrophes for comparison
-      function norm(s){ return clean(s.replace(/\u2019/g,"'")); }
-      if(norm(user) === norm(expected)){
-        input.classList.remove('wrong'); input.classList.add('correct');
-        // show explanation and next
-        var expl = document.getElementById('explicacionAleatorio');
-        if(expl) expl.textContent = expected;
-        if(nextBtn) nextBtn.classList.remove('hidden');
-      } else {
-        input.classList.remove('correct'); input.classList.add('wrong');
-        if(nextBtn) nextBtn.classList.add('hidden');
-      }
-    }
-
-    function revealAleatorioNew(){
-      var q = getCurrentQuestion();
-      if(!q) return;
-      var expected = getCorrectWithPronoun(q);
-      if(input) input.value = expected;
-      var expl = document.getElementById('explicacionAleatorio');
-      if(expl) expl.textContent = expected;
-      if(nextBtn) nextBtn.classList.add('hidden');
-      input.classList.remove('wrong'); input.classList.add('correct');
-    }
-
-    if(btnCheck){
-      btnCheck.removeAttribute('onclick');
-      btnCheck.addEventListener('click', checkAleatorioNew);
-    }
-    if(btnReveal){
-      btnReveal.removeAttribute('onclick');
-      btnReveal.addEventListener('click', revealAleatorioNew);
-    }
-    if(input){
-      input.removeAttribute('onkeydown');
-      input.addEventListener('keydown', function(e){ if(e.key === 'Enter') checkAleatorioNew(); });
-    }
-
-    // INDIVIDUAL overrides
-    var btnCheckAll = document.getElementById('btnCheckAll');
-    var btnNextIndividual = document.getElementById('btnNextIndividual');
-
-    function getIndividualTense(){
-      try{
-        if(typeof tensesList !== 'undefined' && typeof currentTenseIndex !== 'undefined'){
-          return tensesList[currentTenseIndex];
-        }
-      }catch(e){}
-      if(tensesList && typeof currentTenseIndex !== 'undefined'){ return tensesList[currentTenseIndex]; }
-      return null;
-    }
-
-    function checkIndividualNew(){
-      var tense = getIndividualTense();
-      var allCorrect = true;
-      var inputs = document.querySelectorAll('#pronomsList input');
-      inputs.forEach(function(inp, i){
-        inp.classList.remove('correct','wrong');
-        var correct = "";
-        try{
-          if(conjugations && conjugations[singleVerb] && conjugations[singleVerb][tense]){
-            correct = conjugations[singleVerb][tense][i] || "";
-          }
-        }catch(e){ correct=""; }
-        var expected = pronounForm([].slice.call(document.querySelectorAll('#pronomsList .pronom'))[i]?.textContent || "", correct);
-        function norm(s){ return clean(s.replace(/\u2019/g,"'")); }
-        if(norm(inp.value) === norm(expected)){
-          inp.classList.add('correct');
-        } else {
-          inp.classList.add('wrong'); allCorrect = false;
-        }
+        html += ` <div class="pronom-row">
+                  <div class="pronom">${p}:</div>
+                  <input id="inputIndi" class="inputIndi" data-i="${i}" placeholder="" autocomplete="off"></div>`;
       });
-      if(allCorrect){
-        if(btnNextIndividual) btnNextIndividual.classList.remove('hidden');
-      } else {
-        if(btnNextIndividual) btnNextIndividual.classList.add('hidden');
+
+      document.getElementById("pronomsList").innerHTML = html;
+      document.getElementById("btnNextIndividual").classList.add("hidden");
+
+      // CHECK BUTTON DISABLED INITIALLY
+      const btnCheck = document.getElementById("btnCheckIndividual");
+      if (btnCheck) {
+        btnCheck.disabled = true;
+      }
+
+      // SET FOCUS ON INPUT AT START OF QUESTION
+      setTimeout(function () {
+        const firstInput = document.querySelector('#pronomsList input[data-i="0"]');
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }, 0);
+
+      const pronomsList = document.getElementById("pronomsList");
+      if (pronomsList) {
       }
     }
 
-    if(btnCheckAll){
-      btnCheckAll.removeAttribute('onclick');
-      btnCheckAll.addEventListener('click', checkIndividualNew);
+    // Around line 1083: Corrected checkIndividualInputForColor function
+
+    function checkIndividualInputForColor(event) {
+      if (event.target.tagName !== 'INPUT') return;
+
+      const inp = event.target;
+      const userValue = inp.value.trim();
+
+      // 1. Determine correctness (Minimal check needed for dynamic color)
+      const i = parseInt(inp.getAttribute('data-i'));
+      const tense = getCurrentTense();
+      const verb = getVerb();
+      var correct = getConj(verb, tense, i) || '';
+      var u = norm(userValue);
+
+      var isCorrect = u === norm(correct);
+
+      inp.classList.remove('wrongIndi');
+
+      if (userValue !== '' && isCorrect) {
+        inp.classList.add('correctIndi');
+      } else {
+        setTimeout(() => {
+          inp.classList.remove('correctIndi');
+        }, 0);
+      }
+
+      // --- 2. MANAGE CHECK BUTTON DISABLED STATE ---
+      var inputs = Array.from(document.querySelectorAll('#pronomsList input'));
+      var anyInputHasValue = inputs.some(inp => inp.value.trim() !== '');
+      var btnCheck = document.getElementById('btnCheckIndividual');
+      var next = document.getElementById('btnNextIndividual'); // <-- Get Next button reference
+
+      if (btnCheck) {
+        btnCheck.disabled = !anyInputHasValue;
+      }
+
+      if (next) {
+        next.classList.add('hidden');
+      }
+      if (btnCheck) {
+        btnCheck.classList.remove('hidden');
+      }
+
     }
 
-    // ensure revealIndividual uses pronounForm: override if exists
-    var origRevealInd = window.revealIndividual;
-    window.revealIndividual = function(){
-      var tense = getIndividualTense();
-      var inputs = document.querySelectorAll('#pronomsList input');
-      inputs.forEach(function(inp, i){
-        var correct = "";
-        try{
-          if(conjugations && conjugations[singleVerb] && conjugations[singleVerb][tense]){
-            correct = conjugations[singleVerb][tense][i] || "";
-          }
-        }catch(e){}
-        var pron = [].slice.call(document.querySelectorAll('#pronomsList .pronom'))[i]?.textContent || "";
-        inp.value = pronounForm(pron, correct);
+    function updateAleatorioCheckButton() {
+      const btnCheck = document.getElementById("btnCheck");
+      const btnNext = document.getElementById("btnNext");
+      const ans = document.getElementById("answer");
+      const q = getCurrentQuestion();
+
+      if (!btnCheck || !btnNext || !ans || !q) return;
+
+      ans.classList.remove('correct', 'wrong');
+
+      const userValue = ans.value || "";
+      const hasInput = userValue.trim().length > 0;
+      const isCorrect = isAleatorioAnswerCorrect(q, userValue);
+
+      if (hasInput && isCorrect) {
+        ans.classList.add('correct');
+      }
+      else {
+        btnNext.classList.add("hidden");
+        btnCheck.classList.remove("hidden");
+      }
+      if (hasInput) {
+        btnCheck.classList.remove("hidden");
+        btnCheck.disabled = false;
+      }
+      else {
+        btnCheck.disabled = !hasInput;
+      }
+      btnNext.classList.add("hidden");
+    }
+
+    function nextIndividual() {
+      currentTenseIndex++;
+      loadTense();
+    }
+
+    function getCurrentTense() {
+      return window.tensesList ? window.tensesList[window.currentTenseIndex] : null;
+    }
+
+    function getVerb() {
+      return window.singleVerb || null;
+    }
+
+    function getCurrentQuestion() {
+      return window.questions ? window.questions[window.currentQuestion] : null;
+    }
+
+    function getCurrentQuestionPronoun() {
+      const q = getCurrentQuestion();
+      return q ? q.pronoun : null;
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      // Chips Generation
+      createChips("tenseChips", TIMES, "tenseA");
+      createChips("verbChips", Object.keys(window.conjugations), "verbs");
+      createChips("individualTenseChips", TIMES, "tenseI");
+      createVerbSelect();
+      updateStarts();
+    });
+
+    'use strict';
+    // normalize string: remove diacritics and collapse whitespace, lowercase
+    function norm(s) { return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); }
+
+    // robust getter: accepts array-shaped or object-shaped conjugations
+    function getConj(verb, tense, pronIndex) {
+      try {
+        if (!verb || !tense) return '';
+        var root = window.conjugations && window.conjugations[verb];
+        if (!root) return '';
+        var block = root[tense] || root[tense.toLowerCase()] || root[tense.replace(/\s+/g, ' ')] || root[tense];
+        if (!block) return '';
+        if (Array.isArray(block)) {
+          var idx = Number(pronIndex) || 0;
+          return block[idx] || '';
+        }
+
+        var keys = ['je', 'tu', 'il', 'nous', 'vous', 'ils'];
+        var idx = Number(pronIndex);
+        if (!isNaN(idx) && keys[idx]) {
+        }
+        if (typeof pronIndex === 'string' && block[pronIndex] !== undefined) return block[pronIndex];
+        return '';
+      } catch (e) { console.error('getConj error', e); return ''; }
+    }
+
+    window.getConj = getConj;
+
+    function isAleatorioAnswerCorrect(q, userValue) {
+      if (!q || !userValue) return false;
+
+      // INPUT ACCEPTS  FLEXIBILITY ON ANSWERS
+      var correct = getConj(q.verb, q.tense, q.index) || '';
+      var u = norm(userValue);
+      var acceptedAnswers = [];
+      acceptedAnswers.push(norm(correct));
+
+      // ACCEPT 3RD FORM SINGULAR & PLURAL INDEPENDENT PRONOUNS
+      var pronounList = [];
+      if (q.pronoun === "Il/Elle/On") {
+        pronounList = ["il", "elle", "on"];
+      } else if (q.pronoun === "Ils/Elles") {
+        pronounList = ["ils", "elles"];
+      } else {
+        pronounList = [norm(q.pronoun)];
+      }
+
+      pronounList.forEach(p => {
+        acceptedAnswers.push(p + ' ' + norm(correct));
       });
-      if(btnNextIndividual) btnNextIndividual.classList.add('hidden');
+
+      return acceptedAnswers.includes(u);
+    }
+
+    window.revealAleatorio = function () {
+      try {
+        var q = window.getCurrentQuestion();
+
+        if (!q) {
+          console.error("No current question found for Aleatorio mode. Ensure a question is visible.");
+          return;
+        }
+
+        var correct = getConj(q.verb, q.tense, q.index) || '';
+        var ansEl = document.getElementById('answer');
+
+        // Reveal the correct answer
+        ansEl.value = correct;
+        ansEl.classList.add("correct");
+        ansEl.classList.remove("wrong");
+
+        // Cleanup: Hide the check button
+        var btnCheck = document.getElementById('btnCheck');
+        if (btnCheck) btnCheck.classList.add('hidden');
+
+        // Show the Next button
+        var next = document.getElementById('btnNext');
+        if (next) next.classList.remove('hidden');
+
+      } catch (e) {
+        console.error('revealAleatorio error', e);
+      }
     };
 
-  } // installValidationOverrides
+    window.revealIndividual = function () {
+      try {
+        var tense = window.getCurrentTense();
+        var verb = window.getVerb();
+        if (!tense || !verb) return;
 
-  // Run installers after a brief timeout to ensure original script ran
-  setTimeout(function(){
-    try{ installStartButtons(); }catch(e){}
-    try{ installBackButton(); }catch(e){}
-    try{ installValidationOverrides(); }catch(e){}
-  }, 250);
+        var inputs = Array.from(document.querySelectorAll('#pronomsList input'));
+        var btnCheck = document.getElementById('btnCheckIndividual');
+        var btnNext = document.getElementById('btnNextIndividual');
 
-  // expose helper for debugging
-  window._pronounForm = pronounForm;
-})();
-</script>
+        inputs.forEach(function (inp, i) {
+          var correct = window.getConj(verb, tense, i) || '';
 
-<!-- Mobile error-capture overlay: shows JS errors / unhandled rejections on the page -->
-<script>
-(function(){
-  function ensureOverlay(){
-    var el = document.getElementById('_mobileErrorOverlay');
-    if(el) return el;
-    el = document.createElement('div'); el.id = '_mobileErrorOverlay'; el.className = 'mobile-error-overlay';
-    el.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center"><strong>JS Error</strong><span class="close" onclick="document.getElementById(\'_mobileErrorOverlay\').style.display=\'none\'">✕</span></div><pre style="white-space:pre-wrap;margin:8px 0" id="_mobileErrorMsg"></pre>';
-    document.body.appendChild(el);
-    return el;
-  }
+          inp.value = correct;
+          inp.classList.add('correctIndi');
+          inp.classList.remove('wrongIndi');
+        });
 
-  function showError(msg){
-    try{
-      var el = ensureOverlay();
-      var area = document.getElementById('_mobileErrorMsg');
-      area.textContent = typeof msg === 'string' ? msg : JSON.stringify(msg, null, 2);
-      el.style.display = 'block';
-      console.error('Mobile-captured error:', msg);
-    }catch(e){ console.error('Error showing mobile overlay', e); }
-  }
+        if (btnCheck) {
+          btnCheck.disabled = true;
+          btnCheck.classList.add('hidden');
+        }
 
-  window.addEventListener('error', function(e){
-    var msg = (e && e.message ? e.message : String(e)) + (e && e.filename ? '\n' + e.filename + ':' + e.lineno : '');
-    showError(msg);
-  });
+        if (btnNext) {
+          setTimeout(() => {
+            btnNext.classList.remove('hidden');
+            btnNext.focus();
+          }, 0);
+        }
+      } catch (e) {
+        console.error('revealIndividual error', e);
+      }
+    };
 
-  window.addEventListener('unhandledrejection', function(evt){
-    var r = evt && evt.reason ? evt.reason : evt;
-    var text = 'Unhandled rejection: ' + (r && r.message ? r.message : (typeof r === 'string' ? r : JSON.stringify(r)));
-    showError(text);
-  });
+    window.checkAleatorio = function () {
+      try {
+        var q = getCurrentQuestion();
+        if (!q) return;
 
-  // small helper for manual logging from console
-  window._showMobileError = showError;
-})();
-</script>
+        var ansEl = document.getElementById('answer');
+        var user = ansEl.value || "";
+
+        ansEl.classList.remove("correct", "wrong");
+
+        var isCorrect = isAleatorioAnswerCorrect(q, user);
+        var hasInput = user.trim().length > 0;
+
+        if (isCorrect) {
+          ansEl.classList.add("correct");
+          document.getElementById("btnNext").classList.remove("hidden");
+          document.getElementById("btnCheck").classList.add("hidden");
+          setTimeout(() => {
+            document.getElementById('btnNext').focus();
+          }, 50);
+
+        } else if (hasInput) {
+          ansEl.classList.add("wrong");
+
+        }
+      } catch (e) {
+        console.error('checkAleatorio error', e);
+      }
+    };
+
+    window.checkIndividual = function () {
+      try {
+        var tense = getCurrentTense(); if (!tense) return;
+        var verb = getVerb(); if (!verb) return;
+        var inputs = Array.from(document.querySelectorAll('#pronomsList input'));
+        var btnCheck = document.getElementById('btnCheckIndividual');
+        var next = document.getElementById('btnNextIndividual');
+
+        var allTenseInputsCompleteAndCorrect = true;
+        var anyInputHasValue = false;
+        var firstFocusCandidate = null;
+
+        var isExplicitCheck = !inputs.includes(document.activeElement);
+
+        inputs.forEach(function (inp, i) {
+          var correct = getConj(verb, tense, i) || '';
+          var userValue = inp.value.trim();
+          var u = norm(userValue);
+
+          const PRONOUN_GROUPS = [["je"], ["tu"], ["il", "elle", "on"], ["nous"], ["vous"], ["ils", "elles"]];
+          var acceptedAnswers = [norm(correct)];
+          pronounList = PRONOUN_GROUPS[i] || [];
+          pronounList.forEach(p => { acceptedAnswers.push(p + ' ' + norm(correct)); });
+          var isCorrect = acceptedAnswers.includes(u);
+
+          if (userValue !== '') {
+            anyInputHasValue = true;
+          }
+
+          if (userValue === '' || !isCorrect) {
+            allTenseInputsCompleteAndCorrect = false;
+            if (!firstFocusCandidate) {
+              firstFocusCandidate = inp;
+            }
+          }
+
+          if (userValue !== '') {
+            if (isCorrect) {
+              inp.classList.add('correctIndi');
+            } else {
+              inp.classList.add('wrongIndi');
+            }
+          }
+        });
+
+
+        // --- FINAL BUTTON & FOCUS MANAGEMENT ---
+        if (allTenseInputsCompleteAndCorrect) {
+          if (btnCheck) btnCheck.disabled = true;
+        } else {
+
+          if (btnCheck) btnCheck.disabled = !anyInputHasValue;
+
+          var isAnInputFocused = inputs.includes(document.activeElement);
+          if (isExplicitCheck && !isAnInputFocused && firstFocusCandidate) {
+            firstFocusCandidate.focus();
+          }
+        }
+      } catch (e) {
+        console.error('checkIndividual error', e);
+      }
+    };
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        // --- ALEATORIO BINDINGS ---
+        var ans = document.getElementById('answer');
+        if (ans) {
+          ans.addEventListener('input', updateAleatorioCheckButton);
+          ans.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+
+              const nextButton = document.getElementById('btnNext');
+
+              if (nextButton && !nextButton.classList.contains('hidden')) {
+                // --- ACTION 2 (Next Question) ---
+                window.nextAleatorio();
+                ans.blur();
+
+              } else {
+                window.checkAleatorio();
+              }
+            }
+          });
+        }
+
+        var btnCheck = document.getElementById('btnCheck');
+        if (btnCheck) {
+          btnCheck.addEventListener('click', window.checkAleatorio);
+        }
+
+        var btnRevealAleatorio = document.getElementById('btnRevealAleatorio');
+        if (btnRevealAleatorio) {
+          btnRevealAleatorio.removeAttribute('onclick');
+          btnRevealAleatorio.addEventListener('click', window.revealAleatorio);
+        }
+
+        // --- INDIVIDUAL BINDINGS ---
+        var btnRevealIndividual = document.getElementById('btnRevealIndividual');
+        if (btnRevealIndividual) {
+          btnRevealIndividual.addEventListener('click', window.revealIndividual);
+        }
+
+        var btnCheckIndividual = document.getElementById('btnCheckIndividual');
+        if (btnCheckIndividual) {
+          btnCheckIndividual.removeAttribute('onclick');
+          btnCheckIndividual.addEventListener('click', function () {
+            window.checkIndividual();
+            if (btnCheckIndividual.disabled) {
+              var btnNext = document.getElementById('btnNextIndividual');
+              if (btnNext) {
+                setTimeout(() => {
+                  btnNext.classList.remove('hidden');
+                  btnCheckIndividual.classList.add('hidden');
+                  btnNext.focus();
+                }, 50);
+              }
+            } else {
+              var btnNext = document.getElementById('btnNextIndividual');
+              if (btnNext) btnNext.classList.add('hidden');
+            }
+          });
+        }
+
+
+        var btnNextIndividual = document.getElementById('btnNextIndividual');
+        if (btnNextIndividual) {
+          btnNextIndividual.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              window.nextIndividual();
+            }
+          });
+        }
+
+        var pronomsList = document.getElementById('pronomsList');
+        if (pronomsList) {
+          pronomsList.addEventListener('input', checkIndividualInputForColor);
+          pronomsList.addEventListener('keydown', function (e) {
+            if (e.target.tagName === 'INPUT' && e.key === 'Enter') {
+              e.preventDefault();
+              var inputs = Array.from(document.querySelectorAll('#pronomsList input'));
+              var focusedIndex = inputs.indexOf(e.target);
+              var btnNext = document.getElementById('btnNextIndividual');
+              var btnCheck = document.getElementById('btnCheckIndividual');
+
+
+              if (btnNext && !btnNext.classList.contains('hidden')) {
+                window.nextIndividual();
+                return;
+              }
+
+              window.checkIndividual();
+              if (btnCheck.disabled) {
+                if (btnNext) {
+                  btnNext.classList.remove('hidden');
+                  btnCheck.classList.add('hidden');
+                  btnNext.focus();
+                }
+              } else if (focusedIndex !== -1) {
+                var currentInputIsCorrect = e.target.classList.contains('correctIndi');
+
+                if (currentInputIsCorrect && focusedIndex < inputs.length - 1) {
+                  inputs[focusedIndex + 1].focus();
+                } else {
+                  e.target.blur();
+                }
+              }
+            }
+          });
+        }
+      } catch (e) { console.error('binding error', e); }
+    });
+
+
+  </script>
+
+  <script>
+  </script>
 
 </body>
+
 </html>
