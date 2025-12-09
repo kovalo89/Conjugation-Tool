@@ -2018,5 +2018,1015 @@
       "on": "serait arrivé",
       "elles": "seraient arrivés"
     }
+  },
+  "vivre": {
+    "present": {
+      "je": "vis",
+      "tu": "vis",
+      "il": "vit",
+      "nous": "vivons",
+      "vous": "vivez",
+      "ils": "vivent",
+      "elle": "vit",
+      "on": "vit",
+      "elles": "vivent"
+    },
+    "passeCompose": {
+      "je": "ai vécu",
+      "tu": "as vécu",
+      "il": "a vécu",
+      "nous": "avons vécu",
+      "vous": "avez vécu",
+      "ils": "ont vécu",
+      "elle": "a vécu",
+      "on": "a vécu",
+      "elles": "ont vécu"
+    },
+    "imparfait": {
+      "je": "vivais",
+      "tu": "vivais",
+      "il": "vivait",
+      "nous": "vivions",
+      "vous": "viviez",
+      "ils": "vivaient",
+      "elle": "vivait",
+      "on": "vivait",
+      "elles": "vivaient"
+    },
+    "futurSimple": {
+      "je": "vivrai",
+      "tu": "vivras",
+      "il": "vivra",
+      "nous": "vivrons",
+      "vous": "vivrez",
+      "ils": "vivront",
+      "elle": "vivra",
+      "on": "vivra",
+      "elles": "vivront"
+    },
+    "plusQueParfait": {
+      "je": "avais vécu",
+      "tu": "avais vécu",
+      "il": "avait vécu",
+      "nous": "avions vécu",
+      "vous": "aviez vécu",
+      "ils": "avaient vécu",
+      "elle": "avait vécu",
+      "on": "avait vécu",
+      "elles": "avaient vécu"
+    },
+    "futurProche": {
+      "je": "vais vivre",
+      "tu": "vas vivre",
+      "il": "va vivre",
+      "nous": "allons vivre",
+      "vous": "allez vivre",
+      "ils": "vont vivre",
+      "elle": "va vivre",
+      "on": "va vivre",
+      "elles": "vont vivre"
+    },
+    "futurAnterieur": {
+      "je": "aurai vécu",
+      "tu": "auras vécu",
+      "il": "aura vécu",
+      "nous": "aurons vécu",
+      "vous": "aurez vécu",
+      "ils": "auront vécu",
+      "elle": "aura vécu",
+      "on": "aura vécu",
+      "elles": "auront vécu"
+    },
+    "conditionnelPresent": {
+      "je": "vivrais",
+      "tu": "vivrais",
+      "il": "vivrait",
+      "nous": "vivrions",
+      "vous": "vivriez",
+      "ils": "vivraient",
+      "elle": "vivrait",
+      "on": "vivrait",
+      "elles": "vivraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais vécu",
+      "tu": "aurais vécu",
+      "il": "aurait vécu",
+      "nous": "aurions vécu",
+      "vous": "auriez vécu",
+      "ils": "auraient vécu",
+      "elle": "aurait vécu",
+      "on": "aurait vécu",
+      "elles": "auraient vécu"
+    }
+  },
+  "mettre": {
+    "present": {
+      "je": "mets",
+      "tu": "mets",
+      "il": "met",
+      "nous": "mettons",
+      "vous": "mettez",
+      "ils": "mettent",
+      "elle": "met",
+      "on": "met",
+      "elles": "mettent"
+    },
+    "passeCompose": {
+      "je": "ai mis",
+      "tu": "as mis",
+      "il": "a mis",
+      "nous": "avons mis",
+      "vous": "avez mis",
+      "ils": "ont mis",
+      "elle": "a mis",
+      "on": "a mis",
+      "elles": "ont mis"
+    },
+    "imparfait": {
+      "je": "mettais",
+      "tu": "mettais",
+      "il": "mettait",
+      "nous": "mettions",
+      "vous": "mettiez",
+      "ils": "mettaient",
+      "elle": "mettait",
+      "on": "mettait",
+      "elles": "mettaient"
+    },
+    "futurSimple": {
+      "je": "mettrai",
+      "tu": "mettras",
+      "il": "mettra",
+      "nous": "mettrons",
+      "vous": "mettrez",
+      "ils": "mettront",
+      "elle": "mettra",
+      "on": "mettra",
+      "elles": "mettront"
+    },
+    "plusQueParfait": {
+      "je": "avais mis",
+      "tu": "avais mis",
+      "il": "avait mis",
+      "nous": "avions mis",
+      "vous": "aviez mis",
+      "ils": "avaient mis",
+      "elle": "avait mis",
+      "on": "avait mis",
+      "elles": "avaient mis"
+    },
+    "futurProche": {
+      "je": "vais mettre",
+      "tu": "vas mettre",
+      "il": "va mettre",
+      "nous": "allons mettre",
+      "vous": "allez mettre",
+      "ils": "vont mettre",
+      "elle": "va mettre",
+      "on": "va mettre",
+      "elles": "vont mettre"
+    },
+    "futurAnterieur": {
+      "je": "aurai mis",
+      "tu": "auras mis",
+      "il": "aura mis",
+      "nous": "aurons mis",
+      "vous": "aurez mis",
+      "ils": "auront mis",
+      "elle": "aura mis",
+      "on": "aura mis",
+      "elles": "auront mis"
+    },
+    "conditionnelPresent": {
+      "je": "mettrais",
+      "tu": "mettrais",
+      "il": "mettrait",
+      "nous": "mettrions",
+      "vous": "mettriez",
+      "ils": "mettraient",
+      "elle": "mettrait",
+      "on": "mettrait",
+      "elles": "mettraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais mis",
+      "tu": "aurais mis",
+      "il": "aurait mis",
+      "nous": "aurions mis",
+      "vous": "auriez mis",
+      "ils": "auraient mis",
+      "elle": "aurait mis",
+      "on": "aurait mis",
+      "elles": "auraient mis"
+    }
+  },
+  "passer": {
+    "present": {
+      "je": "passe",
+      "tu": "passes",
+      "il": "passe",
+      "nous": "passons",
+      "vous": "passez",
+      "ils": "passent",
+      "elle": "passe",
+      "on": "passe",
+      "elles": "passent"
+    },
+    "passeCompose": {
+      "je": "ai passé",
+      "tu": "as passé",
+      "il": "a passé",
+      "nous": "avons passé",
+      "vous": "avez passé",
+      "ils": "ont passé",
+      "elle": "a passé",
+      "on": "a passé",
+      "elles": "ont passé"
+    },
+    "imparfait": {
+      "je": "passais",
+      "tu": "passais",
+      "il": "passait",
+      "nous": "passions",
+      "vous": "passiez",
+      "ils": "passaient",
+      "elle": "passait",
+      "on": "passait",
+      "elles": "passaient"
+    },
+    "futurSimple": {
+      "je": "passerai",
+      "tu": "passeras",
+      "il": "passera",
+      "nous": "passerons",
+      "vous": "passerez",
+      "ils": "passeront",
+      "elle": "passera",
+      "on": "passera",
+      "elles": "passeront"
+    },
+    "plusQueParfait": {
+      "je": "avais passé",
+      "tu": "avais passé",
+      "il": "avait passé",
+      "nous": "avions passé",
+      "vous": "aviez passé",
+      "ils": "avaient passé",
+      "elle": "avait passé",
+      "on": "avait passé",
+      "elles": "avaient passé"
+    },
+    "futurProche": {
+      "je": "vais passer",
+      "tu": "vas passer",
+      "il": "va passer",
+      "nous": "allons passer",
+      "vous": "allez passer",
+      "ils": "vont passer",
+      "elle": "va passer",
+      "on": "va passer",
+      "elles": "vont passer"
+    },
+    "futurAnterieur": {
+      "je": "aurai passé",
+      "tu": "auras passé",
+      "il": "aura passé",
+      "nous": "aurons passé",
+      "vous": "aurez passé",
+      "ils": "auront passé",
+      "elle": "aura passé",
+      "on": "aura passé",
+      "elles": "auront passé"
+    },
+    "conditionnelPresent": {
+      "je": "passerais",
+      "tu": "passerais",
+      "il": "passerait",
+      "nous": "passerions",
+      "vous": "passeriez",
+      "ils": "passeraient",
+      "elle": "passerait",
+      "on": "passerait",
+      "elles": "passeraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais passé",
+      "tu": "aurais passé",
+      "il": "aurait passé",
+      "nous": "aurions passé",
+      "vous": "auriez passé",
+      "ils": "auraient passé",
+      "elle": "aurait passé",
+      "on": "aurait passé",
+      "elles": "auraient passé"
+    }
+  },
+  "comprendre": {
+    "present": {
+      "je": "comprends",
+      "tu": "comprends",
+      "il": "comprend",
+      "nous": "comprenons",
+      "vous": "comprenez",
+      "ils": "comprennent",
+      "elle": "comprend",
+      "on": "comprend",
+      "elles": "comprennent"
+    },
+    "passeCompose": {
+      "je": "ai compris",
+      "tu": "as compris",
+      "il": "a compris",
+      "nous": "avons compris",
+      "vous": "avez compris",
+      "ils": "ont compris",
+      "elle": "a compris",
+      "on": "a compris",
+      "elles": "ont compris"
+    },
+    "imparfait": {
+      "je": "comprenais",
+      "tu": "comprenais",
+      "il": "comprenait",
+      "nous": "comprenions",
+      "vous": "compreniez",
+      "ils": "comprenaient",
+      "elle": "comprenait",
+      "on": "comprenait",
+      "elles": "comprenaient"
+    },
+    "futurSimple": {
+      "je": "comprendrai",
+      "tu": "comprendras",
+      "il": "comprendra",
+      "nous": "comprendrons",
+      "vous": "comprendrez",
+      "ils": "comprendront",
+      "elle": "comprendra",
+      "on": "comprendra",
+      "elles": "comprendront"
+    },
+    "plusQueParfait": {
+      "je": "avais compris",
+      "tu": "avais compris",
+      "il": "avait compris",
+      "nous": "avions compris",
+      "vous": "aviez compris",
+      "ils": "avaient compris",
+      "elle": "avait compris",
+      "on": "avait compris",
+      "elles": "avaient compris"
+    },
+    "futurProche": {
+      "je": "vais comprendre",
+      "tu": "vas comprendre",
+      "il": "va comprendre",
+      "nous": "allons comprendre",
+      "vous": "allez comprendre",
+      "ils": "vont comprendre",
+      "elle": "va comprendre",
+      "on": "va comprendre",
+      "elles": "vont comprendre"
+    },
+    "futurAnterieur": {
+      "je": "aurai compris",
+      "tu": "auras compris",
+      "il": "aura compris",
+      "nous": "aurons compris",
+      "vous": "aurez compris",
+      "ils": "auront compris",
+      "elle": "aura compris",
+      "on": "aura compris",
+      "elles": "auront compris"
+    },
+    "conditionnelPresent": {
+      "je": "comprendrais",
+      "tu": "comprendrais",
+      "il": "comprendrait",
+      "nous": "comprendrions",
+      "vous": "comprendriez",
+      "ils": "comprendraient",
+      "elle": "comprendrait",
+      "on": "comprendrait",
+      "elles": "comprendraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais compris",
+      "tu": "aurais compris",
+      "il": "aurait compris",
+      "nous": "aurions compris",
+      "vous": "auriez compris",
+      "ils": "auraient compris",
+      "elle": "aurait compris",
+      "on": "aurait compris",
+      "elles": "auraient compris"
+    }
+  },
+  "demander": {
+    "present": {
+      "je": "demande",
+      "tu": "demandes",
+      "il": "demande",
+      "nous": "demandons",
+      "vous": "demandez",
+      "ils": "demandent",
+      "elle": "demande",
+      "on": "demande",
+      "elles": "demandent"
+    },
+    "passeCompose": {
+      "je": "ai demandé",
+      "tu": "as demandé",
+      "il": "a demandé",
+      "nous": "avons demandé",
+      "vous": "avez demandé",
+      "ils": "ont demandé",
+      "elle": "a demandé",
+      "on": "a demandé",
+      "elles": "ont demandé"
+    },
+    "imparfait": {
+      "je": "demandais",
+      "tu": "demandais",
+      "il": "demandait",
+      "nous": "demandions",
+      "vous": "demandiez",
+      "ils": "demandaient",
+      "elle": "demandait",
+      "on": "demandait",
+      "elles": "demandaient"
+    },
+    "futurSimple": {
+      "je": "demanderai",
+      "tu": "demanderas",
+      "il": "demandera",
+      "nous": "demanderons",
+      "vous": "demanderez",
+      "ils": "demanderont",
+      "elle": "demandera",
+      "on": "demandera",
+      "elles": "demanderont"
+    },
+    "plusQueParfait": {
+      "je": "avais demandé",
+      "tu": "avais demandé",
+      "il": "avait demandé",
+      "nous": "avions demandé",
+      "vous": "aviez demandé",
+      "ils": "avaient demandé",
+      "elle": "avait demandé",
+      "on": "avait demandé",
+      "elles": "avaient demandé"
+    },
+    "futurProche": {
+      "je": "vais demander",
+      "tu": "vas demander",
+      "il": "va demander",
+      "nous": "allons demander",
+      "vous": "allez demander",
+      "ils": "vont demander",
+      "elle": "va demander",
+      "on": "va demander",
+      "elles": "vont demander"
+    },
+    "futurAnterieur": {
+      "je": "aurai demandé",
+      "tu": "auras demandé",
+      "il": "aura demandé",
+      "nous": "aurons demandé",
+      "vous": "aurez demandé",
+      "ils": "auront demandé",
+      "elle": "aura demandé",
+      "on": "aura demandé",
+      "elles": "auront demandé"
+    },
+    "conditionnelPresent": {
+      "je": "demanderais",
+      "tu": "demanderais",
+      "il": "demanderait",
+      "nous": "demanderions",
+      "vous": "demanderiez",
+      "ils": "demanderaient",
+      "elle": "demanderait",
+      "on": "demanderait",
+      "elles": "demanderaient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais demandé",
+      "tu": "aurais demandé",
+      "il": "aurait demandé",
+      "nous": "aurions demandé",
+      "vous": "auriez demandé",
+      "ils": "auraient demandé",
+      "elle": "aurait demandé",
+      "on": "aurait demandé",
+      "elles": "auraient demandé"
+    }
+  },
+  "trouver": {
+    "present": {
+      "je": "trouve",
+      "tu": "trouves",
+      "il": "trouve",
+      "nous": "trouvons",
+      "vous": "trouvez",
+      "ils": "trouvent",
+      "elle": "trouve",
+      "on": "trouve",
+      "elles": "trouvent"
+    },
+    "passeCompose": {
+      "je": "ai trouvé",
+      "tu": "as trouvé",
+      "il": "a trouvé",
+      "nous": "avons trouvé",
+      "vous": "avez trouvé",
+      "ils": "ont trouvé",
+      "elle": "a trouvé",
+      "on": "a trouvé",
+      "elles": "ont trouvé"
+    },
+    "imparfait": {
+      "je": "trouvais",
+      "tu": "trouvais",
+      "il": "trouvait",
+      "nous": "trouvions",
+      "vous": "trouviez",
+      "ils": "trouvaient",
+      "elle": "trouvait",
+      "on": "trouvait",
+      "elles": "trouvaient"
+    },
+    "futurSimple": {
+      "je": "trouverai",
+      "tu": "trouveras",
+      "il": "trouvera",
+      "nous": "trouverons",
+      "vous": "trouverez",
+      "ils": "trouveront",
+      "elle": "trouvera",
+      "on": "trouvera",
+      "elles": "trouveront"
+    },
+    "plusQueParfait": {
+      "je": "avais trouvé",
+      "tu": "avais trouvé",
+      "il": "avait trouvé",
+      "nous": "avions trouvé",
+      "vous": "aviez trouvé",
+      "ils": "avaient trouvé",
+      "elle": "avait trouvé",
+      "on": "avait trouvé",
+      "elles": "avaient trouvé"
+    },
+    "futurProche": {
+      "je": "vais trouver",
+      "tu": "vas trouver",
+      "il": "va trouver",
+      "nous": "allons trouver",
+      "vous": "allez trouver",
+      "ils": "vont trouver",
+      "elle": "va trouver",
+      "on": "va trouver",
+      "elles": "vont trouver"
+    },
+    "futurAnterieur": {
+      "je": "aurai trouvé",
+      "tu": "auras trouvé",
+      "il": "aura trouvé",
+      "nous": "aurons trouvé",
+      "vous": "aurez trouvé",
+      "ils": "auront trouvé",
+      "elle": "aura trouvé",
+      "on": "aura trouvé",
+      "elles": "auront trouvé"
+    },
+    "conditionnelPresent": {
+      "je": "trouverais",
+      "tu": "trouverais",
+      "il": "trouverait",
+      "nous": "trouverions",
+      "vous": "trouveriez",
+      "ils": "trouveraient",
+      "elle": "trouverait",
+      "on": "trouverait",
+      "elles": "trouveraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais trouvé",
+      "tu": "aurais trouvé",
+      "il": "aurait trouvé",
+      "nous": "aurions trouvé",
+      "vous": "auriez trouvé",
+      "ils": "auraient trouvé",
+      "elle": "aurait trouvé",
+      "on": "aurait trouvé",
+      "elles": "auraient trouvé"
+    }
+  },
+  "rentrer": {
+    "present": {
+      "je": "rentre",
+      "tu": "rentres",
+      "il": "rentre",
+      "nous": "rentrons",
+      "vous": "rentrez",
+      "ils": "rentrent",
+      "elle": "rentre",
+      "on": "rentre",
+      "elles": "rentrent"
+    },
+    "passeCompose": {
+      "je": "suis rentré",
+      "tu": "es rentré",
+      "il": "est rentré",
+      "nous": "sommes rentrés",
+      "vous": "êtes rentrés",
+      "ils": "sont rentrés",
+      "elle": "est rentrée",
+      "on": "est rentré",
+      "elles": "sont rentrées"
+    },
+    "imparfait": {
+      "je": "rentrais",
+      "tu": "rentrais",
+      "il": "rentrait",
+      "nous": "rentrions",
+      "vous": "rentriez",
+      "ils": "rentraient",
+      "elle": "rentrait",
+      "on": "rentrait",
+      "elles": "rentraient"
+    },
+    "futurSimple": {
+      "je": "rentrerai",
+      "tu": "rentreras",
+      "il": "rentrera",
+      "nous": "rentrerons",
+      "vous": "rentrerez",
+      "ils": "rentreront",
+      "elle": "rentrera",
+      "on": "rentrera",
+      "elles": "rentreront"
+    },
+    "plusQueParfait": {
+      "je": "étais rentré",
+      "tu": "étais rentré",
+      "il": "était rentré",
+      "nous": "étions rentrés",
+      "vous": "étiez rentrés",
+      "ils": "étaient rentrés",
+      "elle": "était rentrée",
+      "on": "était rentré",
+      "elles": "étaient rentrées"
+    },
+    "futurProche": {
+      "je": "vais rentrer",
+      "tu": "vas rentrer",
+      "il": "va rentrer",
+      "nous": "allons rentrer",
+      "vous": "allez rentrer",
+      "ils": "vont rentrer",
+      "elle": "va rentrer",
+      "on": "va rentrer",
+      "elles": "vont rentrer"
+    },
+    "futurAnterieur": {
+      "je": "serai rentré",
+      "tu": "seras rentré",
+      "il": "sera rentré",
+      "nous": "serons rentrés",
+      "vous": "serez rentrés",
+      "ils": "seront rentrés",
+      "elle": "sera rentrée",
+      "on": "sera rentré",
+      "elles": "seront rentrées"
+    },
+    "conditionnelPresent": {
+      "je": "rentrerais",
+      "tu": "rentrerais",
+      "il": "rentrerait",
+      "nous": "rentrerions",
+      "vous": "rentreriez",
+      "ils": "rentreraient",
+      "elle": "rentrerait",
+      "on": "rentrerait",
+      "elles": "rentreraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais rentré",
+      "tu": "serais rentré",
+      "il": "serait rentré",
+      "nous": "serions rentrés",
+      "vous": "seriez rentrés",
+      "ils": "seraient rentrés",
+      "elle": "serait rentrée",
+      "on": "serait rentré",
+      "elles": "seraient rentrées"
+    }
+  },
+  "répondre": {
+    "present": {
+      "je": "réponds",
+      "tu": "réponds",
+      "il": "répond",
+      "nous": "répondons",
+      "vous": "répondez",
+      "ils": "répondent",
+      "elle": "répond",
+      "on": "répond",
+      "elles": "répondent"
+    },
+    "passeCompose": {
+      "je": "ai répondu",
+      "tu": "as répondu",
+      "il": "a répondu",
+      "nous": "avons répondu",
+      "vous": "avez répondu",
+      "ils": "ont répondu",
+      "elle": "a répondu",
+      "on": "a répondu",
+      "elles": "ont répondu"
+    },
+    "imparfait": {
+      "je": "répondais",
+      "tu": "répondais",
+      "il": "répondait",
+      "nous": "répondions",
+      "vous": "répondiez",
+      "ils": "répondaient",
+      "elle": "répondait",
+      "on": "répondait",
+      "elles": "répondaient"
+    },
+    "futurSimple": {
+      "je": "répondrai",
+      "tu": "répondras",
+      "il": "répondra",
+      "nous": "répondrons",
+      "vous": "répondrez",
+      "ils": "répondront",
+      "elle": "répondra",
+      "on": "répondra",
+      "elles": "répondront"
+    },
+    "plusQueParfait": {
+      "je": "avais répondu",
+      "tu": "avais répondu",
+      "il": "avait répondu",
+      "nous": "avions répondu",
+      "vous": "aviez répondu",
+      "ils": "avaient répondu",
+      "elle": "avait répondu",
+      "on": "avait répondu",
+      "elles": "avaient répondu"
+    },
+    "futurProche": {
+      "je": "vais répondre",
+      "tu": "vas répondre",
+      "il": "va répondre",
+      "nous": "allons répondre",
+      "vous": "allez répondre",
+      "ils": "vont répondre",
+      "elle": "va répondre",
+      "on": "va répondre",
+      "elles": "vont répondre"
+    },
+    "futurAnterieur": {
+      "je": "aurai répondu",
+      "tu": "auras répondu",
+      "il": "aura répondu",
+      "nous": "aurons répondu",
+      "vous": "aurez répondu",
+      "ils": "auront répondu",
+      "elle": "aura répondu",
+      "on": "aura répondu",
+      "elles": "auront répondu"
+    },
+    "conditionnelPresent": {
+      "je": "répondrais",
+      "tu": "répondrais",
+      "il": "répondrait",
+      "nous": "répondrions",
+      "vous": "répondriez",
+      "ils": "répondraient",
+      "elle": "répondrait",
+      "on": "répondrait",
+      "elles": "répondraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais répondu",
+      "tu": "aurais répondu",
+      "il": "aurait répondu",
+      "nous": "aurions répondu",
+      "vous": "auriez répondu",
+      "ils": "auraient répondu",
+      "elle": "aurait répondu",
+      "on": "aurait répondu",
+      "elles": "auraient répondu"
+    }
+  },
+  "donner": {
+    "present": {
+      "je": "donne",
+      "tu": "donnes",
+      "il": "donne",
+      "nous": "donnons",
+      "vous": "donnez",
+      "ils": "donnent",
+      "elle": "donne",
+      "on": "donne",
+      "elles": "donnent"
+    },
+    "passeCompose": {
+      "je": "ai donné",
+      "tu": "as donné",
+      "il": "a donné",
+      "nous": "avons donné",
+      "vous": "avez donné",
+      "ils": "ont donné",
+      "elle": "a donné",
+      "on": "a donné",
+      "elles": "ont donné"
+    },
+    "imparfait": {
+      "je": "donnais",
+      "tu": "donnais",
+      "il": "donnait",
+      "nous": "donnions",
+      "vous": "donniez",
+      "ils": "donnaient",
+      "elle": "donnait",
+      "on": "donnait",
+      "elles": "donnaient"
+    },
+    "futurSimple": {
+      "je": "donnerai",
+      "tu": "donneras",
+      "il": "donnera",
+      "nous": "donnerons",
+      "vous": "donnerez",
+      "ils": "donneront",
+      "elle": "donnera",
+      "on": "donnera",
+      "elles": "donneront"
+    },
+    "plusQueParfait": {
+      "je": "avais donné",
+      "tu": "avais donné",
+      "il": "avait donné",
+      "nous": "avions donné",
+      "vous": "aviez donné",
+      "ils": "avaient donné",
+      "elle": "avait donné",
+      "on": "avait donné",
+      "elles": "avaient donné"
+    },
+    "futurProche": {
+      "je": "vais donner",
+      "tu": "vas donner",
+      "il": "va donner",
+      "nous": "allons donner",
+      "vous": "allez donner",
+      "ils": "vont donner",
+      "elle": "va donner",
+      "on": "va donner",
+      "elles": "vont donner"
+    },
+    "futurAnterieur": {
+      "je": "aurai donné",
+      "tu": "auras donné",
+      "il": "aura donné",
+      "nous": "aurons donné",
+      "vous": "aurez donné",
+      "ils": "auront donné",
+      "elle": "aura donné",
+      "on": "aura donné",
+      "elles": "auront donné"
+    },
+    "conditionnelPresent": {
+      "je": "donnerais",
+      "tu": "donnerais",
+      "il": "donnerait",
+      "nous": "donnerions",
+      "vous": "donneriez",
+      "ils": "donneraient",
+      "elle": "donnerait",
+      "on": "donnerait",
+      "elles": "donneraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais donné",
+      "tu": "aurais donné",
+      "il": "aurait donné",
+      "nous": "aurions donné",
+      "vous": "auriez donné",
+      "ils": "auraient donné",
+      "elle": "aurait donné",
+      "on": "aurait donné",
+      "elles": "auraient donné"
+    }
+  },
+  "sentir": {
+    "present": {
+      "je": "sens",
+      "tu": "sens",
+      "il": "sent",
+      "nous": "sentons",
+      "vous": "sentez",
+      "ils": "sentent",
+      "elle": "sent",
+      "on": "sent",
+      "elles": "sentent"
+    },
+    "passeCompose": {
+      "je": "ai senti",
+      "tu": "as senti",
+      "il": "a senti",
+      "nous": "avons senti",
+      "vous": "avez senti",
+      "ils": "ont senti",
+      "elle": "a senti",
+      "on": "a senti",
+      "elles": "ont senti"
+    },
+    "imparfait": {
+      "je": "sentais",
+      "tu": "sentais",
+      "il": "sentait",
+      "nous": "sentions",
+      "vous": "sentiez",
+      "ils": "sentaient",
+      "elle": "sentait",
+      "on": "sentait",
+      "elles": "sentaient"
+    },
+    "futurSimple": {
+      "je": "sentirai",
+      "tu": "sentiras",
+      "il": "sentira",
+      "nous": "sentirons",
+      "vous": "sentirez",
+      "ils": "sentiront",
+      "elle": "sentira",
+      "on": "sentira",
+      "elles": "sentiront"
+    },
+    "plusQueParfait": {
+      "je": "avais senti",
+      "tu": "avais senti",
+      "il": "avait senti",
+      "nous": "avions senti",
+      "vous": "aviez senti",
+      "ils": "avaient senti",
+      "elle": "avait senti",
+      "on": "avait senti",
+      "elles": "avaient senti"
+    },
+    "futurProche": {
+      "je": "vais sentir",
+      "tu": "vas sentir",
+      "il": "va sentir",
+      "nous": "allons sentir",
+      "vous": "allez sentir",
+      "ils": "vont sentir",
+      "elle": "va sentir",
+      "on": "va sentir",
+      "elles": "vont sentir"
+    },
+    "futurAnterieur": {
+      "je": "aurai senti",
+      "tu": "auras senti",
+      "il": "aura senti",
+      "nous": "aurons senti",
+      "vous": "aurez senti",
+      "ils": "auront senti",
+      "elle": "aura senti",
+      "on": "aura senti",
+      "elles": "auront senti"
+    },
+    "conditionnelPresent": {
+      "je": "sentirais",
+      "tu": "sentirais",
+      "il": "sentirait",
+      "nous": "sentirions",
+      "vous": "sentiriez",
+      "ils": "sentiraient",
+      "elle": "sentirait",
+      "on": "sentirait",
+      "elles": "sentiraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais senti",
+      "tu": "aurais senti",
+      "il": "aurait senti",
+      "nous": "aurions senti",
+      "vous": "auriez senti",
+      "ils": "auraient senti",
+      "elle": "aurait senti",
+      "on": "aurait senti",
+      "elles": "auraient senti"
+    }
   }
 }
