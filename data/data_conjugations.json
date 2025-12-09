@@ -3027,7 +3027,9 @@
       "elle": "aurait senti",
       "on": "aurait senti",
       "elles": "auraient senti"
-    },
+    }
+  },
+    
     "naître": {
       "present": {
         "je": "nais",
@@ -3130,4 +3132,3 @@
       }
     }
   }
-}
