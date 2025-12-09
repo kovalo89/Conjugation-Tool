@@ -3027,6 +3027,107 @@
       "elle": "aurait senti",
       "on": "aurait senti",
       "elles": "auraient senti"
+    },
+    "naître": {
+    "present": {
+      "je": "nais",
+      "tu": "nais",
+      "il": "naît",
+      "nous": "naissons",
+      "vous": "naissez",
+      "ils": "naissent",
+      "elle": "naît",
+      "on": "naît",
+      "elles": "naissent"
+    },
+    "passeCompose": {
+      "je": "suis né",
+      "tu": "es né",
+      "il": "est né",
+      "nous": "sommes nés",
+      "vous": "êtes nés",
+      "ils": "sont nés",
+      "elle": "est née",
+      "on": "est né",
+      "elles": "sont nées"
+    },
+    "imparfait": {
+      "je": "naissais",
+      "tu": "naissais",
+      "il": "naissait",
+      "nous": "naissions",
+      "vous": "naissiez",
+      "ils": "naissaient",
+      "elle": "naissait",
+      "on": "naissait",
+      "elles": "naissaient"
+    },
+    "futurSimple": {
+      "je": "naîtrai",
+      "tu": "naîtras",
+      "il": "naîtra",
+      "nous": "naîtrons",
+      "vous": "naîtrez",
+      "ils": "naîtront",
+      "elle": "naîtra",
+      "on": "naîtra",
+      "elles": "naîtront"
+    },
+    "plusQueParfait": {
+      "je": "étais né",
+      "tu": "étais né",
+      "il": "était né",
+      "nous": "étions nés",
+      "vous": "étiez nés",
+      "ils": "étaient nés",
+      "elle": "était née",
+      "on": "était né",
+      "elles": "étaient nées"
+    },
+    "futurProche": {
+      "je": "vais naître",
+      "tu": "vas naître",
+      "il": "va naître",
+      "nous": "allons naître",
+      "vous": "allez naître",
+      "ils": "vont naître",
+      "elle": "va naître",
+      "on": "va naître",
+      "elles": "vont naître"
+    },
+    "futurAnterieur": {
+      "je": "serai né",
+      "tu": "seras né",
+      "il": "sera né",
+      "nous": "serons nés",
+      "vous": "serez nés",
+      "ils": "seront nés",
+      "elle": "sera née",
+      "on": "sera né",
+      "elles": "seront nées"
+    },
+    "conditionnelPresent": {
+      "je": "naîtrais",
+      "tu": "naîtrais",
+      "il": "naîtrait",
+      "nous": "naîtrions",
+      "vous": "naîtriez",
+      "ils": "naîtraient",
+      "elle": "naîtrait",
+      "on": "naîtrait",
+      "elles": "naîtraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais né",
+      "tu": "serais né",
+      "il": "serait né",
+      "nous": "serions nés",
+      "vous": "seriez nés",
+      "ils": "seraient nés",
+      "elle": "serait née",
+      "on": "serait né",
+      "elles": "seraient nées"
     }
   }
+ }
 }
