@@ -76,6 +76,28 @@
       "elle": "aura été",
       "on": "aura été",
       "elles": "auront été"
+    },
+    "conditionnelPresent": {
+      "je": "serais",
+      "tu": "serais",
+      "il": "serait",
+      "nous": "serions",
+      "vous": "seriez",
+      "ils": "seraient",
+      "elle": "serait",
+      "on": "serait",
+      "elles": "seraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais été",
+      "tu": "aurais été",
+      "il": "aurait été",
+      "nous": "aurions été",
+      "vous": "auriez été",
+      "ils": "auraient été",
+      "elle": "aurait été",
+      "on": "aurait été",
+      "elles": "auraient été"
     }
   },
   "avoir": {
@@ -155,6 +177,28 @@
       "elle": "aura eu",
       "on": "aura eu",
       "elles": "auront eu"
+    },
+    "conditionnelPresent": {
+      "je": "aurais",
+      "tu": "aurais",
+      "il": "aurait",
+      "nous": "aurions",
+      "vous": "auriez",
+      "ils": "auraient",
+      "elle": "aurait",
+      "on": "aurait",
+      "elles": "auraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais eu",
+      "tu": "aurais eu",
+      "il": "aurait eu",
+      "nous": "aurions eu",
+      "vous": "auriez eu",
+      "ils": "auraient eu",
+      "elle": "aurait eu",
+      "on": "aurait eu",
+      "elles": "auraient eu"
     }
   },
   "faire": {
@@ -234,6 +278,28 @@
       "elle": "aura fait",
       "on": "aura fait",
       "elles": "auront fait"
+    },
+    "conditionnelPresent": {
+      "je": "ferais",
+      "tu": "ferais",
+      "il": "ferait",
+      "nous": "ferions",
+      "vous": "feriez",
+      "ils": "feraient",
+      "elle": "ferait",
+      "on": "ferait",
+      "elles": "feraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais fait",
+      "tu": "aurais fait",
+      "il": "aurait fait",
+      "nous": "aurions fait",
+      "vous": "auriez fait",
+      "ils": "auraient fait",
+      "elle": "aurait fait",
+      "on": "aurait fait",
+      "elles": "auraient fait"
     }
   },
   "aller": {
@@ -313,6 +379,28 @@
       "elle": "sera allé",
       "on": "sera allé",
       "elles": "seront allés"
+    },
+    "conditionnelPresent": {
+      "je": "irais",
+      "tu": "irais",
+      "il": "irait",
+      "nous": "irions",
+      "vous": "iriez",
+      "ils": "iraient",
+      "elle": "irait",
+      "on": "irait",
+      "elles": "iraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais allé",
+      "tu": "serais allé",
+      "il": "serait allé",
+      "nous": "serions allés",
+      "vous": "seriez allés",
+      "ils": "seraient allés",
+      "elle": "serait allé",
+      "on": "serait allé",
+      "elles": "seraient allés"
     }
   },
   "pouvoir": {
@@ -392,6 +480,28 @@
       "elle": "aura pu",
       "on": "aura pu",
       "elles": "auront pu"
+    },
+    "conditionnelPresent": {
+      "je": "pourrais",
+      "tu": "pourrais",
+      "il": "pourrait",
+      "nous": "pourrions",
+      "vous": "pourriez",
+      "ils": "pourraient",
+      "elle": "pourrait",
+      "on": "pourrait",
+      "elles": "pourraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais pu",
+      "tu": "aurais pu",
+      "il": "aurait pu",
+      "nous": "aurions pu",
+      "vous": "auriez pu",
+      "ils": "auraient pu",
+      "elle": "aurait pu",
+      "on": "aurait pu",
+      "elles": "auraient pu"
     }
   },
   "vouloir": {
@@ -471,6 +581,28 @@
       "elle": "aura voulu",
       "on": "aura voulu",
       "elles": "auront voulu"
+    },
+    "conditionnelPresent": {
+      "je": "voudrais",
+      "tu": "voudrais",
+      "il": "voudrait",
+      "nous": "voudrions",
+      "vous": "voudriez",
+      "ils": "voudraient",
+      "elle": "voudrait",
+      "on": "voudrait",
+      "elles": "voudraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais voulu",
+      "tu": "aurais voulu",
+      "il": "aurait voulu",
+      "nous": "aurions voulu",
+      "vous": "auriez voulu",
+      "ils": "auraient voulu",
+      "elle": "aurait voulu",
+      "on": "aurait voulu",
+      "elles": "auraient voulu"
     }
   },
   "dire": {
@@ -550,6 +682,28 @@
       "elle": "aura dit",
       "on": "aura dit",
       "elles": "auront dit"
+    },
+    "conditionnelPresent": {
+      "je": "dirais",
+      "tu": "dirais",
+      "il": "dirait",
+      "nous": "dirions",
+      "vous": "diriez",
+      "ils": "diraient",
+      "elle": "dirait",
+      "on": "dirait",
+      "elles": "diraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais dit",
+      "tu": "aurais dit",
+      "il": "aurait dit",
+      "nous": "aurions dit",
+      "vous": "auriez dit",
+      "ils": "auraient dit",
+      "elle": "aurait dit",
+      "on": "aurait dit",
+      "elles": "auraient dit"
     }
   },
   "prendre": {
@@ -629,85 +783,129 @@
       "elle": "aura pris",
       "on": "aura pris",
       "elles": "auront pris"
+    },
+    "conditionnelPresent": {
+      "je": "prendrais",
+      "tu": "prendrais",
+      "il": "prendrait",
+      "nous": "prendrions",
+      "vous": "prendriez",
+      "ils": "prendraient",
+      "elle": "prendrait",
+      "on": "prendrait",
+      "elles": "prendraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais pris",
+      "tu": "aurais pris",
+      "il": "aurait pris",
+      "nous": "aurions pris",
+      "vous": "auriez pris",
+      "ils": "auraient pris",
+      "elle": "aurait pris",
+      "on": "aurait pris",
+      "elles": "auraient pris"
     }
   },
   "voir": {
     "present": {
-      "je": "ai",
-      "tu": "as",
-      "il": "a",
-      "nous": "avons",
-      "vous": "avez",
-      "ils": "ont",
-      "elle": "a",
-      "on": "a",
-      "elles": "ont"
+      "je": "vois",
+      "tu": "vois",
+      "il": "voit",
+      "nous": "voyons",
+      "vous": "voyez",
+      "ils": "voient",
+      "elle": "voit",
+      "on": "voit",
+      "elles": "voient"
     },
     "passeCompose": {
-      "je": "ai eu",
-      "tu": "as eu",
-      "il": "a eu",
-      "nous": "avons eu",
-      "vous": "avez eu",
-      "ils": "ont eu",
-      "elle": "a eu",
-      "on": "a eu",
-      "elles": "ont eu"
+      "je": "ai vu",
+      "tu": "as vu",
+      "il": "a vu",
+      "nous": "avons vu",
+      "vous": "avez vu",
+      "ils": "ont vu",
+      "elle": "a vu",
+      "on": "a vu",
+      "elles": "ont vu"
     },
     "imparfait": {
-      "je": "avais",
-      "tu": "avais",
-      "il": "avait",
-      "nous": "avions",
-      "vous": "aviez",
-      "ils": "avaient",
-      "elle": "avait",
-      "on": "avait",
-      "elles": "avaient"
+      "je": "voyais",
+      "tu": "voyais",
+      "il": "voyait",
+      "nous": "voyions",
+      "vous": "voyiez",
+      "ils": "voyaient",
+      "elle": "voyait",
+      "on": "voyait",
+      "elles": "voyaient"
     },
     "futurSimple": {
-      "je": "aurai",
-      "tu": "auras",
-      "il": "aura",
-      "nous": "aurons",
-      "vous": "aurez",
-      "ils": "auront",
-      "elle": "aura",
-      "on": "aura",
-      "elles": "auront"
+      "je": "verrai",
+      "tu": "verras",
+      "il": "verra",
+      "nous": "verrons",
+      "vous": "verrez",
+      "ils": "verront",
+      "elle": "verra",
+      "on": "verra",
+      "elles": "verront"
     },
     "plusQueParfait": {
-      "je": "avais eu",
-      "tu": "avais eu",
-      "il": "avait eu",
-      "nous": "avions eu",
-      "vous": "aviez eu",
-      "ils": "avaient eu",
-      "elle": "avait eu",
-      "on": "avait eu",
-      "elles": "avaient eu"
+      "je": "avais vu",
+      "tu": "avais vu",
+      "il": "avait vu",
+      "nous": "avions vu",
+      "vous": "aviez vu",
+      "ils": "avaient vu",
+      "elle": "avait vu",
+      "on": "avait vu",
+      "elles": "avaient vu"
     },
     "futurProche": {
-      "je": "vais avoir",
-      "tu": "vas avoir",
-      "il": "va avoir",
-      "nous": "allons avoir",
-      "vous": "allez avoir",
-      "ils": "vont avoir",
-      "elle": "va avoir",
-      "on": "va avoir",
-      "elles": "vont avoir"
+      "je": "vais voir",
+      "tu": "vas voir",
+      "il": "va voir",
+      "nous": "allons voir",
+      "vous": "allez voir",
+      "ils": "vont voir",
+      "elle": "va voir",
+      "on": "va voir",
+      "elles": "vont voir"
     },
     "futurAnterieur": {
-      "je": "aurai eu",
-      "tu": "auras eu",
-      "il": "aura eu",
-      "nous": "aurons eu",
-      "vous": "aurez eu",
-      "ils": "auront eu",
-      "elle": "aura eu",
-      "on": "aura eu",
-      "elles": "auront eu"
+      "je": "aurai vu",
+      "tu": "auras vu",
+      "il": "aura vu",
+      "nous": "aurons vu",
+      "vous": "aurez vu",
+      "ils": "auront vu",
+      "elle": "aura vu",
+      "on": "aura vu",
+      "elles": "auront vu"
+    },
+    "conditionnelPresent": {
+      "je": "verrais",
+      "tu": "verrais",
+      "il": "verrait",
+      "nous": "verrions",
+      "vous": "verriez",
+      "ils": "verraient",
+      "elle": "verrait",
+      "on": "verrait",
+      "elles": "verraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais vu",
+      "tu": "aurais vu",
+      "il": "aurait vu",
+      "nous": "aurions vu",
+      "vous": "auriez vu",
+      "ils": "auraient vu",
+      "elle": "aurait vu",
+      "on": "aurait vu",
+      "elles": "auraient vu"
     }
   },
   "savoir": {
@@ -787,6 +985,28 @@
       "elle": "aura su",
       "on": "aura su",
       "elles": "auront su"
+    },
+    "conditionnelPresent": {
+      "je": "saurais",
+      "tu": "saurais",
+      "il": "saurait",
+      "nous": "saurions",
+      "vous": "sauriez",
+      "ils": "sauraient",
+      "elle": "saurait",
+      "on": "saurait",
+      "elles": "sauraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais su",
+      "tu": "aurais su",
+      "il": "aurait su",
+      "nous": "aurions su",
+      "vous": "auriez su",
+      "ils": "auraient su",
+      "elle": "aurait su",
+      "on": "aurait su",
+      "elles": "auraient su"
     }
   },
   "venir": {
@@ -866,6 +1086,28 @@
       "elle": "sera venu",
       "on": "sera venu",
       "elles": "seront venus"
+    },
+    "conditionnelPresent": {
+      "je": "viendrais",
+      "tu": "viendrais",
+      "il": "viendrait",
+      "nous": "viendrions",
+      "vous": "viendriez",
+      "ils": "viendraient",
+      "elle": "viendrait",
+      "on": "viendrait",
+      "elles": "viendraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais venu",
+      "tu": "serais venu",
+      "il": "serait venu",
+      "nous": "serions venus",
+      "vous": "seriez venus",
+      "ils": "seraient venus",
+      "elle": "serait venu",
+      "on": "serait venu",
+      "elles": "seraient venus"
     }
   },
   "devoir": {
@@ -945,6 +1187,28 @@
       "elle": "aura dû",
       "on": "aura dû",
       "elles": "auront dû"
+    },
+    "conditionnelPresent": {
+      "je": "devrais",
+      "tu": "devrais",
+      "il": "devrait",
+      "nous": "devrions",
+      "vous": "devriez",
+      "ils": "devraient",
+      "elle": "devrait",
+      "on": "devrait",
+      "elles": "devraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais dû",
+      "tu": "aurais dû",
+      "il": "aurait dû",
+      "nous": "aurions dû",
+      "vous": "auriez dû",
+      "ils": "auraient dû",
+      "elle": "aurait dû",
+      "on": "aurait dû",
+      "elles": "auraient dû"
     }
   },
   "boire": {
@@ -1024,6 +1288,28 @@
       "elle": "aura bu",
       "on": "aura bu",
       "elles": "auront bu"
+    },
+    "conditionnelPresent": {
+      "je": "boirais",
+      "tu": "boirais",
+      "il": "boirait",
+      "nous": "boirions",
+      "vous": "boiriez",
+      "ils": "boiraient",
+      "elle": "boirait",
+      "on": "boirait",
+      "elles": "boiraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais bu",
+      "tu": "aurais bu",
+      "il": "aurait bu",
+      "nous": "aurions bu",
+      "vous": "auriez bu",
+      "ils": "auraient bu",
+      "elle": "aurait bu",
+      "on": "aurait bu",
+      "elles": "auraient bu"
     }
   },
   "lire": {
@@ -1103,6 +1389,28 @@
       "elle": "aura lu",
       "on": "aura lu",
       "elles": "auront lu"
+    },
+    "conditionnelPresent": {
+      "je": "lirais",
+      "tu": "lirais",
+      "il": "lirait",
+      "nous": "lirions",
+      "vous": "liriez",
+      "ils": "liraient",
+      "elle": "lirait",
+      "on": "lirait",
+      "elles": "liraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais lu",
+      "tu": "aurais lu",
+      "il": "aurait lu",
+      "nous": "aurions lu",
+      "vous": "auriez lu",
+      "ils": "auraient lu",
+      "elle": "aurait lu",
+      "on": "aurait lu",
+      "elles": "auraient lu"
     }
   },
   "écrire": {
@@ -1182,6 +1490,28 @@
       "elle": "aura écrit",
       "on": "aura écrit",
       "elles": "auront écrit"
+    },
+    "conditionnelPresent": {
+      "je": "écrirais",
+      "tu": "écrirais",
+      "il": "écrirait",
+      "nous": "écririons",
+      "vous": "écririez",
+      "ils": "écriraient",
+      "elle": "écrirait",
+      "on": "écrirait",
+      "elles": "écriraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais écrit",
+      "tu": "aurais écrit",
+      "il": "aurait écrit",
+      "nous": "aurions écrit",
+      "vous": "auriez écrit",
+      "ils": "auraient écrit",
+      "elle": "aurait écrit",
+      "on": "aurait écrit",
+      "elles": "auraient écrit"
     }
   },
   "parler": {
@@ -1261,6 +1591,28 @@
       "elle": "aura parlé",
       "on": "aura parlé",
       "elles": "auront parlé"
+    },
+    "conditionnelPresent": {
+      "je": "parlerais",
+      "tu": "parlerais",
+      "il": "parlerait",
+      "nous": "parlerions",
+      "vous": "parleriez",
+      "ils": "parleraient",
+      "elle": "parlerait",
+      "on": "parlerait",
+      "elles": "parleraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais parlé",
+      "tu": "aurais parlé",
+      "il": "aurait parlé",
+      "nous": "aurions parlé",
+      "vous": "auriez parlé",
+      "ils": "auraient parlé",
+      "elle": "aurait parlé",
+      "on": "aurait parlé",
+      "elles": "auraient parlé"
     }
   },
   "manger": {
@@ -1340,6 +1692,28 @@
       "elle": "aura mangé",
       "on": "aura mangé",
       "elles": "auront mangé"
+    },
+    "conditionnelPresent": {
+      "je": "mangerais",
+      "tu": "mangerais",
+      "il": "mangerait",
+      "nous": "mangerions",
+      "vous": "mangeriez",
+      "ils": "mangeraient",
+      "elle": "mangerait",
+      "on": "mangerait",
+      "elles": "mangeraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais mangé",
+      "tu": "aurais mangé",
+      "il": "aurait mangé",
+      "nous": "aurions mangé",
+      "vous": "auriez mangé",
+      "ils": "auraient mangé",
+      "elle": "aurait mangé",
+      "on": "aurait mangé",
+      "elles": "auraient mangé"
     }
   },
   "finir": {
@@ -1419,6 +1793,28 @@
       "elle": "aura fini",
       "on": "aura fini",
       "elles": "auront fini"
+    },
+    "conditionnelPresent": {
+      "je": "finirais",
+      "tu": "finirais",
+      "il": "finirait",
+      "nous": "finirions",
+      "vous": "finiriez",
+      "ils": "finiraient",
+      "elle": "finirait",
+      "on": "finirait",
+      "elles": "finiraient"
+    },
+    "conditionnelPasse": {
+      "je": "aurais fini",
+      "tu": "aurais fini",
+      "il": "aurait fini",
+      "nous": "aurions fini",
+      "vous": "auriez fini",
+      "ils": "auraient fini",
+      "elle": "aurait fini",
+      "on": "aurait fini",
+      "elles": "auraient fini"
     }
   },
   "partir": {
@@ -1498,6 +1894,28 @@
       "elle": "sera parti",
       "on": "sera parti",
       "elles": "seront partis"
+    },
+    "conditionnelPresent": {
+      "je": "partirais",
+      "tu": "partirais",
+      "il": "partirait",
+      "nous": "partirions",
+      "vous": "partiriez",
+      "ils": "partiraient",
+      "elle": "partirait",
+      "on": "partirait",
+      "elles": "partiraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais parti",
+      "tu": "serais parti",
+      "il": "serait parti",
+      "nous": "serions partis",
+      "vous": "seriez partis",
+      "ils": "seraient partis",
+      "elle": "serait parti",
+      "on": "serait parti",
+      "elles": "seraient partis"
     }
   },
   "arriver": {
@@ -1577,6 +1995,28 @@
       "elle": "sera arrivé",
       "on": "sera arrivé",
       "elles": "seront arrivés"
+    },
+    "conditionnelPresent": {
+      "je": "arriverais",
+      "tu": "arriverais",
+      "il": "arriverait",
+      "nous": "arriverions",
+      "vous": "arriveriez",
+      "ils": "arriveraient",
+      "elle": "arriverait",
+      "on": "arriverait",
+      "elles": "arriveraient"
+    },
+    "conditionnelPasse": {
+      "je": "serais arrivé",
+      "tu": "serais arrivé",
+      "il": "serait arrivé",
+      "nous": "serions arrivés",
+      "vous": "seriez arrivés",
+      "ils": "seraient arrivés",
+      "elle": "serait arrivé",
+      "on": "serait arrivé",
+      "elles": "seraient arrivés"
     }
   }
 }
