@@ -650,28 +650,53 @@
   <script>
     // ------------------------------
     // Data (same as before, corrected)
-    window.conjugations = {
-      Être: { present: ["suis", "es", "est", "sommes", "êtes", "sont"], passeCompose: ["ai été", "as été", "a été", "avons été", "avez été", "ont été"], imparfait: ["étais", "étais", "était", "étions", "étiez", "étaient"], futurSimple: ["serai", "seras", "sera", "serons", "serez", "seront"], plusQueParfait: ["avais été", "avais été", "avait été", "avions été", "aviez été", "avaient été"], futurProche: ["vais être", "vas être", "va être", "allons être", "allez être", "vont être"], futurAnterieur: ["aurai été", "auras été", "aura été", "aurons été", "aurez été", "auront été"] },
-      Avoir: { present: ["ai", "as", "a", "avons", "avez", "ont"], passeCompose: ["ai eu", "as eu", "a eu", "avons eu", "avez eu", "ont eu"], imparfait: ["avais", "avais", "avait", "avions", "aviez", "avaient"], futurSimple: ["aurai", "auras", "aura", "aurons", "aurez", "auront"], plusQueParfait: ["avais eu", "avais eu", "avait eu", "avions eu", "aviez eu", "avaient eu"], futurProche: ["vais avoir", "vas avoir", "va avoir", "allons avoir", "allez avoir", "vont avoir"], futurAnterieur: ["aurai eu", "auras eu", "aura eu", "aurons eu", "aurez eu", "auront eu"] },
-      Faire: { present: ["fais", "fais", "fait", "faisons", "faites", "font"], passeCompose: ["ai fait", "as fait", "a fait", "avons fait", "avez fait", "ont fait"], imparfait: ["faisais", "faisais", "faisait", "faisions", "faisiez", "faisaient"], futurSimple: ["ferai", "feras", "fera", "ferons", "ferez", "feront"], plusQueParfait: ["avais fait", "avais fait", "avait fait", "avions fait", "aviez fait", "avaient fait"], futurProche: ["vais faire", "vas faire", "va faire", "allons faire", "allez faire", "vont faire"], futurAnterieur: ["aurai fait", "auras fait", "aura fait", "aurons fait", "aurez fait", "auront fait"] },
-      Aller: { present: ["vais", "vas", "va", "allons", "allez", "vont"], passeCompose: ["suis allé", "es allé", "est allé", "sommes allés", "êtes allés", "sont allés"], imparfait: ["allais", "allais", "allait", "allions", "alliez", "allaient"], futurSimple: ["irai", "iras", "ira", "irons", "irez", "iront"], plusQueParfait: ["étais allé", "étais allé", "était allé", "étions allés", "étiez allés", "étaient allés"], futurProche: ["vais aller", "vas aller", "va aller", "allons aller", "allez aller", "vont aller"], futurAnterieur: ["serai allé", "seras allé", "sera allé", "serons allés", "serez allés", "seront allés"] },
-      Pouvoir: { present: ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"], passeCompose: ["ai pu", "as pu", "a pu", "avons pu", "avez pu", "ont pu"], imparfait: ["pouvais", "pouvais", "pouvait", "pouvions", "pouviez", "pouvaient"], futurSimple: ["pourrai", "pourras", "pourra", "pourrons", "pourrez", "pourront"], plusQueParfait: ["avais pu", "avais pu", "avait pu", "avions pu", "aviez pu", "avaient pu"], futurProche: ["vais pouvoir", "vas pouvoir", "va pouvoir", "allons pouvoir", "allez pouvoir", "vont pouvoir"], futurAnterieur: ["aurai pu", "auras pu", "aura pu", "aurons pu", "aurez pu", "auront pu"] },
-      Vouloir: { present: ["veux", "veux", "veut", "voulons", "voulez", "veulent"], passeCompose: ["ai voulu", "as voulu", "a voulu", "avons voulu", "avez voulu", "ont voulu"], imparfait: ["voulais", "voulais", "voulait", "voulions", "vouliez", "voulaient"], futurSimple: ["voudrai", "voudras", "voudra", "voudrons", "voudrez", "voudront"], plusQueParfait: ["avais voulu", "avais voulu", "avait voulu", "avions voulu", "aviez voulu", "avaient voulu"], futurProche: ["vais vouloir", "vas vouloir", "va vouloir", "allons vouloir", "allez vouloir", "vont vouloir"], futurAnterieur: ["aurai voulu", "auras voulu", "aura voulu", "aurons voulu", "aurez voulu", "auront voulu"] },
-      Dire: { present: ["dis", "dis", "dit", "disons", "dites", "disent"], passeCompose: ["ai dit", "as dit", "a dit", "avons dit", "avez dit", "ont dit"], imparfait: ["disais", "disais", "disait", "disions", "disiez", "disaient"], futurSimple: ["dirai", "diras", "dira", "dirons", "direz", "diront"], plusQueParfait: ["avais dit", "avais dit", "avait dit", "avions dit", "aviez dit", "avaient dit"], futurProche: ["vais dire", "vas dire", "va dire", "allons dire", "allez dire", "vont dire"], futurAnterieur: ["aurai dit", "auras dit", "aura dit", "aurons dit", "aurez dit", "auront dit"] },
-      Prendre: { present: ["prends", "prends", "prend", "prenons", "prenez", "prennent"], passeCompose: ["ai pris", "as pris", "a pris", "avons pris", "avez pris", "ont pris"], imparfait: ["prenais", "prenais", "prenait", "prenions", "preniez", "prenaient"], futurSimple: ["prendrai", "prendras", "prendra", "prendrons", "prendrez", "prendront"], plusQueParfait: ["avais pris", "avais pris", "avait pris", "avions pris", "aviez pris", "avaient pris"], futurProche: ["vais prendre", "vas prendre", "va prendre", "allons prendre", "allez prendre", "vont prendre"], futurAnterieur: ["aurai pris", "auras pris", "aura pris", "aurons pris", "aurez pris", "auront pris"] },
-      Voir: { present: ["vois", "vois", "voit", "voyons", "voyez", "voient"], passeCompose: ["ai vu", "as vu", "a vu", "avons vu", "avez vu", "ont vu"], imparfait: ["voyais", "voyais", "voyait", "voyions", "voyiez", "voyaient"], futurSimple: ["verrai", "verras", "verra", "verrons", "verrez", "verront"], plusQueParfait: ["avais vu", "avais vu", "avait vu", "avions vu", "aviez vu", "avaient vu"], futurProche: ["vais voir", "vas voir", "va voir", "allons voir", "allez voir", "vont voir"], futurAnterieur: ["aurai vu", "auras vu", "aura vu", "aurons vu", "aurez vu", "auront vu"] },
-      Savoir: { present: ["sais", "sais", "sait", "savons", "savez", "savent"], passeCompose: ["ai su", "as su", "a su", "avons su", "avez su", "ont su"], imparfait: ["savais", "savais", "savait", "savions", "saviez", "savaient"], futurSimple: ["saurai", "sauras", "saura", "saurons", "saurez", "sauront"], plusQueParfait: ["avais su", "avais su", "avait su", "avions su", "aviez su", "avaient su"], futurProche: ["vais savoir", "vas savoir", "va savoir", "allons savoir", "allez savoir", "vont savoir"], futurAnterieur: ["aurai su", "auras su", "aura su", "aurons su", "aurez su", "auront su"] },
-      Venir: { present: ["viens", "viens", "vient", "venons", "venez", "viennent"], passeCompose: ["suis venu", "es venu", "est venu", "sommes venus", "êtes venus", "sont venus"], imparfait: ["venais", "venais", "venait", "venions", "veniez", "venaient"], futurSimple: ["viendrai", "viendras", "viendra", "viendrons", "viendrez", "viendront"], plusQueParfait: ["étais venu", "étais venu", "était venu", "étions venus", "étiez venus", "étaient venus"], futurProche: ["vais venir", "vas venir", "va venir", "allons venir", "allez venir", "vont venir"], futurAnterieur: ["serai venu", "seras venu", "sera venu", "serons venus", "serez venus", "seront venus"] },
-      Devoir: { present: ["dois", "dois", "doit", "devons", "devez", "doivent"], passeCompose: ["ai dû", "as dû", "a dû", "avons dû", "avez dû", "ont dû"], imparfait: ["devais", "devais", "devait", "devions", "deviez", "devaient"], futurSimple: ["devrai", "devras", "devra", "devrons", "devrez", "devront"], plusQueParfait: ["avais dû", "avais dû", "avait dû", "avions dû", "aviez dû", "avaient dû"], futurProche: ["vais devoir", "vas devoir", "va devoir", "allons devoir", "allez devoir", "vont devoir"], futurAnterieur: ["aurai dû", "auras dû", "aura dû", "aurons dû", "aurez dû", "auront dû"] },
-      Boire: { present: ["bois", "bois", "boit", "buvons", "buvez", "boivent"], passeCompose: ["ai bu", "as bu", "a bu", "avons bu", "avez bu", "ont bu"], imparfait: ["buvais", "buvais", "buvait", "buvions", "buviez", "buvaient"], futurSimple: ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"], plusQueParfait: ["avais bu", "avais bu", "avait bu", "avions bu", "aviez bu", "avaient bu"], futurProche: ["vais boire", "vas boire", "va boire", "allons boire", "allez boire", "vont boire"], futurAnterieur: ["aurai bu", "auras bu", "aura bu", "aurons bu", "aurez bu", "auront bu"] },
-      Lire: { present: ["lis", "lis", "lit", "lisons", "lisez", "lisent"], passeCompose: ["ai lu", "as lu", "a lu", "avons lu", "avez lu", "ont lu"], imparfait: ["lisais", "lisais", "lisait", "lisions", "lisiez", "lisaient"], futurSimple: ["lirai", "liras", "lira", "lirons", "lirez", "liront"], plusQueParfait: ["avais lu", "avais lu", "avait lu", "avions lu", "aviez lu", "avaient lu"], futurProche: ["vais lire", "vas lire", "va lire", "allons lire", "allez lire", "vont lire"], futurAnterieur: ["aurai lu", "auras lu", "aura lu", "aurons lu", "aurez lu", "auront lu"] },
-      Écrire: { present: ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"], passeCompose: ["ai écrit", "as écrit", "a écrit", "avons écrit", "avez écrit", "ont écrit"], imparfait: ["écrivais", "écrivais", "écrivait", "écrivions", "écriviez", "écrivaient"], futurSimple: ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"], plusQueParfait: ["avais écrit", "avais écrit", "avait écrit", "avions écrit", "aviez écrit", "avaient écrit"], futurProche: ["vais écrire", "vas écrire", "va écrire", "allons écrire", "allez écrire", "vont écrire"], futurAnterieur: ["aurai écrit", "auras écrit", "aura écrit", "aurons écrit", "aurez écrit", "auront écrit"] },
-      Parler: { present: ["parle", "parles", "parle", "parlons", "parlez", "parlent"], passeCompose: ["ai parlé", "as parlé", "a parlé", "avons parlé", "avez parlé", "ont parlé"], imparfait: ["parlais", "parlais", "parlait", "parlions", "parliez", "parlaient"], futurSimple: ["parlerai", "parleras", "parlera", "parlerons", "parlerez", "parleront"], plusQueParfait: ["avais parlé", "avais parlé", "avait parlé", "avions parlé", "aviez parlé", "avaient parlé"], futurProche: ["vais parler", "vas parler", "va parler", "allons parler", "allez parler", "vont parler"], futurAnterieur: ["aurai parlé", "auras parlé", "aura parlé", "aurons parlé", "aurez parlé", "auront parlé"] },
-      Manger: { present: ["mange", "manges", "mange", "mangeons", "mangez", "mangent"], passeCompose: ["ai mangé", "as mangé", "a mangé", "avons mangé", "avez mangé", "ont mangé"], imparfait: ["mangeais", "mangeais", "mangeait", "mangions", "mangiez", "mangeaient"], futurSimple: ["mangerai", "mangeras", "mangera", "mangerons", "mangerez", "mangeront"], plusQueParfait: ["avais mangé", "avais mangé", "avait mangé", "avions mangé", "aviez mangé", "avaient mangé"], futurProche: ["vais manger", "vas manger", "va manger", "allons manger", "allez manger", "vont manger"], futurAnterieur: ["aurai mangé", "auras mangé", "aura mangé", "aurons mangé", "aurez mangé", "auront mangé"] },
-      Finir: { present: ["finis", "finis", "finit", "finissons", "finissez", "finissent"], passeCompose: ["ai fini", "as fini", "a fini", "avons fini", "avez fini", "ont fini"], imparfait: ["finissais", "finissais", "finissait", "finissions", "finissiez", "finissaient"], futurSimple: ["finirai", "finiras", "finira", "finirons", "finirez", "finiront"], plusQueParfait: ["avais fini", "avais fini", "avait fini", "avions fini", "aviez fini", "avaient fini"], futurProche: ["vais finir", "vas finir", "va finir", "allons finir", "allez finir", "vont finir"], futurAnterieur: ["aurai fini", "auras fini", "aura fini", "aurons fini", "aurez fini", "auront fini"] },
-      Partir: { present: ["pars", "pars", "part", "partons", "partez", "partent"], passeCompose: ["suis parti", "es parti", "est parti", "sommes partis", "êtes partis", "sont partis"], imparfait: ["partais", "partais", "partait", "partions", "partiez", "partaient"], futurSimple: ["partirai", "partiras", "partira", "partirons", "partirez", "partiront"], plusQueParfait: ["étais parti", "étais parti", "était parti", "étions partis", "étiez partis", "étaient partis"], futurProche: ["vais partir", "vas partir", "va partir", "allons partir", "allez partir", "vont partir"], futurAnterieur: ["serai parti", "seras parti", "sera parti", "serons partis", "serez partis", "seront partis"] },
-      Arriver: { present: ["arrive", "arrives", "arrive", "arrivons", "arrivez", "arrivent"], passeCompose: ["suis arrivé", "es arrivé", "est arrivé", "sommes arrivés", "êtes arrivés", "sont arrivés"], imparfait: ["arrivais", "arrivais", "arrivait", "arrivions", "arriviez", "arrivaient"], futurSimple: ["arriverai", "arriveras", "arrivera", "arriverons", "arriverez", "arriveront"], plusQueParfait: ["étais arrivé", "étais arrivé", "était arrivé", "étions arrivés", "étiez arrivés", "étaient arrivés"], futurProche: ["vais arriver", "vas arriver", "va arriver", "allons arriver", "allez arriver", "vont arriver"], futurAnterieur: ["serai arrivé", "seras arrivé", "sera arrivé", "serons arrivés", "serez arrivés", "seront arrivés"] }
-    };
+    const DATA_URL = 'https://raw.githubusercontent.com/kovalo89/Conjugation-Tool/main/data/data_conjugations.json';
+
+    async function loadConjugationData() {
+      try {
+        console.log("Fetching conjugation data...");
+        const response = await fetch(DATA_URL);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const rawData = await response.json();
+        window.conjugations = formatData(rawData);
+        createChips("tenseChips", Object.keys(window.conjugations.Être), "tenseA");
+        createChips("verbChips", Object.keys(window.conjugations), "verbs");
+        createChips("individualTenseChips", Object.keys(window.conjugations.Être), "tenseI");
+        createVerbSelect();
+        updateStarts();
+        console.log("Data loaded and UI initialized successfully.");
+
+      } catch (e) {
+        console.error("Failed to load conjugation data:", e);
+        alert("Error loading conjugation data. Please check the network and the data URL in the script.");
+      }
+    }
+    function formatData(rawData) {
+      const formattedData = {};
+      for (const verbKey in rawData) {
+        const capitalizedVerb = verbKey.charAt(0).toUpperCase() + verbKey.slice(1);
+        const tenses = rawData[verbKey];
+        formattedData[capitalizedVerb] = {};
+
+        for (const tenseKey in tenses) {
+          // Ensure the conjugation is an ordered array of 6 forms for the existing UI logic
+          const forms = tenses[tenseKey];
+          formattedData[capitalizedVerb][tenseKey] = [
+            forms.je, forms.tu, forms.il, forms.nous, forms.vous, forms.ils
+          ].filter(f => f !== undefined);
+        }
+      }
+      return formattedData;
+    }
+
+    // Run the data loading function when the page is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      loadConjugationData();
+    });
 
     // ------------------------------
     // UI generation
@@ -699,7 +724,9 @@
       futurSimple: "Futur simple",
       plusQueParfait: "Plus-que-parfait",
       futurProche: "Futur proche",
-      futurAnterieur: "Futur antérieur"
+      futurAnterieur: "Futur antérieur",
+      conditionnelPresent: "Conditionnel Présent",
+      conditionnelPasse: "Conditionnel Passé",
     };
 
     function createChips(containerId, items, type) {
@@ -909,8 +936,6 @@
       }, 0);
     }
 
-    function clean(s) { return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim(); }
-
     function checkAleatorio() {
 
       if (u === clean(expectedFormOnly) || u === clean(expectedWithPron)) {
@@ -1089,7 +1114,6 @@
     }
     document.addEventListener('DOMContentLoaded', function () {
       // Chips Generation
-      createChips("tenseChips", TIMES, "tenseA");
       createChips("verbChips", Object.keys(window.conjugations), "verbs");
       createChips("individualTenseChips", TIMES, "tenseI");
       createVerbSelect();
@@ -1098,7 +1122,13 @@
 
     'use strict';
     // normalize string: remove diacritics and collapse whitespace, lowercase
-    function norm(s) { return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); }
+    function norm(s) {
+      return (s || '').toLowerCase().trim();
+    }
+
+    function stripAccents(s) {
+      return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
 
     // robust getter: accepts array-shaped or object-shaped conjugations
     function getConj(verb, tense, pronIndex) {
