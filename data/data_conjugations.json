@@ -3231,35 +3231,6 @@
       "elles": "auraient aimé"
     }
   },
-  "falloir": {
-    "present": {
-      "il": "faut"
-    },
-    "passeCompose": {
-      "il": "a fallu"
-    },
-    "imparfait": {
-      "il": "fallait"
-    },
-    "futurSimple": {
-      "il": "faudra"
-    },
-    "plusQueParfait": {
-      "il": "avait fallu"
-    },
-    "futurProche": {
-      "il": "va falloir"
-    },
-    "futurAnterieur": {
-      "il": "aura fallu"
-    },
-    "conditionnelPresent": {
-      "il": "faudrait"
-    },
-    "conditionnelPasse": {
-      "il": "aurait fallu"
-    }
-  },
   "connaître": {
     "present": {
       "je": "connais",
